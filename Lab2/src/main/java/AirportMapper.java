@@ -1,4 +1,5 @@
 import jdk.internal.module.ModuleLoaderMap;
+import org.apache.hadoop.io.LongWritable;
 
-public class AirportMapper extends Mapper<LongMapper> {
+public class AirportMapper extends Mapper<LongWritable, > {
 }
