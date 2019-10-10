@@ -16,11 +16,9 @@ public class AirportApp {
         job.setJobName("Word count");
         FileInputFormat.addInputPath(job, new Path(args[0]));
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
-        job.setMapperClass(FlightMapper.class);
-        job.setReducerClass(FlightReducer.class);
-        job.setOutputKeyClass(Text.class);
-        job.setOutputValueClass(IntWritable.class);
-        job.setNumReduceTasks(2);
+       // job.setMapperClass(FlightMapper.class);
+      //  job.setReducerClass(FlightReducer.class);
+        
         System.exit(job.waitForCompletion(true) ? 0 : 1);
     }
 }
