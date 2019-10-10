@@ -15,6 +15,7 @@ public class AirportApp {
         job.setJarByClass(AirportApp.class);
         job.setJobName("Trip count");
         MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, CallsJoinMapper.class);
+        MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, CallsJoinMapper.class);
         FileInputFormat.addInputPath(job, new Path(args[0]));
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
        // job.setMapperClass(FlightMapper.class);
