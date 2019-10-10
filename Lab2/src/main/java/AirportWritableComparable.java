@@ -7,8 +7,10 @@ import java.io.IOException;
 public class AirportWritableComparable implements WritableComparable {
 
     private int airportId;
+    private boolean key;
 
-    public AirportWritableComparable
+    public AirportWritableComparable;
+
 
     @Override
     public int compareTo(Object o) {
