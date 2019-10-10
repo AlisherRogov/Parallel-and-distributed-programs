@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class AirportWritableComparable implements WritableComparable {
 
-    private int a
+    private int airportId;
 
     @Override
     public int compareTo(Object o) {
