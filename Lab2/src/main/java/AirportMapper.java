@@ -1,4 +1,4 @@
-package PACKAGE_NAME;
+import jdk.internal.module.ModuleLoaderMap;
 
-public class AirportMapper {
+public class AirportMapper extends ModuleLoaderMap.Mapper {
 }
