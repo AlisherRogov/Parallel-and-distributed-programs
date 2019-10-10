@@ -8,7 +8,7 @@ public class AirportWritableComparable implements WritableComparable {
 
     private int airportId;
 
-    public AirportWritableComparable()
+    public AirportWritableComparable
 
     @Override
     public int compareTo(Object o) {
