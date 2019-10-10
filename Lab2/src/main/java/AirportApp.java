@@ -1,6 +1,7 @@
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
+import org.apache.hadoop.mapreduce.lib.input.MultipleInputs;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
 public class AirportApp {
@@ -12,6 +13,7 @@ public class AirportApp {
         Job job = Job.getInstance();
         job.setJarByClass(AirportApp.class);
         job.setJobName("Trip count");
+        MultipleInputs.addInputPath(job, new Path);
         FileInputFormat.addInputPath(job, new Path(args[0]));
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
        // job.setMapperClass(FlightMapper.class);
