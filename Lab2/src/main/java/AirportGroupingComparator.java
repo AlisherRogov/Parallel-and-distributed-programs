@@ -1,7 +1,9 @@
 import org.apache.hadoop.io.WritableComparable;
 import org.apache.hadoop.io.WritableComparator;
 
-class AirportComparator extends WritableComparator {
+public class AirportComparator extends WritableComparator {
+
+    pr
 
     @Override
     public int compare(WritableComparable a, WritableComparable b) {
