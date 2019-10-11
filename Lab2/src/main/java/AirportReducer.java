@@ -13,7 +13,8 @@ public class AirportReducer extends Reducer<AirportWritableComparable, Text, Tex
 
         if(iter.hasNext()) {
             float current = Float.parseFloat(iter.next().toString());
-            float min = 
+            float min = current;
+            float average = 
         }
     }
 }
