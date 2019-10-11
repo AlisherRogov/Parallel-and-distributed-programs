@@ -14,6 +14,21 @@ public class AirportWritableComparable implements WritableComparable {
         this.key = key;
     };
 
+    public int getAirportId() {
+        return airportId;
+    }
+
+    public int getKey() {
+        return key;
+    }
+
+    public void setAirportId(int airportId) {
+        this.airportId = airportId;
+    }
+
+    public void setKey(int key) {
+        this.key = key;
+    }
 
     @Override
     public int compareTo(Object o) {
