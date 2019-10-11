@@ -24,6 +24,7 @@ public class AirportApp {
         job.setReducerClass(AirportReducer.class);
 
         job.setMapOutputKeyClass(AirportWritableComparable.class);
+        job.setMapOutputValueClass();
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(Text.class);
 
