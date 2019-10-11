@@ -1,5 +1,6 @@
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
+import org.apache.hadoop.io.WritableComparable;
 
-public class AirportMapper extends Mapper<LongWritable, Text, W, Int> {
+public class AirportMapper extends Mapper<LongWritable, Text, WritableComparable, Int> {
 }
