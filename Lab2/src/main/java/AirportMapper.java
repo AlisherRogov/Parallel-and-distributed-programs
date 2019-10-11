@@ -3,7 +3,8 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.io.WritableComparable;
 import org.apache.hadoop.mapreduce.Mapper;
 
-public class AirportMapper extends Mapper<LongWritable, Text, WritableComparable, Text> {
+public class AirportMapper extends Mapper<LongWritable, Text, AirportWritableComparable, Text> {
 
-    protected void map
+    @Override
+    protected void map (LongWritable, Text, )
 }
