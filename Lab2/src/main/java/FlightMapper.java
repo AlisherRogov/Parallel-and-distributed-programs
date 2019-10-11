@@ -18,7 +18,6 @@ public class FlightMapper extends Mapper<LongWritable, Text, AirportWritableComp
             }
             if(delayTime > 0) {
                 int airportID = Integer.parseInt(columns[14]);
-                Text airportName = new Text(columns[1].replaceAll("\"", ""));
                 context.write(new AirportWritableComparable(airportID, 0), airportName);
             }
         }
