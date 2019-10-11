@@ -13,7 +13,7 @@ public class AirportApp {
         }
         Job job = Job.getInstance();
         job.setJarByClass(AirportApp.class);
-        job.setJobName("Trip count");
+        job.setJobName("Delay count");
         MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, AirportMapper.class);
         MultipleInputs.addInputPath(job, new Path(args[1]), TextInputFormat.class, FlightMapper.class);
 
