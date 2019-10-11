@@ -5,6 +5,7 @@ public class AirportComparator extends WritableComparator {
 
     @Override
     public int compare(WritableComparable a, WritableComparable b) {
-        return super.compare(a, b);
+        AirportWritableComparable first = (AirportWritableComparable) a;
+
     }
 }
