@@ -31,6 +31,17 @@ public class AirportWritableComparable implements WritableComparable {
     }
 
     @Override
+    public boolean equals(Object obj) {
+        
+        return super.equals(obj);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
     public int compareTo(Object o) {
         return 0;
     }
@@ -43,5 +54,10 @@ public class AirportWritableComparable implements WritableComparable {
     @Override
     public void readFields(DataInput dataInput) throws IOException {
 
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
     }
 }
