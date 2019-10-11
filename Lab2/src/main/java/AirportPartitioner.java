@@ -1,10 +1,10 @@
 import org.apache.hadoop.mapreduce.Partitioner;
+import org.apache.hadoop.io.Text;
 
-public class AirportPartitioner<K, V> extends Partitioner<K, V> {
+public class AirportPartitioner extends Partitioner<AirportWritableComparable, Text> {
 
-    public A
     @Override
-    public int getPartition(K k, V v, int i) {
+    public int getPartition(AirportWritableComparable k, Text v, int i) {
         return 0;
     }
 }
