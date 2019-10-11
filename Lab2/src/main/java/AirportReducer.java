@@ -30,7 +30,8 @@ public class AirportReducer extends Reducer<AirportWritableComparable, Text, Tex
             }
             average /= (float)counter;
             Text Info = new Text("Average: " + Float.toString(average) + ", Max: " +
-                    )
+                    Float.toString(max) + ", Min: " + Float.toString(min));
+            
         }
     }
 }
