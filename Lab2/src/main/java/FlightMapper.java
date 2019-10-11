@@ -8,15 +8,15 @@ public class FlightMapper extends Mapper<LongWritable, Text, AirportWritableComp
 
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
-        if(key.get() > 0) {
+        if (key.get() > 0) {
             String[] columns = value.toString().split(",");
             float delayTime;
-            if(columns[18].equals("")) {
+            if (columns[18].equals("")) {
                 delayTime = 0;
             } else {
                 delayTime = Float.parseFloat(columns[14]);
             }
-            if(delayTime > 0) {
+            if (delayTime > 0) {
                 int airportID = Integer.parseInt(columns[14]);
                 context.write(new AirportWritableComparable(airportID, 1), new Text(columns[18]));
             }

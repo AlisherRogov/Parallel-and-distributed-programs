@@ -32,8 +32,8 @@ public class AirportWritableComparable implements WritableComparable {
 
     @Override
     public boolean equals(Object obj) {
-        if(this == obj) return true;
-        if(obj == null || this.getClass() != obj.getClass()) return  false;
+        if (this == obj) return true;
+        if (obj == null || this.getClass() != obj.getClass()) return  false;
 
         AirportWritableComparable tmp = (AirportWritableComparable) obj;
         return (tmp.getAirportId() == airportId && tmp.getKey() == key);
@@ -47,12 +47,21 @@ public class AirportWritableComparable implements WritableComparable {
     @Override
     public int compareTo(Object obj) {
         AirportWritableComparable tmp = (AirportWritableComparable) obj;
-        if()
+        if (airportId > tmp.getAirportId()) {
+            return 1;
+        }else if (airportId < tmp.getAirportId()) {
+            return -1;
+        } else if (key > tmp.getKey()) {
+            return 1;
+        } else if (key < tmp.getKey()) {
+            return -1;
+        }
         return 0;
     }
 
     @Override
     public void write(DataOutput dataOutput) throws IOException {
+        
 
     }
 
