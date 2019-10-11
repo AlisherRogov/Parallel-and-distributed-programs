@@ -73,6 +73,6 @@ public class AirportWritableComparable implements WritableComparable {
 
     @Override
     public String toString() {
-        return super.toString();
+        return ;
     }
 }
