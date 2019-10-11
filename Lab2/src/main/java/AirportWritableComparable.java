@@ -73,8 +73,7 @@ public class AirportWritableComparable implements WritableComparable {
 
     @Override
     public String toString() {
-        return "AirportWritableComparable " +
-                "airportID:" + airportId +
-                "key:" + key;
+        return "AirportID:" + airportId +
+                ", Key:" + key;
     }
 }
