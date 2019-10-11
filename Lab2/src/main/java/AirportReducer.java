@@ -11,10 +11,25 @@ public class AirportReducer extends Reducer<AirportWritableComparable, Text, Tex
         Iterator<Text> iter = values.iterator();
         Text airportId = iter.next();
 
-        if(iter.hasNext()) {
+        if (iter.hasNext()) {
             float current = Float.parseFloat(iter.next().toString());
             float min = current;
-            float average = 
+            float average = current;
+            float max = current;
+            int counter = 1;
+            while (iter.hasNext()) {
+                current = Float.parseFloat(iter.next().toString());
+                average += current;
+                if (current > max) {
+                    max = current;
+                }
+                if(current < min) {
+                    min = current;
+                }
+                counter++;
+            }
+            average /= counter;
+
         }
     }
 }
