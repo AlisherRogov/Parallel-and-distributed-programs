@@ -9,7 +9,7 @@ public class AirportReducer extends Reducer<AirportWritableComparable, Text, Tex
     @Override
     protected void reduce(AirportWritableComparable key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
         Iterator<Text> iter = values.iterator();
-        Text airportId = iter.next().toString();
+        Text airportId = new Text(iter.next().toString());
 
         if (iter.hasNext()) {
             float current = Float.parseFloat(iter.next().toString());
