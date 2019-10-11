@@ -11,7 +11,7 @@ public class FlightMapper extends Mapper<LongWritable, Text, AirportWritableComp
         if(key.get() > 0) {
             String[] columns = value.toString().split(",");
             float delayTime;
-            if(columns[14].equals("")) {
+            if(columns[18].equals("")) {
                 delayTime = 0;
             } else {
                 delayTime = Float.parseFloat(columns[14]);
