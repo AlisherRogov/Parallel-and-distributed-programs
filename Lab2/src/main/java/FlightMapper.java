@@ -10,7 +10,12 @@ public class FlightMapper extends Mapper<LongWritable, Text, AirportWritableComp
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         if(key.get() > 0) {
             String[] columns = value.toString().split(",");
-            if(columns[14].equals(""))
+            float delayTime;
+            if(columns[14].equals("")) {
+                delayTime = 0;
+            } else {
+                delayTime = Float.parseFloat(columns[14]);
+            }
             Text airportName = new Text(columns[1].replaceAll("\"", ""));
             context.write(new AirportWritableComparable(airportID, 0), airportName);
 
