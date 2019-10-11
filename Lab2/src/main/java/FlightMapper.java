@@ -14,7 +14,7 @@ public class FlightMapper extends Mapper<LongWritable, Text, AirportWritableComp
             if (columns[18].equals("")) {
                 delayTime = 0;
             } else {
-                delayTime = Float.parseFloat(columns[14]);
+                delayTime = Float.parseFloat(columns[18]);
             }
             if (delayTime > 0) {
                 int airportID = Integer.parseInt(columns[14]);
@@ -23,3 +23,4 @@ public class FlightMapper extends Mapper<LongWritable, Text, AirportWritableComp
         }
     }
 }
+  

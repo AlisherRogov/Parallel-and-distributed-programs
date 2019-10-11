@@ -38,12 +38,12 @@ public class AirportWritableComparable implements WritableComparable {
         if (obj == null || this.getClass() != obj.getClass()) return  false;
 
         AirportWritableComparable tmp = (AirportWritableComparable) obj;
-        return (tmp.getAirportId() == airportId && tmp.getKey() == key);
+        return (tmp.getAirportId() == this.airportId && tmp.getKey() == this.key);
     }
 
     @Override
     public int hashCode() {
-        return super.hashCode();
+        return this.toString().hashCode();
     }
 
     @Override
