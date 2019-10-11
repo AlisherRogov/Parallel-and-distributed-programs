@@ -29,7 +29,6 @@ public class AirportReducer extends Reducer<AirportWritableComparable, Text, Tex
                 counter++;
             }
             average /= (float)counter;
-
         }
     }
 }
