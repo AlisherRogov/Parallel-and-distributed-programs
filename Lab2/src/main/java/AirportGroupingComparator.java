@@ -1,7 +1,7 @@
-import org.apache.hadoop.io.RawComparator;
-import org.apache.hadoop.io.WritableComparable;
 
-public class AirportComparator implements WritableComparable {
+import org.apache.hadoop.io.WritableComparator;
+
+public class AirportComparator implements WritableComparator {
 
     @Override
     public int compare(Object o, Object t1) {
