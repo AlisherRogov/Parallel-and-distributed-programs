@@ -22,8 +22,7 @@ public class AirportReducer extends Reducer<AirportWritableComparable, Text, Tex
                 average += current;
                 if (current > max) {
                     max = current;
-                }
-                if(current < min) {
+                }else if (current < min) {
                     min = current;
                 }
                 counter++;

@@ -9,10 +9,12 @@ public class AirportWritableComparable implements WritableComparable {
     private int airportId;
     private int  key;
 
+    public AirportWritableComparable() {}
+
     public AirportWritableComparable(int airportId, int key) {
         this.airportId = airportId;
         this.key = key;
-    };
+    }
 
     public int getAirportId() {
         return airportId;
@@ -45,15 +47,15 @@ public class AirportWritableComparable implements WritableComparable {
     }
 
     @Override
-    public int compareTo(Object obj) {
-        AirportWritableComparable tmp = (AirportWritableComparable) obj;
-        if (airportId > tmp.getAirportId()) {
+    public int compareTo(Object o) {
+        AirportWritableComparable tmp = (AirportWritableComparable) o;
+        if (this.airportId > tmp.getAirportId()) {
             return 1;
-        }else if (airportId < tmp.getAirportId()) {
+        }else if (this.airportId < tmp.getAirportId()) {
             return -1;
-        } else if (key > tmp.getKey()) {
+        } else if (this.key > tmp.getKey()) {
             return 1;
-        } else if (key < tmp.getKey()) {
+        } else if (this.key < tmp.getKey()) {
             return -1;
         }
         return 0;
@@ -61,8 +63,8 @@ public class AirportWritableComparable implements WritableComparable {
 
     @Override
     public void write(DataOutput dataOutput) throws IOException {
-        dataOutput.write(airportId);
-        dataOutput.write(key);
+        dataOutput.writeInt(airportId);
+        dataOutput.writeInt(key);
     }
 
     @Override
