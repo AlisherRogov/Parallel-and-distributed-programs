@@ -11,6 +11,8 @@ public class AirportReducer extends Reducer<AirportWritableComparable, Text, Tex
         Iterator<Text> iter = values.iterator();
         Text airportId = iter.next();
 
-        float min = 
+        if(iter.hasNext()) {
+            float min = 
+        }
     }
 }
