@@ -11,7 +11,8 @@ public class AirportMapper extends Mapper<LongWritable, Text, AirportWritableCom
         if(key.get() > 0) {
             String[] columns = value.toString().split("\",");
 
-            int airportID = 
+            int airportID = Integer.parseInt(columns[o].replaceAll("\"", ""));
+            Text airportName = new Text()
 
         }
     }
