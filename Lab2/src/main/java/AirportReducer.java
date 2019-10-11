@@ -12,7 +12,7 @@ public class AirportReducer extends Reducer<AirportWritableComparable, Text, Tex
         Text airportId = iter.next();
 
         if(iter.hasNext()) {
-            float current = iter.
+            float current = iter.next().toString()
             float min =
         }
     }
