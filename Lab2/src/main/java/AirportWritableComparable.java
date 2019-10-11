@@ -9,7 +9,7 @@ public class AirportWritableComparable implements WritableComparable {
     private int airportId;
     private boolean key;
 
-    public AirportWritableComparable;
+    public AirportWritableComparable(int airportId, boo);
 
 
     @Override
