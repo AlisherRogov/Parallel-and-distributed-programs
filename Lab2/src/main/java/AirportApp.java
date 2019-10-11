@@ -11,6 +11,7 @@ public class AirportApp {
             System.err.println("Usage: WordCountApp <input path> <output path>");
             System.exit(-1);
         }
+        
         Job job = Job.getInstance();
         job.setJarByClass(AirportApp.class);
         job.setJobName("Delay count");
