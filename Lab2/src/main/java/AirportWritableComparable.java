@@ -35,7 +35,9 @@ public class AirportWritableComparable implements WritableComparable {
         if(this == obj) return true;
         if(obj == null || this.getClass() != obj.getClass()) return  false;
 
-        AirportWritableComparable tmp = AirportWritableComparable
+        AirportWritableComparable tmp = (AirportWritableComparable) obj;
+
+        return (tmp.getAirportId())
 
 
         return super.equals(obj);
