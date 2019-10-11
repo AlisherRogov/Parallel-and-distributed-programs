@@ -8,6 +8,6 @@ public class AirportComparator implements WritableComparator {
         AirportWritableComparable first = (AirportWritableComparable) a;
         AirportWritableComparable second = (AirportWritableComparable) b;
 
-        return first.compareTo(second);
+        return ;
     }
 }
