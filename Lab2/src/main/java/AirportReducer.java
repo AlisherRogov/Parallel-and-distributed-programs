@@ -7,6 +7,6 @@ public class AirportReducer extends Reducer<AirportWritableComparable, Text, Tex
 
     @Override
     protected void reduce(AirportWritableComparable key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
-        
+
     }
 }
