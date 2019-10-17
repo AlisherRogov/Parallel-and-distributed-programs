@@ -1,17 +1,18 @@
+package bmstu.hadoop.labs;
 import org.apache.hadoop.io.WritableComparable;
 
 import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
 
-public class AirportWritableComparable implements WritableComparable {
+public class AirportJoinCompositeKey implements WritableComparable {
 
     private int airportId;
     private int  key;
 
-    public AirportWritableComparable() {}
+    public AirportJoinCompositeKey() {}
 
-    public AirportWritableComparable(int airportId, int key) {
+    public AirportJoinCompositeKey(int airportId, int key) {
         this.airportId = airportId;
         this.key = key;
     }
@@ -37,7 +38,7 @@ public class AirportWritableComparable implements WritableComparable {
         if (this == obj) return true;
         if (obj == null || this.getClass() != obj.getClass()) return  false;
 
-        AirportWritableComparable tmp = (AirportWritableComparable) obj;
+        AirportJoinCompositeKey tmp = (AirportJoinCompositeKey) obj;
         return (tmp.getAirportId() == this.airportId && tmp.getKey() == this.key);
     }
 
@@ -48,7 +49,7 @@ public class AirportWritableComparable implements WritableComparable {
 
     @Override
     public int compareTo(Object o) {
-        AirportWritableComparable tmp = (AirportWritableComparable) o;
+        AirportJoinCompositeKey tmp = (AirportJoinCompositeKey) o;
         if (this.airportId > tmp.getAirportId()) {
             return 1;
         }else if (this.airportId < tmp.getAirportId()) {

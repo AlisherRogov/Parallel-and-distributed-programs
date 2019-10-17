@@ -1,3 +1,4 @@
+package bmstu.hadoop.labs;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
@@ -23,7 +24,7 @@ public class AirportApp {
         job.setGroupingComparatorClass(AirportGroupingComparator.class);
         job.setReducerClass(AirportReducer.class);
 
-        job.setMapOutputKeyClass(AirportWritableComparable.class);
+        job.setMapOutputKeyClass(AirportJoinCompositeKey.class);
         job.setMapOutputValueClass(Text.class);
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(Text.class);
