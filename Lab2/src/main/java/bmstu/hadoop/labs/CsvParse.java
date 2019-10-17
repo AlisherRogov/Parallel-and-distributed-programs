@@ -1,4 +1,5 @@
 package bmstu.hadoop.labs;
+import org.apache.hadoop.io.Text;
 
 public class CsvParse {
 
@@ -12,10 +13,10 @@ public class CsvParse {
         int airportID = 0;
         String[] columns;
         if (key == 0) {
-            columns = text.split("\",");
+            columns = text.toString().split("\",");
             airportID = Integer.parseInt(columns[indexAirportID].replaceAll("\"", ""));
         } else if (key == 1) {
-            columns = text.split(",");
+            String[] columns = text.toString().split(",");
             airportID = Integer.parseInt(columns[indexAirportID]);
         }
         return airportID;

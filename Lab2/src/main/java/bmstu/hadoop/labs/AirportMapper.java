@@ -13,7 +13,7 @@ public class AirportMapper extends Mapper<LongWritable, Text, AirportJoinComposi
 
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
-        CsvParse csv = new CsvParse(value.toString());
+        CsvParse csv = new CsvParse(value);
         if (key.get() > 0) {
             context.write(new AirportJoinCompositeKey(csv.getAirportsID(AIRPORT_ID, TYPE_AIRPORT), TYPE_AIRPORT),
                     csv.getAirportsName(AIRPORT_NAME));
