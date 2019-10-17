@@ -3,13 +3,13 @@ import org.apache.hadoop.io.Text;
 
 public class CsvParse {
 
-    private static Text text;
+    private Text text;
 
     public CsvParse(Text text) {
         this.text = text;
     }
 
-    public static int getAirportsID(int indexAirportID, int key) {
+    public int getAirportsID(int indexAirportID, int key) {
         int airportID = 0;
         if (key == 0) {
             String[] columns = text.toString().split("\",");
@@ -21,13 +21,13 @@ public class CsvParse {
         return airportID;
     }
 
-    public static Text getAirportsName(int indexAirportName) {
+    public Text getAirportsName(int indexAirportName) {
         String[] columns = text.toString().split("\",");
         Text airportName = new Text(columns[indexAirportName].replaceAll("\"", ""));
         return airportName;
     }
 
-    public static float getDelayTime(int indexFlightDelay) {
+    public float getDelayTime(int indexFlightDelay) {
         String[] columns = text.toString().split(",");
         float delayTime;
         if (columns[indexFlightDelay].equals("")) {
@@ -38,7 +38,7 @@ public class CsvParse {
         return delayTime;
     }
 
-    public static Text getDelayText(int indexFlightDelay) {
+    public Text getDelayText(int indexFlightDelay) {
         String[] columns = text.toString().split(",");
         return new Text(columns[indexFlightDelay]);
     }
