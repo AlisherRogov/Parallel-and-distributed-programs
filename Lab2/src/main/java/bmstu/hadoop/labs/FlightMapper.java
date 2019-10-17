@@ -10,8 +10,7 @@ public class FlightMapper extends Mapper<LongWritable, Text, AirportJoinComposit
     private static final int TYPE_AIRPORT = 1;
     private static final int AIRPORT_ID = 14;
     private static final int FLIGHT_DELAY_TIME = 18;
-
-
+    
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         CsvParse csv = new CsvParse(value);
