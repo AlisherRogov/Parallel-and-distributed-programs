@@ -3,9 +3,9 @@ import org.apache.hadoop.io.Text;
 
 public class CsvParse {
 
-    private String text;
+    private Text text;
 
-    public CsvParse(String text) {
+    public CsvParse(Text text) {
         this.text = text;
     }
 
@@ -16,7 +16,7 @@ public class CsvParse {
             columns = text.toString().split("\",");
             airportID = Integer.parseInt(columns[indexAirportID].replaceAll("\"", ""));
         } else if (key == 1) {
-            String[] columns = text.toString().split(",");
+            columns = text.toString().split(",");
             airportID = Integer.parseInt(columns[indexAirportID]);
         }
         return airportID;
@@ -24,8 +24,7 @@ public class CsvParse {
 
     public Text getAirportsName(int indexAirportName) {
         String[] columns = text.toString().split("\",");
-        Text airportName = new Text(columns[indexAirportName].replaceAll("\"", ""));
-        return airportName;
+        return new Text(columns[indexAirportName].replaceAll("\"", ""));
     }
 
     public float getDelayTime(int indexFlightDelay) {
@@ -34,7 +33,7 @@ public class CsvParse {
         if (columns[indexFlightDelay].equals("")) {
             delayTime = 0;
         } else {
-            delayTime = Float.parseFloat(columns[18]);
+            delayTime = Float.parseFloat(columns[indexFlightDelay]);
         }
         return delayTime;
     }
