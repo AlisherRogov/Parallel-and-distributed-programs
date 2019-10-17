@@ -13,7 +13,7 @@ public class FlightMapper extends Mapper<LongWritable, Text, AirportJoinComposit
 
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
-        CsvParse csv = new CsvParse(value);
+        CsvParse csv = new CsvParse(value.toString());
         if (key.get() > 0) {
             float delayTime = csv.getDelayTime(FLIGHT_DELAY_TIME);
             if (delayTime > 0) {

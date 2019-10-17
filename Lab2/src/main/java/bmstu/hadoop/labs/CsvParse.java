@@ -1,21 +1,21 @@
 package bmstu.hadoop.labs;
-import org.apache.hadoop.io.Text;
 
 public class CsvParse {
 
-    private Text text;
+    private String text;
 
-    public CsvParse(Text text) {
+    public CsvParse(String text) {
         this.text = text;
     }
 
     public int getAirportsID(int indexAirportID, int key) {
         int airportID = 0;
+        String[] columns;
         if (key == 0) {
-            String[] columns = text.toString().split("\",");
+            columns = text.split("\",");
             airportID = Integer.parseInt(columns[indexAirportID].replaceAll("\"", ""));
         } else if (key == 1) {
-            String[] columns = text.toString().split(",");
+            columns = text.split(",");
             airportID = Integer.parseInt(columns[indexAirportID]);
         }
         return airportID;
