@@ -18,4 +18,6 @@ public class DelayStatistic implements Serializable {
             this.countDelayFlights = countDelayFlights;
             this.countFlights = 1;
         }
+
+        
 }
