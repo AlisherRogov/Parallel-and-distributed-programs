@@ -35,7 +35,7 @@ public class DelayStatistic implements Serializable {
     }
 
     public float percentDelayed() {
-            
+
     }
 
     public static DelayStatistic addStatistics(DelayStatistic statistic, float delayTime, boolean countCanceledFlights, boolean countDelayFlights) {
