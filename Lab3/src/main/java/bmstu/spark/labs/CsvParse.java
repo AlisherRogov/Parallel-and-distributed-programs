@@ -39,6 +39,6 @@ public class CsvParse {
 
     public boolen getCanceled(int indexCanceled) {
         String[] columns = text.toString().split(",");
-        return Float.parseFloat(columns[indexCanceled]) ;
+        return Float.parseFloat(columns[indexCanceled]) != ;
     }
 }
