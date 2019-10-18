@@ -11,10 +11,10 @@ public class DelayStatistic implements Serializable {
 
         public DelayStatistic() {};
 
-        public DelayStatistic(float delayTime, boolean countCanceledFlights, boolean countDelayFlights, int countFlights) {
+        public DelayStatistic(float delayTime, int countCanceledFlights, int countDelayFlights, int countFlights) {
             this.delayTime = delayTime;
-            this.countCanceledFlights = countCanceledFlights ? 1 : 0;
-            this.countDelayFlights = countDelayFlights ? 1 : 0;
+            this.countCanceledFlights = countCanceledFlights;
+            this.countDelayFlights = countDelayFlights;
             this.countFlights = countFlights;
         }
 
@@ -35,9 +35,9 @@ public class DelayStatistic implements Serializable {
     }
 
     public DelayStatistic addValue(DelayStatistic statistic, float delayTime, boolean countCanceledFlights, boolean countDelayFlights) {
-        return new DelayStatistic( delayTime > statistic.getDelayTime() ? delayTime : statistic.getDelayTime(),
-                statistic.getCountCanceledFlights() + countCanceledFlights ? 1 : 0,
-                statistic.getCountDelayFlights() + countDelayFlights ? 1 : 0,
+        return new DelayStatistic(Math.max(delayTime, statistic.getDelayTime()),
+                statistic.getCountCanceledFlights() + (countCanceledFlights ? 1 : 0),
+                statistic.getCountDelayFlights() + (countDelayFlights ? 1 : 0),
                 statistic.getCountFlights() + 1);
     }
 
