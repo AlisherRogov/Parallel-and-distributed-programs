@@ -4,9 +4,11 @@ import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
+import scala.Tuple2;
 
 public class AirportSparkApp {
 
+    private static final int TYPE_AIRPORT = 0;
     private static final int AIRPORT_ID_TYPE_AIRPORT = 0;
     private static final int AIRPORT_NAME = 1;
 
@@ -24,7 +26,7 @@ public class AirportSparkApp {
         JavaPairRDD<Integer, String> airportTable = airportData.mapToPair(
                 s -> {
                     CsvParse csvS = new CsvParse(s);
-                    
+                    return Tuple2
                 }
         );
     }
