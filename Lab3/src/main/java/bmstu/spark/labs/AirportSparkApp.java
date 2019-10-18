@@ -26,8 +26,10 @@ public class AirportSparkApp {
         JavaPairRDD<Tuple2<Integer, Integer>, FLightDataAccum> flightTable = flightData.mapToPair(
                 s-> {
                     FLightDataAccum accum = new FLightDataAccum(s);
-                    return new Tuple2<>(new Tuple2<>(accum.getOriginAirport(), accum.getDestAirport()), accum)
+                    return new Tuple2<>(new Tuple2<>(accum.getOriginAirport(), accum.getDestAirport()), accum);
                 }
-        )
+        );
+
+        
     }
 }
