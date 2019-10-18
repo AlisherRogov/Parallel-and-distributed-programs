@@ -9,7 +9,8 @@ public class FLightDataAccum implements Serializable {
     private static final int FLIGHT_DELAY_TIME = 18;
 
     private CsvParse csv;
-    private in
+    private int destAirport;
+    private int 
 
     public FLightDataAccum(String s) {
         csv = new CsvParse(s);
