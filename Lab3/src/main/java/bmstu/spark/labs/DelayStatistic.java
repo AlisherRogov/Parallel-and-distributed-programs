@@ -11,11 +11,11 @@ public class DelayStatistic implements Serializable {
 
         public DelayStatistic() {};
 
-        public DelayStatistic(float delayTime, int countCanceledFlights,
-                              int countDelayFlights) {
+        public DelayStatistic(float delayTime, boolean countCanceledFlights,
+                              boolean countDelayFlights) {
             this.delayTime = delayTime;
-            this.countCanceledFlights = countCanceledFlights;
-            this.countDelayFlights = countDelayFlights;
+            this.countCanceledFlights = countCanceledFlights ? 1 : 0;
+            this.countDelayFlights = countDelayFlights ? 1 : 0;
             this.countFlights = 1;
         }
 
