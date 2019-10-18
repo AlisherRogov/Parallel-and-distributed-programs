@@ -14,7 +14,7 @@ public class AirportSparkApp {
     private static final int TYPE_FLIGHT = 1;
     private static final int AIRPORT_ID = 14;
     private static final int FLIGHT_DELAY_TIME = 18;
-    
+
     public static void main(String[] args) {
         SparkConf conf  = new SparkConf().setAppName("lab3");
         JavaSparkContext sc = new JavaSparkContext(conf);
