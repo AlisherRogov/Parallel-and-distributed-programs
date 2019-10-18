@@ -11,6 +11,7 @@ public class FLightDataAccum implements Serializable {
     private CsvParse csv;
     private int destAirport;
     private int originAirport;
+    private boolean isCanceled;
     
 
     public FLightDataAccum(String s) {
