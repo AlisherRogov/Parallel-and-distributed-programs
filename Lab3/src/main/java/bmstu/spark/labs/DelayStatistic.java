@@ -41,6 +41,6 @@ public class DelayStatistic implements Serializable {
                 statistic.getCountFlights() + 1);
     }
 
-    public DelayStatistic combine
+    public DelayStatistic combineTwoStatis
 
 }
