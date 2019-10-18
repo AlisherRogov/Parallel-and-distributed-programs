@@ -10,7 +10,8 @@ public class FLightDataAccum implements Serializable {
 
     private CsvParse csv;
     private int destAirport;
-    private int 
+    private int originAirport;
+    
 
     public FLightDataAccum(String s) {
         csv = new CsvParse(s);
