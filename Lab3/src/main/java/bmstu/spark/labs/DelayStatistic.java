@@ -34,13 +34,15 @@ public class DelayStatistic implements Serializable {
         return countFlights;
     }
 
-    public DelayStatistic addValue(DelayStatistic statistic, float delayTime, boolean countCanceledFlights, boolean countDelayFlights) {
+    public DelayStatistic addStatistics(DelayStatistic statistic, float delayTime, boolean countCanceledFlights, boolean countDelayFlights) {
         return new DelayStatistic(Math.max(delayTime, statistic.getDelayTime()),
                 statistic.getCountCanceledFlights() + (countCanceledFlights ? 1 : 0),
                 statistic.getCountDelayFlights() + (countDelayFlights ? 1 : 0),
                 statistic.getCountFlights() + 1);
     }
 
-    public DelayStatistic combineTwoStatis
+    public DelayStatistic combineTwoStatistics(DelayStatistic a, DelayStatistic b) {
+            
+    }
 
 }
