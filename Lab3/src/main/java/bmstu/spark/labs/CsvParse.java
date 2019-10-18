@@ -15,22 +15,22 @@ public class CsvParse {
         int airportID = 0;
         String[] columns;
         if (key == TYPE_AIRPORT) {
-            columns = text.toString().split("\",");
+            columns = text.split("\",");
             airportID = Integer.parseInt(columns[indexAirportID].replaceAll("\"", ""));
         } else if (key == TYPE_FLIGHT) {
-            columns = text.toString().split(",");
+            columns = text.split(",");
             airportID = Integer.parseInt(columns[indexAirportID]);
         }
         return airportID;
     }
 
     public String getAirportsName(int indexAirportName) {
-        String[] columns = text.toString().split("\",");
+        String[] columns = text.split("\",");
         return columns[indexAirportName].replaceAll("\"", "");
     }
 
     public float getDelayTime(int indexFlightDelay) {
-        String[] columns = text.toString().split(",");
+        String[] columns = text.split(",");
         float delayTime;
         if (columns[indexFlightDelay].equals("")) {
             delayTime = FLOAT_ZERO;
@@ -41,7 +41,7 @@ public class CsvParse {
     }
 
     public boolean getCanceled(int indexCanceled) {
-        String[] columns = text.toString().split(",");
+        String[] columns = text.split(",");
         return Float.parseFloat(columns[indexCanceled]) != FLOAT_ZERO;
     }
 }
