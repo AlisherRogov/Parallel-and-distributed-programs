@@ -14,7 +14,9 @@ public class AirportSparkApp {
         JavaRDD<String> airportData = sc.textFile("L_AIRPORT_ID.csv");
 
         JavaPairRDD<Integer, String> airportTable = airportData.mapToPair(
-                s -> 
+                s -> {
+                    CsvParse csvS = new CsvParse(s);
+                }
         );
     }
 }
