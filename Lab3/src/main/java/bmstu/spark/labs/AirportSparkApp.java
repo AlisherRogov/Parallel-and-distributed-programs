@@ -13,6 +13,6 @@ public class AirportSparkApp {
         JavaRDD<String> flightTable = sc.textFile("664600583_T_ONTIME_sample.csv");
         JavaRDD<String> airportTable = sc.textFile("L_AIRPORT_ID.csv");
 
-        JavaPairRDD<>
+        JavaPairRDD<Integer, String> 
     }
 }
