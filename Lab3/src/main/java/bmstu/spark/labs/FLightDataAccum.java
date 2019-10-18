@@ -12,10 +12,10 @@ public class FLightDataAccum implements Serializable {
     private int destAirport;
     private int originAirport;
     private boolean isCanceled;
-    
+    private float delayTime;
 
     public FLightDataAccum(String s) {
         csv = new CsvParse(s);
-
+        t
     }
 }
