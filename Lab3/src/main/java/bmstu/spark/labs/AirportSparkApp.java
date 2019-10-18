@@ -8,6 +8,6 @@ public class AirportSparkApp {
         SparkConf conf  = new SparkConf().setAppName("lab3");
         JavaSparkContext sc = new JavaSparkContext(conf);
 
-        JavaRDD<String> flightTable = 
+        JavaRDD<String> flightTable = sc.
     }
 }
