@@ -1,4 +1,7 @@
 package bmstu.spark.labs;
 
-public class FLightDataAccum {
+import java.io.Serializable;
+
+public class FLightDataAccum implements Serializable {
+    
 }
