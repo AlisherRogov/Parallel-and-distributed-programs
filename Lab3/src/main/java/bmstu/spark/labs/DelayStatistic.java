@@ -40,5 +40,6 @@ public class DelayStatistic implements Serializable {
                        statistic.getCountDelayFlights() + (countDelayFlights ? 1 : 0),
                        statistic.getCountFlights() + 1);
         }
-        
+
+
 }
