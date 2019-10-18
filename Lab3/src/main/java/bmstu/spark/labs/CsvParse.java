@@ -6,27 +6,36 @@ public class CsvParse {
     private static final int TYPE_AIRPORT = 0;
     private static final int TYPE_FLIGHT = 1;
     private static final float FLOAT_ZERO = 0.00f;
+    private static final int TYPE_FLIGHT = 1;
+    private static final int ORIGIN_AIRPORT_ID = 11;
+    private static final int DEST_AIRPORT_ID = 14;
+    private static final int FLIGHT_DELAY_TIME = 18;
+    private static final int CANCELED = 19;
+    private static final int AIRPORT_ID_TYPE_AIRPORT = 0;
+    private static final int AIRPORT_NAME_TYPE_AIRPORT = 1;
 
     public CsvParse(String text) {
         this.text = text;
     }
 
-    public int getAirportsID(int indexAirportID, int key) {
-        int airportID = 0;
-        String[] columns;
-        if (key == TYPE_AIRPORT) {
-            columns = text.split("\",");
-            airportID = Integer.parseInt(columns[indexAirportID].replaceAll("\"", ""));
-        } else if (key == TYPE_FLIGHT) {
-            columns = text.split(",");
-            airportID = Integer.parseInt(columns[indexAirportID]);
-        }
-        return airportID;
+    public int getAirportsID() {
+        String[] columns = text.split("\",");
+        return Integer.parseInt(columns[AIRPORT_ID_TYPE_AIRPORT].replaceAll("\"", ""));
     }
 
     public String getAirportsName(int indexAirportName) {
         String[] columns = text.split("\",");
         return columns[indexAirportName].replaceAll("\"", "");
+    }
+
+    public int getOriginAirportId() {
+        String[] columns = text.split(",");
+        return Integer.parseInt(columns[ORIGIN_AIRPORT_ID]);
+    }
+
+    public int getDestAirportId() {
+        String[] columns = text.split(",");
+        return Integer.parseInt(columns[DEST_AIRPORT_ID]);
     }
 
     public float getDelayTime(int indexFlightDelay) {
