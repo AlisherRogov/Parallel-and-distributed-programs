@@ -19,5 +19,5 @@ public class DelayStatistic implements Serializable {
             this.countFlights = 1;
         }
 
-        public void addValue(int statistic, float delayTime, boolean )
+        public void addValue(int statistic, float delayTime, boolean count)
 }
