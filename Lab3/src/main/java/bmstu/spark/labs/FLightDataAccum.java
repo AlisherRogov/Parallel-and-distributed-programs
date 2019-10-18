@@ -8,7 +8,7 @@ public class FLightDataAccum implements Serializable {
     private static final int ORIGIN_AIRPORT_ID = 11;
     private static final int DEST_AIRPORT_ID = 14;
     private static final int FLIGHT_DELAY_TIME = 18;
-    private static final boolean 
+    private static final boolean CANCELED = ;
 
     private CsvParse csv;
     private int destAirport;
