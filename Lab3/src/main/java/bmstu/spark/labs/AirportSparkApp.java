@@ -31,6 +31,6 @@ public class AirportSparkApp {
                 }
         );
 
-
+        JavaPairRDD<Tuple2<Integer, Integer>, FLightDataAccum> flightTable = flightData.mapToPair()
     }
 }
