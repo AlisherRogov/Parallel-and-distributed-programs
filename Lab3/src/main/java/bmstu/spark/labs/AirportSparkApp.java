@@ -11,6 +11,6 @@ public class AirportSparkApp {
 
         JavaRDD<String> flightTable = sc.textFile("664600583_T_ONTIME_sample.csv");
 
-        flightTable.mapToPair()
+        JavaRDD flightTable.mapToPair()
     }
 }
