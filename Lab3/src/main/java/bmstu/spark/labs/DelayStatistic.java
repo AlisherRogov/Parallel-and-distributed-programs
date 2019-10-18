@@ -4,5 +4,6 @@ import java.io.Serializable;
 
 public class DelayStatistic implements Serializable {
 
-        
+        private float delayTime;
+        private int 
 }
