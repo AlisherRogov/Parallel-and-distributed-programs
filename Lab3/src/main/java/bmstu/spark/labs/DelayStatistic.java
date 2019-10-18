@@ -21,6 +21,6 @@ public class DelayStatistic implements Serializable {
 
         public void addValue(int statistic, float delayTime, boolean countCanceledFlights,
                              boolean countDelayFlights) {
-            statistic++
+            return
         }
 }
