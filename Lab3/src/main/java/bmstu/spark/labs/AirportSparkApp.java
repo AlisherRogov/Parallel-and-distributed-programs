@@ -7,8 +7,7 @@ import org.apache.spark.api.java.JavaSparkContext;
 
 public class AirportSparkApp {
 
-    private static final int TYPE_AIRPORT = 0;
-    private static final int AIRPORT_ID = 0;
+    private static final int AIRPORT_ID_TYPE_AIRPORT = 0;
     private static final int AIRPORT_NAME = 1;
 
     private static final int TYPE_FLIGHT = 1;
@@ -25,6 +24,7 @@ public class AirportSparkApp {
         JavaPairRDD<Integer, String> airportTable = airportData.mapToPair(
                 s -> {
                     CsvParse csvS = new CsvParse(s);
+                    
                 }
         );
     }
