@@ -48,7 +48,7 @@ public class CsvParse {
         return delayTime;
     }
 
-    public boolean getCanceled(int indexCanceled) {
+    public boolean getCanceled() {
 
         return Float.parseFloat(columnsTypeFlight[CANCELED]) != FLOAT_ZERO;
     }
