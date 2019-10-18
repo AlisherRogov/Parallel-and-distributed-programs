@@ -6,6 +6,12 @@ import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 
 public class AirportSparkApp {
+
+    private static final int TYPE_AIRPORT = 0;
+    private static final int AIRPORT_ID = 0;
+    private static final int AIRPORT_NAME = 1;
+
+    
     public static void main(String[] args) {
         SparkConf conf  = new SparkConf().setAppName("lab3");
         JavaSparkContext sc = new JavaSparkContext(conf);
