@@ -26,8 +26,11 @@ public class AirportSparkApp {
         JavaPairRDD<Integer, String> airportTable = airportData.mapToPair(
                 s -> {
                     CsvParse csvS = new CsvParse(s);
-                    return Tuple2
+                    return new Tuple2<>(csvS.getAirportsID(AIRPORT_ID_TYPE_AIRPORT, TYPE_AIRPORT),
+                            csvS.getAirportsName(AIRPORT_NAME));
                 }
         );
+
+        J
     }
 }
