@@ -9,5 +9,5 @@ public class FLightDataAccum implements Serializable {
     private int countCanceledFlights;
     private int maxDelayTime;
 
-    
+
 }
