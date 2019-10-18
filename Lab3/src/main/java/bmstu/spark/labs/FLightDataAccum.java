@@ -5,5 +5,7 @@ import java.io.Serializable;
 public class FLightDataAccum implements Serializable {
 
     private int countFlightts;
-    private int 
+    private int countDelayFlights;
+    private int countCanceledFlights;
+    
 }
