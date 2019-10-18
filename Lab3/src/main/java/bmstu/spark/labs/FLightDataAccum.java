@@ -31,7 +31,4 @@ public class FLightDataAccum implements Serializable {
         return originAirport;
     }
 
-    public CsvParse getCsv() {
-        return csv;
-    }
 }
