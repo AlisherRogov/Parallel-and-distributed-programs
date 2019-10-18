@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class DelayStatistic implements Serializable {
 
         private float delayTime;
-        private int delayFlights;
-        private int canceledFlights;
-        private int flights;
+        private int countDelayFlights;
+        private int countCanceledFlights;
+        private int countClights;
 }
