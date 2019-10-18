@@ -1,4 +1,7 @@
 package bmstu.spark.labs;
 
-public class DelayStatistic {
+import java.io.Serializable;
+
+public class DelayStatistic implements Serializable {
+    
 }
