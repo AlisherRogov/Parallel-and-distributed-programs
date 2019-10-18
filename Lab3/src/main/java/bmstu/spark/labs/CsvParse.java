@@ -3,6 +3,9 @@ package bmstu.spark.labs;
 public class CsvParse {
 
     private String text;
+    private static final int TYPE_AIRPORT = 0;
+    private static final int TYPE_FLIGHT = 1;
+    private static final float FLOAT_ZERO = 0.00f;
 
     public CsvParse(String text) {
         this.text = text;
@@ -11,10 +14,10 @@ public class CsvParse {
     public int getAirportsID(int indexAirportID, int key) {
         int airportID = 0;
         String[] columns;
-        if (key == 0) {
+        if (key == TYPE_AIRPORT) {
             columns = text.toString().split("\",");
             airportID = Integer.parseInt(columns[indexAirportID].replaceAll("\"", ""));
-        } else if (key == 1) {
+        } else if (key == TYPE_FLIGHT) {
             columns = text.toString().split(",");
             airportID = Integer.parseInt(columns[indexAirportID]);
         }
@@ -30,15 +33,15 @@ public class CsvParse {
         String[] columns = text.toString().split(",");
         float delayTime;
         if (columns[indexFlightDelay].equals("")) {
-            delayTime = 0;
+            delayTime = FLOAT_ZERO;
         } else {
             delayTime = Float.parseFloat(columns[indexFlightDelay]);
         }
         return delayTime;
     }
 
-    public boolen getCanceled(int indexCanceled) {
+    public boolean getCanceled(int indexCanceled) {
         String[] columns = text.toString().split(",");
-        return Float.parseFloat(columns[indexCanceled]) != ;
+        return Float.parseFloat(columns[indexCanceled]) != FLOAT_ZERO;
     }
 }

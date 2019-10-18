@@ -18,6 +18,6 @@ public class FLightDataAccum implements Serializable {
 
     public FLightDataAccum(String s) {
         csv = new CsvParse(s);
-        t
+        this destAirport = csv.getAirportsID();
     }
 }
