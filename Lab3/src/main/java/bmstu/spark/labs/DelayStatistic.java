@@ -9,5 +9,7 @@ public class DelayStatistic implements Serializable {
         private int countCanceledFlights;
         private int countFlights;
 
-        
+        public DelayStatistic() {};
+
+        public DelayStatistic()
 }
