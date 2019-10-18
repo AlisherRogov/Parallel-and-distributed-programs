@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 public class FLightDataAccum implements Serializable {
 
-
     private CsvParse csv;
     private int destAirport;
     private int originAirport;
