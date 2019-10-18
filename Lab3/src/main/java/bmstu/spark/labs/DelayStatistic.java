@@ -35,9 +35,10 @@ public class DelayStatistic implements Serializable {
     }
 
     public void addValue(DelayStatistic statistic, float delayTime, boolean countCanceledFlights, boolean countDelayFlights) {
-            return new(delayTime > statistic.getDelayTime() ? delayTime, statistic.getDelayTime(),
-                        
-
-        )
+            return new DelayStatistic(delayTime > statistic.getDelayTime() ? delayTime, statistic.getDelayTime(),
+                       statistic.getCountCanceledFlights() + (countCanceledFlights ? 1 : 0),
+                       statistic.getCountDelayFlights() + (countDelayFlights ? 1 : 0),
+                       statistic.getCountFlights() + 1);
         }
+        
 }
