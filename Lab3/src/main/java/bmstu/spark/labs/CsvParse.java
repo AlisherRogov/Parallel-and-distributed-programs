@@ -1,14 +1,14 @@
 package bmstu.spark.labs;
 
-public class CsvParse {
+class CsvParse {
 
-    private String text;
+    private static String text;
 
     public CsvParse(String text) {
         this.text = text;
     }
 
-    public int getAirportsID(int indexAirportID, int key) {
+    public static int getAirportsID(int indexAirportID, int key) {
         int airportID = 0;
         String[] columns;
         if (key == 0) {
