@@ -10,5 +10,5 @@ public class FLightDataAccum implements Serializable {
     private int maxDelayTime;
 
 
-    
+
 }
