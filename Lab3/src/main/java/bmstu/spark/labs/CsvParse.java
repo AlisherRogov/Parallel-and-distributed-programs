@@ -36,4 +36,9 @@ public class CsvParse {
         }
         return delayTime;
     }
+
+    public boolen getCanceled(int indexCanceled) {
+        String[] columns = text.toString().split(",");
+        return columns[indexCanceled].to;
+    }
 }
