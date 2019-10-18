@@ -8,6 +8,6 @@ public class AirportSparkApp {
         SparkConf conf  = new SparkConf().setAppName("lab3");
         JavaSparkContext sc = new JavaSparkContext(conf);
 
-        JavaRDD<String> flightTable = sc.textFile(664600583_T_ONTIME_sample.csv)
+        JavaRDD<String> flightTable = sc.textFile("664600583_T_ONTIME_sample.csv")
     }
 }
