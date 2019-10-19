@@ -6,6 +6,8 @@ import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import scala.Tuple2;
 
+import java.util.Map;
+
 public class AirportSparkApp {
 
     public static void main(String[] args) {
@@ -44,6 +46,6 @@ public class AirportSparkApp {
                         FLightDataAccumulator.getDelayTime() > 0),
                 DelayStatistic::combineTwoStatistics);
 
-        
+        Map<Integer, String>
     }
 }
