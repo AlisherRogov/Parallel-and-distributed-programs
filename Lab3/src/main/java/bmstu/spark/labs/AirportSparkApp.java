@@ -30,6 +30,6 @@ public class AirportSparkApp {
                 }
         );
 
-        JavaPairRDD<Tuple2<Integer, Integer>, DelayStatistic> 
+        JavaPairRDD<Tuple2<Integer, Integer>, DelayStatistic> flightStat = 
     }
 }
