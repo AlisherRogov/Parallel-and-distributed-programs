@@ -53,11 +53,11 @@ public class DelayStatistic implements Serializable {
             return a;
     }
 
-    float getPencentOfDelayed() {
+    private float getPencentOfDelayed() {
         return 100.0f * (float) this.getCountDelayFlights() / (float) this.getCountFlights();
     }
 
-     float getPencentOfCanceled() {
+    private float getPencentOfCanceled() {
         return 100.0f * (float) this.getCountCanceledFlights() / (float) this.getCountFlights();
     }
 
