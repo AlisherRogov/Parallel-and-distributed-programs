@@ -30,4 +30,8 @@ public class FLightDataAccum implements Serializable {
         return originAirport;
     }
 
+    public boolean getCanceled() {
+        return isCanceled;
+    }
+
 }
