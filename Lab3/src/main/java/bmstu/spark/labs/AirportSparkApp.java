@@ -57,7 +57,7 @@ public class AirportSparkApp {
                       DelayStatistic.resultStatistics(p._2))
         );
 
-        joined.saveAsTextFile();
+        joined.saveAsTextFile("output");
 
     }
 }
