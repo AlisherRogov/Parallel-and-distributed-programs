@@ -55,6 +55,9 @@ public class AirportSparkApp {
               p -> new Tuple2<>( airportBroadcasted.value().get(p._1._1) + " TO" +
                       airportBroadcasted.value().get(p._1._2),
                       DelayStatistic.resultStatistics(p._2))
-        )
+        );
+
+        joined.savaAs
+
     }
 }
