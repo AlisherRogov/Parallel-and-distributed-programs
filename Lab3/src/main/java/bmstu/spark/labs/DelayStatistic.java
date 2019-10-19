@@ -53,6 +53,12 @@ public class DelayStatistic implements Serializable {
             return a;
     }
 
-    public static String resultStatistics()
+    private static int getPencentOfDelayed(DelayStatistic a) {
+        
+    }
+
+    public static String resultStatistics(DelayStatistic a) {
+
+    }
 
 }
