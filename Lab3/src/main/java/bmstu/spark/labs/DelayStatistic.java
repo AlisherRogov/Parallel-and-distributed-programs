@@ -62,7 +62,7 @@ public class DelayStatistic implements Serializable {
     }
 
     public static String resultStatistics(DelayStatistic a) {
-            return 
+            return "max delay:  " + a.
     }
 
 }
