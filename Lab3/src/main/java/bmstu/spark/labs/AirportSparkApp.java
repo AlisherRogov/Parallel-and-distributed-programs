@@ -51,6 +51,6 @@ public class AirportSparkApp {
 
         final Broadcast<Map<Integer, String>> airportBroadcasted = sc.broadcast(mapAirportTable);
 
-        JavaPairRDD<String, String> joined = 
+        JavaPairRDD<String, String> joined = flightStat.
     }
 }
