@@ -30,6 +30,8 @@ public class AirportSparkApp {
                 }
         );
 
-        JavaPairRDD<Tuple2<Integer, Integer>, DelayStatistic> flightStat = 
+        JavaPairRDD<Tuple2<Integer, Integer>, DelayStatistic> flightStat = flightTable.combineByKey(
+                
+        )
     }
 }
