@@ -54,11 +54,15 @@ public class DelayStatistic implements Serializable {
     }
 
     private static float getPencentOfDelayed(DelayStatistic a) {
-        return 100.0f * 
+        return 100.0f * (float) a.getCountDelayFlights() / (float) a.getCountFlights();
+    }
+
+    private static float getPencentOfCanceled(DelayStatistic a) {
+        return 100.0f * (float) a.getCountCanceledFlights() / (float) a.getCountFlights();
     }
 
     public static String resultStatistics(DelayStatistic a) {
-
+            return 
     }
 
 }
