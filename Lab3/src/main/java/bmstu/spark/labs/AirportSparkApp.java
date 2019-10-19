@@ -35,10 +35,11 @@ public class AirportSparkApp {
                         FlightDataAccumulator  -> {
                             int countCanceledFlights = FlightDataAccumulator.getCanceled() ? 1 : 0;
                             int countDelayFlights = FlightDataAccumulator.getDelayTime() > 0.0f ? 1 : 0;
-                            return new DelayStatistic(1,
+                            return new DelayStatistic(
                                     FlightDataAccumulator.getDelayTime(),
                                     countCanceledFlights,
-                                    countDelayFlights);
+                                    countDelayFlights,
+                                    1);
                         },
                 (statCount, FLightDataAccumulator) -> DelayStatistic.addStatistics(statCount, FLightDataAccumulator.getDelayTime(),
                         FLightDataAccumulator.getCanceled(), FLightDataAccumulator.getDelayTime() > 0),
