@@ -38,9 +38,12 @@ public class AirportSparkApp {
                                     FlightDataAccumulator.getDelayTime() > 0 ? 1 : 0,
                                     1);
                         },
-                (statCount, FLightDataAccumulator) -> DelayStatistic.addStatistics(statCount, FLightDataAccumulator.getDelayTime(),
-                        FLightDataAccumulator.getCanceled(), FLightDataAccumulator.getDelayTime() > 0),
+                (statCount, FLightDataAccumulator) -> DelayStatistic.addStatistics(statCount,
+                        FLightDataAccumulator.getDelayTime(),
+                        FLightDataAccumulator.getCanceled(),
+                        FLightDataAccumulator.getDelayTime() > 0),
                 DelayStatistic::combineTwoStatistics);
 
+        
     }
 }
