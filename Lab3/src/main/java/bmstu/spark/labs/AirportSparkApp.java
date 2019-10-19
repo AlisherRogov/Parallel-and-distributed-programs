@@ -49,6 +49,6 @@ public class AirportSparkApp {
 
         Map<Integer, String> mapAirportTable = airportTable.collectAsMap();
 
-        Broadcast
+        final Broadcast 
     }
 }
