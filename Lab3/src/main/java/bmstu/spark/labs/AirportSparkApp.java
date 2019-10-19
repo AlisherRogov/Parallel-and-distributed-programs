@@ -52,8 +52,9 @@ public class AirportSparkApp {
         final Broadcast<Map<Integer, String>> airportBroadcasted = sc.broadcast(mapAirportTable);
 
         JavaPairRDD<String, String> joined = flightStat.mapToPair(
-              p ->  airportBroadcasted.value().get(p._1._1) + " TO" +
-                      airportBroadcasted.value().get(p._1._2)
+              p -> new Tuple2<>( airportBroadcasted.value().get(p._1._1) + " TO" +
+                      airportBroadcasted.value().get(p._1._2),
+                      
         )
     }
 }
