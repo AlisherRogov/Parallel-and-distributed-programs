@@ -53,7 +53,7 @@ public class DelayStatistic implements Serializable {
             return a;
     }
 
-    private static int getPencentOfDelayed(DelayStatistic a) {
+    private static float getPencentOfDelayed(DelayStatistic a) {
         
     }
 
