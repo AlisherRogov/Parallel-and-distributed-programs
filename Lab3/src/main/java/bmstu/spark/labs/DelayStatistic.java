@@ -53,16 +53,18 @@ public class DelayStatistic implements Serializable {
             return a;
     }
 
-    private static float getPencentOfDelayed(DelayStatistic a) {
-        return 100.0f * (float) a.getCountDelayFlights() / (float) a.getCountFlights();
+    float getPencentOfDelayed() {
+        return 100.0f * (float) this.getCountDelayFlights() / (float) this.getCountFlights();
     }
 
-    private static float getPencentOfCanceled(DelayStatistic a) {
-        return 100.0f * (float) a.getCountCanceledFlights() / (float) a.getCountFlights();
+     float getPencentOfCanceled() {
+        return 100.0f * (float) this.getCountCanceledFlights() / (float) this.getCountFlights();
     }
 
     public static String resultStatistics(DelayStatistic a) {
-            return "max delay:  " + a.
+            return "max delay:  " + a.getDelayTime() +
+                    " percent of Delayed: " + a.getPencentOfDelayed() +
+                    " percent of Canceled: " + a.getPencentOfCanceled();
     }
 
 }
