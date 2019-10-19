@@ -32,7 +32,12 @@ public class AirportSparkApp {
 
         JavaPairRDD<Tuple2<Integer, Integer>, DelayStatistic> flightStat = flightTable
                 .combineByKey(
-                        p -> new DelayStatistic(p.getDelayTime(), p.getCanceled(), 1),
+                        FlightDataAccumulator  -> {
+                            return new DelayStatistic(FlightDataAccumulator.getDelayTime(),
+                                    FlightDataAccumulator.getCanceled() ? 1 : 0,
+                                    FlightDataAccumulator.getDelayTime() > 0 ? 1 : 0,
+                                    1);
+                        },
                 (statCount, FLightDataAccumulator) -> DelayStatistic.addStatistics(statCount, FLightDataAccumulator.getDelayTime(),
                         FLightDataAccumulator.getCanceled(), FLightDataAccumulator.getDelayTime() > 0),
                 DelayStatistic::addStatistics);
