@@ -54,7 +54,7 @@ public class DelayStatistic implements Serializable {
     }
 
     private static float getPencentOfDelayed(DelayStatistic a) {
-        
+        return 100.0f * 
     }
 
     public static String resultStatistics(DelayStatistic a) {
