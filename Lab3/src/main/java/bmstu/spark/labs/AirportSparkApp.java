@@ -54,7 +54,7 @@ public class AirportSparkApp {
         JavaPairRDD<String, String> joined = flightStat.mapToPair(
               p -> new Tuple2<>( airportBroadcasted.value().get(p._1._1) + " TO" +
                       airportBroadcasted.value().get(p._1._2),
-                      DelayStatistic.resultStatistics(p._2);
+                      DelayStatistic.resultStatistics(p._2))
         )
     }
 }
