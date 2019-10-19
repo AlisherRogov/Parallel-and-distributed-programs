@@ -46,6 +46,6 @@ public class AirportSparkApp {
                         FLightDataAccumulator.getDelayTime() > 0),
                 DelayStatistic::combineTwoStatistics);
 
-        Map<Integer, String>
+        Map<Integer, String> mapAirportTable = airportTable.collectAsMap()
     }
 }
