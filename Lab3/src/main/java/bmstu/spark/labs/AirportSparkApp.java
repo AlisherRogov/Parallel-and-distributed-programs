@@ -40,7 +40,7 @@ public class AirportSparkApp {
                         },
                 (statCount, FLightDataAccumulator) -> DelayStatistic.addStatistics(statCount, FLightDataAccumulator.getDelayTime(),
                         FLightDataAccumulator.getCanceled(), FLightDataAccumulator.getDelayTime() > 0),
-                DelayStatistic::addStatistics);
+                DelayStatistic::combineTwoStatistics);
 
     }
 }
