@@ -8,6 +8,9 @@ public class CsvParseRow {
 
     public CsvParseRow(String text, int key) {
         this.text = text;
+        if(key == 0) {
+            
+        }
     }
 
     public int getAirportsID(int indexAirportID, int key) {
