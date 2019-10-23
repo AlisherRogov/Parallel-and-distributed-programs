@@ -3,12 +3,15 @@ import org.apache.hadoop.io.Text;
 
 public class CsvParseRow {
 
+    private static final int TYPE_AIRPORT = 0;
+    private static final int TYPE_FLIGHT = 1;
+
     private String[] columns;
 
     public CsvParseRow(String text, int key) {
-        if (key == 0) {
+        if (key == TYPE_AIRPORT) {
             columns = text.split("\",");
-        } else if (key == 1) {
+        } else if (key == TYPE_FLIGHT) {
             columns = text.split(",");
         }
     }
