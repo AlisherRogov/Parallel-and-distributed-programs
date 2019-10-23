@@ -3,9 +3,9 @@ import org.apache.hadoop.io.Text;
 
 public class CsvParseRow {
 
-    private Text text;
+    private String text;
 
-    public CsvParseRow(Text text) {
+    public CsvParseRow(String text) {
         this.text = text;
     }
 
