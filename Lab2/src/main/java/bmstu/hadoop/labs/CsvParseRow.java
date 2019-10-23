@@ -15,6 +15,8 @@ public class CsvParseRow {
         }
     }
 
+    
+
     public int getAirportsID(int indexAirportID, int key) {
         int airportID = 0;
         if (key == 0) {
