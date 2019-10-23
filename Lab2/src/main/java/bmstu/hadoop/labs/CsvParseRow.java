@@ -35,7 +35,7 @@ public class CsvParseRow {
     public float getDelayTime(int indexFlightDelay) {
         float delayTime;
         if (columns[indexFlightDelay].equals("")) {
-            delayTime = 0;
+            delayTime = 0.0f;
         } else {
             delayTime = Float.parseFloat(columns[indexFlightDelay]);
         }
