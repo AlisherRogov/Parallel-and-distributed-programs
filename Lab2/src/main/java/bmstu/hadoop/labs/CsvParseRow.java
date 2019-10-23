@@ -6,7 +6,7 @@ public class CsvParseRow {
     private String text;
     private String[] columns;
 
-    public CsvParseRow(String text) {
+    public CsvParseRow(String text, int key) {
         this.text = text;
     }
 
