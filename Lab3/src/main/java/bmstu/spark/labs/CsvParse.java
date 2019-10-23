@@ -16,15 +16,15 @@ public class CsvParse {
     public CsvParse(String text) {
         this.text = text;
         this.columnsTypeAirport = text.split("\",");
-        this.columnsTypeFlight = text.split(",");
+        this.columnsTypeFlight = text.split(",");   // в один
     }
 
     public int getAirportsID() {
-        return Integer.parseInt(columnsTypeAirport[AIRPORT_ID_TYPE_AIRPORT].replaceAll("\"", ""));
+        return Integer.parseInt(columnsTypeAirport[AIRPORT_ID_TYPE_AIRPORT].replaceAll("\"", "")); // в отдельную
     }
 
     public String getAirportsName() {
-        return columnsTypeAirport[AIRPORT_NAME_TYPE_AIRPORT].replaceAll("\"", "");
+        return columnsTypeAirport[AIRPORT_NAME_TYPE_AIRPORT].replaceAll("\"", ""); // в отдельную
     }
 
     public int getOriginAirportId() {

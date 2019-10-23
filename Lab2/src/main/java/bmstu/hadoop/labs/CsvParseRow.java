@@ -11,9 +11,9 @@ public class CsvParse {
 
     public int getAirportsID(int indexAirportID, int key) {
         int airportID = 0;
-        String[] columns;
+        String[] columns;  // убрать
         if (key == 0) {
-            columns = text.toString().split("\",");
+            columns = text.toString().split("\",");  // убрать в отделбную функцию
             airportID = Integer.parseInt(columns[indexAirportID].replaceAll("\"", ""));
         } else if (key == 1) {
             columns = text.toString().split(",");
