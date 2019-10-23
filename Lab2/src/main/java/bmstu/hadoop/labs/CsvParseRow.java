@@ -15,14 +15,15 @@ public class CsvParseRow {
         }
     }
 
-    private int asInt(String) {
+    private String replaceRegex(String s, String regex) {
+        return s.replaceAll(regex, "");
 
     }
 
     public int getAirportsID(int indexAirportID, int key) {
         int airportID = 0;
         if (key == 0) {
-            airportID = Integer.parseInt(columns[indexAirportID].replaceAll("\"", ""));
+            airportID = Integer.parseInt(replaceRegex(columns[indexAirportID], "\""));
         } else if (key == 1) {
             airportID = Integer.parseInt(columns[indexAirportID]);
         }
