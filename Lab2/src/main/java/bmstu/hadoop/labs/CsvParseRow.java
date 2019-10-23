@@ -1,11 +1,11 @@
 package bmstu.hadoop.labs;
 import org.apache.hadoop.io.Text;
 
-public class CsvParse {
+public class CsvParseRow {
 
     private Text text;
 
-    public CsvParse(Text text) {
+    public CsvParseRow(Text text) {
         this.text = text;
     }
 
