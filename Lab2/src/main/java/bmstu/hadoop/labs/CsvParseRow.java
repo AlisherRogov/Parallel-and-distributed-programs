@@ -3,11 +3,9 @@ import org.apache.hadoop.io.Text;
 
 public class CsvParseRow {
 
-    private String text;
     private String[] columns;
 
     public CsvParseRow(String text, int key) {
-        this.text = text;
         if (key == 0) {
             columns = text.split("\",");
         } else if (key == 1) {
@@ -31,7 +29,7 @@ public class CsvParseRow {
     }
 
     public Text getAirportsName(int indexAirportName) {
-        return new Text(columns[indexAirportName].replaceAll("\"", ""));
+        return new Text(replaceRegex(columns[indexAirportName], "\""));
     }
 
     public float getDelayTime(int indexFlightDelay) {
