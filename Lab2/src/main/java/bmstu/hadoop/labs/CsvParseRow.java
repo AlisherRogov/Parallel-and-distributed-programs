@@ -8,14 +8,15 @@ public class CsvParseRow {
 
     public CsvParseRow(String text, int key) {
         this.text = text;
-        if(key == 0) {
-            
+        if (key == 0) {
+            columns = text.split("\",");
+        } else if (key == 1) {
+            columns = text.split(",");
         }
     }
 
     public int getAirportsID(int indexAirportID, int key) {
         int airportID = 0;
-        String[] columns;  // убрать
         if (key == 0) {
             columns = text.toString().split("\",");  // убрать в отделбную функцию
             airportID = Integer.parseInt(columns[indexAirportID].replaceAll("\"", ""));
