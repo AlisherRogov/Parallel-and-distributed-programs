@@ -4,6 +4,7 @@ import org.apache.hadoop.io.Text;
 public class CsvParseRow {
 
     private String text;
+    private String[] columns;
 
     public CsvParseRow(String text) {
         this.text = text;
