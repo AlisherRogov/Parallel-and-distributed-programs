@@ -18,14 +18,13 @@ public class CsvParseRow {
 
     private String replaceRegex(String s, String regex) {
         return s.replaceAll(regex, "");
-
     }
 
     public int getAirportsID(int indexAirportID, int key) {
         int airportID = 0;
-        if (key == 0) {
+        if (key == TYPE_AIRPORT) {
             airportID = Integer.parseInt(replaceRegex(columns[indexAirportID], "\""));
-        } else if (key == 1) {
+        } else if (key == TYPE_FLIGHT) {
             airportID = Integer.parseInt(columns[indexAirportID]);
         }
         return airportID;
