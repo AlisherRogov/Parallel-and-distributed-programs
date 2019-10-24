@@ -22,7 +22,7 @@ public class CsvParseRow {
     private String replaceRegex(String s, String regex) {
         return s.replaceAll(regex, "");
     }
-    
+
     public int getAirportsID() {
         return Integer.parseInt(columnsTypeAirport[AIRPORT_ID_TYPE_AIRPORT].replaceAll("\"", "")); // в отдельную
     }
