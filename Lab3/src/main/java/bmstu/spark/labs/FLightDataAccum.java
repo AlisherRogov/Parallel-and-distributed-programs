@@ -4,18 +4,19 @@ import java.io.Serializable;
 
 public class FLightDataAccum implements Serializable {
 
-    private CsvParse csv;
+    private static final int TYPE_FLIGHT = 1;
+    private CsvParseRow csvRow;
     private int destAirport;
     private int originAirport;
     private boolean isCanceled;
     private float delayTime;
 
     public FLightDataAccum(String s) {
-        csv = new CsvParse(s);
-        this.destAirport = csv.getDestAirportId();
-        this.originAirport = csv.getOriginAirportId();
-        this.delayTime = csv.getDelayTime();
-        this.isCanceled = csv.getCanceled();
+        csvRow = new CsvParseRow(s, TYPE_FLIGHT);
+        this.destAirport = csvRow.getDestAirportId();
+        this.originAirport = csvRow.getOriginAirportId();
+        this.delayTime = csvRow.getDelayTime();
+        this.isCanceled = csvRow.getCanceled();
     }
 
     public float getDelayTime() {

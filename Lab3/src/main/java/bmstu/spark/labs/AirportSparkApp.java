@@ -12,7 +12,7 @@ import java.util.Map;
 public class AirportSparkApp {
 
     private static final int TYPE_AIRPORT = 0;
-    private static final int TYPE_FLIGHT = 1;
+
 
     public static void main(String[] args) {
         SparkConf conf  = new SparkConf().setAppName("lab3");
