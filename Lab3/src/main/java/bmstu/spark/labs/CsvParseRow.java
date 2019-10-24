@@ -7,6 +7,7 @@ public class CsvParseRow {
     private static final int ORIGIN_AIRPORT_ID = 11;
     private static final int DEST_AIRPORT_ID = 14;
     private static final int FLIGHT_DELAY_TIME = 18;
+    private static final int CANCELED = 19;
     private static final int AIRPORT_ID = 0;
     private static final int AIRPORT_NAME = 1;
     private static final int TYPE_AIRPORT = 0;
@@ -25,11 +26,11 @@ public class CsvParseRow {
     }
 
     public int getAirportsID() {
-        return Integer.parseInt(replaceRegex(columns[AIRPORT_ID], "\"")); // в отдельную
+        return Integer.parseInt(replaceRegex(columns[AIRPORT_ID], "\""));
     }
 
     public String getAirportsName() {
-        return replaceRegex(columns[AIRPORT_NAME], "\"")); // в отдельную
+        return replaceRegex(columns[AIRPORT_NAME], "\"");
     }
 
     public int getOriginAirportId() {
