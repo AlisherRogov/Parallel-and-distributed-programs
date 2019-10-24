@@ -1,6 +1,6 @@
 package bmstu.spark.labs;
 
-public class CsvParse {
+public class CsvParseRow {
 
     private String text;
     private static final float FLOAT_ZERO = 0.00f;
@@ -13,7 +13,7 @@ public class CsvParse {
     private String[] columnsTypeAirport;
     private String[] columnsTypeFlight;
 
-    public CsvParse(String text, int key) {
+    public CsvParseRow(String text, int key) {
         this.text = text;
         this.columnsTypeAirport = text.split("\",");
         this.columnsTypeFlight = text.split(",");   // в один
