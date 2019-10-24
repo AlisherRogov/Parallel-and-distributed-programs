@@ -2,25 +2,29 @@ package bmstu.spark.labs;
 
 public class CsvParseRow {
 
-    private String text;
+    private String[] columns;
     private static final float FLOAT_ZERO = 0.00f;
     private static final int ORIGIN_AIRPORT_ID = 11;
     private static final int DEST_AIRPORT_ID = 14;
     private static final int FLIGHT_DELAY_TIME = 18;
     private static final int CANCELED = 19;
-    private static final int AIRPORT_ID_TYPE_AIRPORT = 0;
-    private static final int AIRPORT_NAME_TYPE_AIRPORT = 1;
-    private String[] columnsTypeAirport;
-    private String[] columnsTypeFlight;
+    private static final int TYPE_AIRPORT = 0;
+    private static final int TYPE_FLIGHT= 1;
 
     public CsvParseRow(String text, int key) {
-        this.text = text;
-        this.columnsTypeAirport = text.split("\",");
-        this.columnsTypeFlight = text.split(",");   // в один
+        if (key == TYPE_AIRPORT) {
+            columns = text.split("\",");
+        } else if (key == TYPE_FLIGHT) {
+            columns = text.split(",");
+        }
+    }
+
+    private String replaceRegex(String s, String regex) {
+        return s.replaceAll(regex, "");
     }
 
     public int getAirportsID() {
-        return Integer.parseInt(columnsTypeAirport[AIRPORT_ID_TYPE_AIRPORT].replaceAll("\"", "")); // в отдельную
+        return [AIRPORT_ID_Integer.parseInt(columnsTypeAirportTYPE_AIRPORT].replaceAll("\"", "")); // в отдельную
     }
 
     public String getAirportsName() {
