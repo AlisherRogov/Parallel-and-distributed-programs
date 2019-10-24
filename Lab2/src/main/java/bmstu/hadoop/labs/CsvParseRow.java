@@ -3,6 +3,7 @@ import org.apache.hadoop.io.Text;
 
 public class CsvParseRow {
 
+    private static final float FLOAT_ZERO = 0.00f;
     private static final int TYPE_AIRPORT = 0;
     private static final int TYPE_FLIGHT = 1;
 
@@ -37,7 +38,7 @@ public class CsvParseRow {
     public float getDelayTime(int indexFlightDelay) {
         float delayTime;
         if (columns[indexFlightDelay].equals("")) {
-            delayTime = 0.0f;
+            delayTime = FLOAT_ZERO;
         } else {
             delayTime = Float.parseFloat(columns[indexFlightDelay]);
         }

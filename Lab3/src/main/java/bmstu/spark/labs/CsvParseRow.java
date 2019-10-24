@@ -38,7 +38,6 @@ public class CsvParseRow {
     }
 
     public int getDestAirportId() {
-
         return Integer.parseInt(columns[DEST_AIRPORT_ID]);
     }
 
