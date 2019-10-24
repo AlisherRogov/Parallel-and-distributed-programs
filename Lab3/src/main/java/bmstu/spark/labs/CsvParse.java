@@ -13,7 +13,7 @@ public class CsvParse {
     private String[] columnsTypeAirport;
     private String[] columnsTypeFlight;
 
-    public CsvParse(String text) {
+    public CsvParse(String text, int key) {
         this.text = text;
         this.columnsTypeAirport = text.split("\",");
         this.columnsTypeFlight = text.split(",");   // в один
@@ -28,7 +28,6 @@ public class CsvParse {
     }
 
     public int getOriginAirportId() {
-
         return Integer.parseInt(columnsTypeFlight[ORIGIN_AIRPORT_ID]);
     }
 
@@ -49,7 +48,6 @@ public class CsvParse {
     }
 
     public boolean getCanceled() {
-
         return Float.parseFloat(columnsTypeFlight[CANCELED]) != FLOAT_ZERO;
     }
 }
