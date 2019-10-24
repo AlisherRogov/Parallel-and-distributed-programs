@@ -25,34 +25,34 @@ public class CsvParseRow {
     }
 
     public int getAirportsID() {
-        return Integer.parseInt(columnsTypeAirport[AIRPORT_ID_TYPE_AIRPORT].replaceAll("\"", "")); // в отдельную
+        return Integer.parseInt(replaceRegex(columns[AIRPORT_ID], "\"")); // в отдельную
     }
 
     public String getAirportsName() {
-        return columnsTypeAirport[AIRPORT_NAME_TYPE_AIRPORT].replaceAll("\"", ""); // в отдельную
+        return replaceRegex(columns[AIRPORT_NAME], "\"")); // в отдельную
     }
 
     public int getOriginAirportId() {
-        return Integer.parseInt(columnsTypeFlight[ORIGIN_AIRPORT_ID]);
+        return Integer.parseInt(columns[ORIGIN_AIRPORT_ID]);
     }
 
     public int getDestAirportId() {
 
-        return Integer.parseInt(columnsTypeFlight[DEST_AIRPORT_ID]);
+        return Integer.parseInt(columns[DEST_AIRPORT_ID]);
     }
 
     public float getDelayTime() {
 
         float delayTime;
-        if (columnsTypeFlight[FLIGHT_DELAY_TIME].equals("")) {
+        if (columns[FLIGHT_DELAY_TIME].equals("")) {
             delayTime = FLOAT_ZERO;
         } else {
-            delayTime = Float.parseFloat(columnsTypeFlight[FLIGHT_DELAY_TIME]);
+            delayTime = Float.parseFloat(columns[FLIGHT_DELAY_TIME]);
         }
         return delayTime;
     }
 
     public boolean getCanceled() {
-        return Float.parseFloat(columnsTypeFlight[CANCELED]) != FLOAT_ZERO;
+        return Float.parseFloat(columns[CANCELED]) != FLOAT_ZERO;
     }
 }
