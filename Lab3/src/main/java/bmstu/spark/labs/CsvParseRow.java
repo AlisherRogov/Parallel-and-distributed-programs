@@ -3,7 +3,6 @@ package bmstu.spark.labs;
 public class CsvParseRow {
 
     private String[] columns;
-    private static final float FLOAT_ZERO = 0.00f;
     private static final int ORIGIN_AIRPORT_ID = 11;
     private static final int DEST_AIRPORT_ID = 14;
     private static final int FLIGHT_DELAY_TIME = 18;
@@ -21,16 +20,16 @@ public class CsvParseRow {
         }
     }
 
-    private String replaceRegex(String s, String regex) {
-        return s.replaceAll(regex, "");
+    private String replaceRegex(String s) {
+        return s.replaceAll("\"", "");
     }
 
     public int getAirportsID() {
-        return Integer.parseInt(replaceRegex(columns[AIRPORT_ID], "\""));
+        return Integer.parseInt(replaceRegex(columns[AIRPORT_ID]));
     }
 
     public String getAirportsName() {
-        return replaceRegex(columns[AIRPORT_NAME], "\"");
+        return replaceRegex(columns[AIRPORT_NAME]);
     }
 
     public int getOriginAirportId() {
@@ -41,18 +40,21 @@ public class CsvParseRow {
         return Integer.parseInt(columns[DEST_AIRPORT_ID]);
     }
 
-    public float getDelayTime() {
-
-        float delayTime;
-        if (columns[FLIGHT_DELAY_TIME].equals("")) {
-            delayTime = FLOAT_ZERO;
+    private float getDelayTimeFloat(String s) {
+        float result;
+        if (s.equals("")) {
+            result =  0.00f;
         } else {
-            delayTime = Float.parseFloat(columns[FLIGHT_DELAY_TIME]);
+            result = Float.parseFloat(s);
         }
-        return delayTime;
+        return result;
+    }
+
+    public float getDelayTime(int indexFlightDelay) {
+        return getDelayTimeFloat(columns[indexFlightDelay]);
     }
 
     public boolean getCanceled() {
-        return Float.parseFloat(columns[CANCELED]) != FLOAT_ZERO;
+        return Float.parseFloat(columns[CANCELED]) != 0.00f;
     }
 }

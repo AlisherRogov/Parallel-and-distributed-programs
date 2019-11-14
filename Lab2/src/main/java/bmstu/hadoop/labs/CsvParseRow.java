@@ -3,7 +3,6 @@ import org.apache.hadoop.io.Text;
 
 public class CsvParseRow {
 
-    private static final float FLOAT_ZERO = 0.00f;
     private static final int TYPE_AIRPORT = 0;
     private static final int TYPE_FLIGHT = 1;
 
@@ -17,14 +16,14 @@ public class CsvParseRow {
         }
     }
 
-    private String replaceRegex(String s, String regex) {
-        return s.replaceAll(regex, "");
+    private String replaceRegex(String s) {
+        return s.replaceAll("\"", "");
     }
 
     public int getAirportsID(int indexAirportID, int key) {
         int airportID = 0;
         if (key == TYPE_AIRPORT) {
-            airportID = Integer.parseInt(replaceRegex(columns[indexAirportID], "\""));
+            airportID = Integer.parseInt(replaceRegex(columns[indexAirportID]));
         } else if (key == TYPE_FLIGHT) {
             airportID = Integer.parseInt(columns[indexAirportID]);
         }
@@ -32,17 +31,21 @@ public class CsvParseRow {
     }
 
     public Text getAirportsName(int indexAirportName) {
-        return new Text(replaceRegex(columns[indexAirportName], "\""));
+        return new Text(replaceRegex(columns[indexAirportName]));
+    }
+
+    private float getDelayTimeFloat(String s) {
+        float result;
+        if (s.equals("")) {
+            result =  0.00f;
+        } else {
+            result = Float.parseFloat(s);
+        }
+        return result;
     }
 
     public float getDelayTime(int indexFlightDelay) {
-        float delayTime;
-        if (columns[indexFlightDelay].equals("")) {
-            delayTime = FLOAT_ZERO;
-        } else {
-            delayTime = Float.parseFloat(columns[indexFlightDelay]);
-        }
-        return delayTime;
+        return getDelayTimeFloat(columns[indexFlightDelay]);
     }
 
     public Text getDelayText(int indexFlightDelay) {

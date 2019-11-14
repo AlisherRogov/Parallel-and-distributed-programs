@@ -49,9 +49,9 @@ public class AirportSparkApp {
                         FLightDataAccumulator.getDelayTime() > 0),
                 DelayStatistic::combineTwoStatistics);
 
-        Map<Integer, String> mapAirportTable = airportTable.collectAsMap();
+       // Map<Integer, String> mapAirportTable = airportTable.collectAsMap();
 
-        final Broadcast<Map<Integer, String>> airportBroadcasted = sc.broadcast(mapAirportTable);
+        final Broadcast<Map<Integer, String>> airportBroadcasted = sc.broadcast(airportTable.collectAsMap());
 
         JavaPairRDD<String, String> joined = flightStat.mapToPair(
               p -> new Tuple2<>( airportBroadcasted.value().get(p._1._1) + " TO" +
