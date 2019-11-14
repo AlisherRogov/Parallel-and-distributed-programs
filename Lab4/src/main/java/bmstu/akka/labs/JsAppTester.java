@@ -6,6 +6,6 @@ import akka.actor.ActorSystem;
 public class JsAppTester {
     public static void main(String[] args) {
         ActorSystem system = ActorSystem.create("test");
-        ActorRef storeActor = system.actorOf()
+        ActorRef storeActor = system.actorOf(Props.)
     }
 }
