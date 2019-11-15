@@ -3,6 +3,7 @@ package bmstu.akka.labs;
 import akka.NotUsed;
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
+import akka.actor.Props;
 import akka.http.javadsl.ConnectHttp;
 import akka.http.javadsl.Http;
 import akka.http.javadsl.ServerBinding;
@@ -37,6 +38,6 @@ public class JsAppTester {
     }
 
     private Route createRoute(ActorSystem system) {
-        ActorRef testsRouter = system.actorOf(TestsRouter.class, new TestsRouter())
+        ActorRef testsRouter = system.actorOf(Props.create())
     }
 }
