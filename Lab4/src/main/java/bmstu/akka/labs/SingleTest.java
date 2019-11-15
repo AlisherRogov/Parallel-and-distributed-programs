@@ -13,5 +13,21 @@ public class SingleTest {
     @JsonProperty("params") private List<Object> params = null;
     @JsonIgnore private Map<String, Object> unexpectedProperties = new HashMap<>();
 
+    public Map<String, Object> getUnexpectedProperties() {
+        return unexpectedProperties;
+    }
+
+    public List<Object> getParams() {
+        return params;
+    }
+
+    public String getExpectedResults() {
+        return expectedResults;
+    }
+
+    public String getTestName() {
+        return testName;
+    }
+
     
 }
