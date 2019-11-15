@@ -13,5 +13,5 @@ public class PackageTests {
     @JsonProperty("jsScript") private String jsScript;
     @JsonProperty("functionName") private String functionName;
     @JsonProperty("tests") private List<SingleTest> tests = null;
-    @JsonIgnore private Map
+    @JsonIgnore private Map<String, Object>
 }
