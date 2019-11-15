@@ -35,7 +35,8 @@ public class TestsRouter extends AbstractActor {
     private  void receivePackageTests(PackageTests tests) {
         tests.getTests().stream()
                 .map(test -> new JsFunction(tests.getPackageID(), tests.getFunctionName(),
-                        tests.getJsScript(), test.getParams(), test.getExpectedResults()));
+                        tests.getJsScript(), test.getParams(), test.getExpectedResults()))
+                .forEach();
     }
 
 
