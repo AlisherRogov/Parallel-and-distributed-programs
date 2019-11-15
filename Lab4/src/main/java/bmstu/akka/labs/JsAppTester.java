@@ -43,10 +43,9 @@ public class JsAppTester {
     private Route createRoute(ActorSystem system) {
         ActorRef testsRouter = system.actorOf(Props.create(TestsRouter::new));
         return route(
-                path("test", () ->
-                        post(() -> entity(Jackson.unmarshaller(PackageTests.class) , msg ->
-                                testsRouter.tell(msg, ActorRef.noSender());
-                                 return complete("Test has started. \n");
+                post(() -> entity(Jackson.unmarshaller(PackageTests.class) , msg ->
+                        testsRouter.tell(msg, ActorRef.noSender());
+                return complete("Test has started. \n");
 
 
         );
