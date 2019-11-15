@@ -56,7 +56,8 @@ public class JsAppTester {
                         parameter("packageId", packageID -> {
                             Future<Object> result = Patterns.ask(
                                     testsRouter,
-                                    new TestResultRequest()
+                                    new TestResultRequest(packageID),
+                                    
                             )
                         }))
 
