@@ -15,6 +15,7 @@ import akka.pattern.Patterns;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 import bmstu.akka.labs.Actors.TestsRouter;
+import bmstu.akka.labs.Messages.TestResultRequest;
 
 import java.io.IOException;
 import java.util.concurrent.CompletionStage;
@@ -55,7 +56,7 @@ public class JsAppTester {
                         parameter("packageId", packageID -> {
                             Future<Object> result = Patterns.ask(
                                     testsRouter,
-                                    new 
+                                    new TestResultRequest()
                             )
                         }))
 
