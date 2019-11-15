@@ -41,7 +41,7 @@ public class TestPerform extends AbstractActor {
         } catch (NoSuchMethodException e) {
             return "No such method :" + e.getLocalizedMessage();
         }
-        storeActor.tell(new TestsResultStorage())
+        storeActor.tell(new TestsResultStorage(test.getPackageID()), )
     }
 
 }
