@@ -31,11 +31,13 @@ public class TestPerform extends AbstractActor {
                 .match(JsFunction.class)
     }
 
-    private void runTest(JsFunction test) {
+    private String runTest(JsFunction test) {
         try {
             String actualResult = performScript(test.getFunctionName(), test.getScript(),test.getParams());
         } catch (ScriptException e) {
-            return "SctiptError :" + e.getLocalizedMessage()
+            return "SctiptError :" + e.getLocalizedMessage();
+        } catch (NoSuchMethodException e) {
+            return; ""
         }
     }
 
