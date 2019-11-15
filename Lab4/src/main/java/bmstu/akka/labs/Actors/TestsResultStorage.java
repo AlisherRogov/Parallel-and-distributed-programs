@@ -10,6 +10,6 @@ public class TestsResultStorage extends AbstractActor {
 
     @Override
     public Receive createReceive() {
-        
+        return 
     }
 }
