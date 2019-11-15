@@ -46,6 +46,6 @@ public class JsAppTester {
                 path("test", () ->
                         post(() -> entity(Jackson.unmarshaller())))
 
-        )
+        );
     }
 }
