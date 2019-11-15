@@ -47,7 +47,7 @@ public class JsAppTester {
                         post(() -> entity(Jackson.unmarshaller(PackageTests.class) , msg ->
                                 testsRouter.tell(msg, ActorRef.noSender());
                                  return complete("Test has started. \n");
-                        )
+
 
         );
     }
