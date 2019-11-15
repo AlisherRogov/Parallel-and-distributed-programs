@@ -12,7 +12,7 @@ public class TestsRouter extends AbstractActor {
 
     public TestsRouter() {
         this.storeActor = getContext().actorOf(Props.create(TestsResultStorage::new), "TestsResultStorage");
-        this.testPerfomRouter = getContext().actorOf(new RoundRobinPool(TEST_PERFORM_POOL_SIZE).props(TestPerform));
+        this.testPerfomRouter = getContext().actorOf(new RoundRobinPool(TEST_PERFORM_POOL_SIZE).props());
     }
 
 
