@@ -2,6 +2,7 @@ package bmstu.akka.labs.Actors;
 
 import akka.actor.AbstractActor;
 import akka.japi.pf.ReceiveBuilder;
+import bmstu.akka.labs.Messages.SingleTestResult;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,7 +13,7 @@ public class TestsResultStorage extends AbstractActor {
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create()
-                .match(StoreMessage.class, m -> {
+                .match(SingleTestResult.class, m -> {
                     store.put(m.getKey(), m.getValue());
                     System.out.println("receive message " + m.toString());
                 })
