@@ -34,7 +34,9 @@ public class TestPerform extends AbstractActor {
     private void runTest(JsFunction test) {
         try {
             String actualResult = performScript(test.getFunctionName(), test.getScript(),test.getParams());
-        } catch ()
+        } catch (ScriptException e) {
+            
+        }
     }
 
 }
