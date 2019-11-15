@@ -20,11 +20,12 @@ public class TestsRouter extends AbstractActor {
     @Override
     public Receive createReceive() {
         return receiveBuilder()
-                .match(TestResultRequest.class, )
+                .match(TestResultRequest.class,  this::receiveTestResultRequest)
+                .match()
     }
 
     private void receiveTestResultRequest(TestResultRequest req) {
-        this.storeActor.tell();
+        this.storeActor.tell(req, getSender());
     }
 
 
