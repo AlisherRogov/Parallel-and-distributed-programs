@@ -15,4 +15,5 @@ public class PackageTests {
     @JsonProperty("functionName") private String functionName;
     @JsonProperty("tests") private List<SingleTest> tests = null;
     @JsonIgnore private Map<String, Object> unexpectedProperties = new HashMap<>();
+    
 }
