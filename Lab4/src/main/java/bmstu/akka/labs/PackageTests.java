@@ -32,6 +32,7 @@ public class PackageTests {
         return tests;
     }
 
+    @JsonAnyGetter
     public Map<String, Object> getUnexpectedProperties() {
         return unexpectedProperties;
     }
