@@ -35,7 +35,7 @@ public class TestPerform extends AbstractActor {
         try {
             String actualResult = performScript(test.getFunctionName(), test.getScript(),test.getParams());
         } catch (ScriptException e) {
-            return "SctiptError"
+            return "SctiptError :"
         }
     }
 
