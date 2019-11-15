@@ -8,7 +8,7 @@ public class TestsRouter extends AbstractActor {
     private ActorRef testPerfomRouter;
 
     public TestsRouter() {
-        this.storeActor = getContext().actor;
+        this.storeActor = getContext().actorOf();
         this.testPerfomRouter = testPerfomRouter;
     }
 
