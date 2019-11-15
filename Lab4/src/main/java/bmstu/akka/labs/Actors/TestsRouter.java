@@ -33,6 +33,7 @@ public class TestsRouter extends AbstractActor {
 
     private  void receivePackageTests(PackageTests tests) {
         Stream.of(tests.getTests())
+                .map()
     }
 
 
