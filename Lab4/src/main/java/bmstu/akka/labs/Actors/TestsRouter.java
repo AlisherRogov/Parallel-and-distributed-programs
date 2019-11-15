@@ -7,7 +7,7 @@ public class TestsRouter {
     private ActorRef testPerfomRouter;
 
     public TestsRouter() {
-        this.storeActor = get;
+        this.storeActor = getContext;
         this.testPerfomRouter = testPerfomRouter;
     }
 
