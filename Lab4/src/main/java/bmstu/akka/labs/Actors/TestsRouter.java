@@ -4,6 +4,7 @@ import akka.actor.AbstractActor;
 import akka.actor.ActorRef;
 import akka.actor.Props;
 import akka.routing.RoundRobinPool;
+import bmstu.akka.labs.Messages.JsFunction;
 import bmstu.akka.labs.Messages.TestResultRequest;
 import bmstu.akka.labs.PackageTests;
 
@@ -33,7 +34,7 @@ public class TestsRouter extends AbstractActor {
 
     private  void receivePackageTests(PackageTests tests) {
         Stream.of(tests.getTests())
-                .map(test -> new )
+                .map(test -> new JsFunction())
     }
 
 
