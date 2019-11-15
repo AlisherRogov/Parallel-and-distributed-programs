@@ -6,6 +6,6 @@ public class PackageTestsResults {
     private int packageID;
     private ArrayList<String> results;
 
-    public 
+    public Responce
 
 }
