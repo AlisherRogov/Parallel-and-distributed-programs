@@ -11,7 +11,7 @@ public class TestPerform extends AbstractActor {
     private ActorRef storeActor;
 
     ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
-    engine.eval
+    engine.(jscript);
     Invocable invocable = (Invocable) engine;
     return invocable.invokeFunction(functionName, params).toString();
 }
