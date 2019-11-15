@@ -27,8 +27,8 @@ public class TestsResultStorage extends AbstractActor {
         } else {
             ArrayList<String> res = new ArrayList<>();
             res.add(m.getResult());
+            store.put(m.getPackageID(), res);
         }
-        store.put(m.getPackageID(), m.getResult());
     }
 
     private void sendPackageTestsResult(TestResultRequest request) {
