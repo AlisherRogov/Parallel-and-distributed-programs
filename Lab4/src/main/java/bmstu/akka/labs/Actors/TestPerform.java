@@ -10,7 +10,7 @@ import javax.script.ScriptEngineManager;
 public class TestPerform extends AbstractActor {
     private ActorRef storeActor;
 
-    private static String performScript(String functionName, String)
+    private static String performScript(String functionName, String script, )
     ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
     engine.(jscript);
     Invocable invocable = (Invocable) engine;
