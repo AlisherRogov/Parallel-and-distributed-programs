@@ -7,6 +7,6 @@ public class Router {
     private ActorRef testPerfomRouter;
 
     public Router() {
-        
+        this.
     }
 }
