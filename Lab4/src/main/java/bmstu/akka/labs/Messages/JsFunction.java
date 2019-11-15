@@ -18,5 +18,23 @@ public class JsFunction {
         this.script = script;
     }
 
-    
+    public String getPackageID() {
+        return packageID;
+    }
+
+    public List<Object> getParams() {
+        return params;
+    }
+
+    public String getExpectedResult() {
+        return expectedResult;
+    }
+
+    public String getFunctionName() {
+        return functionName;
+    }
+
+    public String getScript() {
+        return script;
+    }
 }
