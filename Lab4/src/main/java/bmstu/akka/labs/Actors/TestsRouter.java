@@ -2,11 +2,14 @@ package bmstu.akka.labs.Actors;
 
 import akka.actor.ActorRef;
 
-public class Router {
+public class TestsRouter {
     private ActorRef storeActor;
     private ActorRef testPerfomRouter;
 
-    public Router() {
-        this.
+    public TestsRouter(ActorRef storeActor, ActorRef testPerfomRouter) {
+        this.storeActor = storeActor;
+        this.testPerfomRouter = testPerfomRouter;
     }
+
+    
 }
