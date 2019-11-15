@@ -13,16 +13,15 @@ public class TestsResultStorage extends AbstractActor {
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create()
-                .match(SingleTestResult.class, m -> {
-                    store.put(m.getKey(), m.getValue());
-                    System.out.println("receive message " + m.toString());
-                })
+                .match(SingleTestResult.class, this::getSingleTestResult)
                 .match(GetMessage.class, req-> sender().tell(
                         new StoreMessage(req.getKey(), store.get(req.getKey()),self())
                 )).build();
     }
 
     private void getSingleTestResult(SingleTestResult m) {
-        store.
+        store.put(m.getPackageID(), m.getResult());
     }
+
+    private void 
 }
