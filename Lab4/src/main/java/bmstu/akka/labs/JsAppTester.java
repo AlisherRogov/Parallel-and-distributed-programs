@@ -48,7 +48,7 @@ public class JsAppTester {
                             testsRouter.tell(msg, ActorRef.noSender());
                             return complete("Test has started. \n");
                         })
-
+                ),
 
         );
     }
