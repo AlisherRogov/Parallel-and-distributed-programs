@@ -12,7 +12,7 @@ public class TestPerform extends AbstractActor {
 
     private static String performScript(String functionName, String script, )
     ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
-    engine.(jscript);
+    engine.eval(jscript);
     Invocable invocable = (Invocable) engine;
     return invocable.invokeFunction(functionName, params).toString();
 }
