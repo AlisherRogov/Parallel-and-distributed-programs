@@ -23,5 +23,8 @@ public class TestPerform extends AbstractActor {
         return invocable.invokeFunction(functionName, args).toString();
     }
 
-    public Receive createReceive()
+    @Override
+    public Receive createReceive() {
+        
+    }
 }
