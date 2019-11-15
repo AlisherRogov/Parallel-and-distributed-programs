@@ -1,5 +1,7 @@
 package bmstu.akka.labs.Actors;
 
-public class TestsResultStorage extends  {
+import akka.actor.AbstractActor;
+
+public class TestsResultStorage extends AbstractActor {
 
 }
