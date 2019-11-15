@@ -34,7 +34,7 @@ public class TestsRouter extends AbstractActor {
 
     private  void receivePackageTests(PackageTests tests) {
         Stream.of(tests.getTests())
-                .map(test -> new JsFunction(tests.getPackageID(),))
+                .map(test -> new JsFunction(tests.getPackageID(), tests.))
     }
 
 
