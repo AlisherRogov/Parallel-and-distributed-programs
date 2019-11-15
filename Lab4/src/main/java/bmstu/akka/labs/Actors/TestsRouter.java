@@ -7,6 +7,8 @@ import akka.routing.RoundRobinPool;
 import bmstu.akka.labs.Messages.TestResultRequest;
 import bmstu.akka.labs.PackageTests;
 
+import java.util.stream.Stream;
+
 public class TestsRouter extends AbstractActor {
     private ActorRef storeActor;
     private ActorRef testPerfomRouter;
@@ -30,7 +32,7 @@ public class TestsRouter extends AbstractActor {
     }
 
     private  void receivePackageTests(PackageTests tests) {
-        
+        Stream
     }
 
 
