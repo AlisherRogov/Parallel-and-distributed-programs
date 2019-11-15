@@ -8,10 +8,11 @@ import akka.routing.RoundRobinPool;
 public class TestsRouter extends AbstractActor {
     private ActorRef storeActor;
     private ActorRef testPerfomRouter;
+    private int TEST_PERFORM_POOL_SIZE = 5;
 
     public TestsRouter() {
         this.storeActor = getContext().actorOf(Props.create(TestsResultStorage::new), "TestsResultStorage");
-        this.testPerfomRouter = getContext().actorOf(new RoundRobinPool());
+        this.testPerfomRouter = getContext().actorOf(new RoundRobinPool(TEST_PERFORM_POOL_SIZE));
     }
 
 
