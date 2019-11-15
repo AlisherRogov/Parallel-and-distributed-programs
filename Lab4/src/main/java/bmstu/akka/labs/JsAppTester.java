@@ -10,6 +10,7 @@ import akka.http.javadsl.ServerBinding;
 import akka.http.javadsl.marshallers.jackson.Jackson;
 import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
+import akka.http.javadsl.server.AllDirectives;
 import akka.http.javadsl.server.Route;
 import akka.pattern.Patterns;
 import akka.stream.ActorMaterializer;
@@ -23,7 +24,7 @@ import java.util.concurrent.Future;
 
 import static akka.http.javadsl.server.Directives.*;
 
-public class JsAppTester {
+public class JsAppTester extends AllDirectives {
     public static void main(String[] args) throws IOException {
         ActorSystem system = ActorSystem.create("Lab4");
         final Http http = Http.get(system);
