@@ -50,7 +50,7 @@ public class JsAppTester {
                         })
                 ),
                 get(() ->
-                        parameter("packageId"))
+                        parameter("packageId", packageID))
 
         );
     }
