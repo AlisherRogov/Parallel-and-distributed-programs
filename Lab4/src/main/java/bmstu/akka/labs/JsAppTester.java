@@ -17,8 +17,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.concurrent.CompletionStage;
 
-import static akka.http.javadsl.server.Directives.path;
-import static akka.http.javadsl.server.Directives.route;
+import static akka.http.javadsl.server.Directives.*;
 
 public class JsAppTester {
     public static void main(String[] args) throws IOException {
@@ -44,7 +43,7 @@ public class JsAppTester {
         ActorRef testsRouter = system.actorOf(Props.create(TestsRouter::new));
         return route(
                 path("test", () ->
-                        post(()))
+                        post(() -> ))
 
         )
     }
