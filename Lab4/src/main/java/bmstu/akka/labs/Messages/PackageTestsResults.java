@@ -3,15 +3,15 @@ package bmstu.akka.labs.Messages;
 import java.util.ArrayList;
 
 public class PackageTestsResults {
-    private int packageID;
+    private String packageID;
     private ArrayList<String> results;
 
-    public PackageTestsResults(int packageID, ArrayList<String> results) {
+    public PackageTestsResults(String packageID, ArrayList<String> results) {
         this.packageID = packageID;
         this.results = results;
     }
 
-    public int getPackageID() {
+    public String getPackageID() {
         return packageID;
     }
 
