@@ -16,5 +16,23 @@ public class PackageTests {
     @JsonProperty("tests") private List<SingleTest> tests = null;
     @JsonIgnore private Map<String, Object> unexpectedProperties = new HashMap<>();
 
-    
+    public String getFunctionName() {
+        return functionName;
+    }
+
+    public String getPackageID() {
+        return packageID;
+    }
+
+    public String getJsScript() {
+        return jsScript;
+    }
+
+    public List<SingleTest> getTests() {
+        return tests;
+    }
+
+    public Map<String, Object> getUnexpectedProperties() {
+        return unexpectedProperties;
+    }
 }
