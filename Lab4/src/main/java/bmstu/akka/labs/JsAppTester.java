@@ -49,6 +49,7 @@ public class JsAppTester {
                             return complete("Test has started. \n");
                         })
                 ),
+                get
 
         );
     }
