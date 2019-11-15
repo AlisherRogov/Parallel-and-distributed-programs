@@ -17,6 +17,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.concurrent.CompletionStage;
 
+import static akka.http.javadsl.server.Directives.path;
 import static akka.http.javadsl.server.Directives.route;
 
 public class JsAppTester {
@@ -42,7 +43,7 @@ public class JsAppTester {
     private Route createRoute(ActorSystem system) {
         ActorRef testsRouter = system.actorOf(Props.create(TestsRouter::new));
         return route(
-                path("test", )
+                path()
 
         )
     }
