@@ -9,6 +9,7 @@ import akka.http.javadsl.ServerBinding;
 import akka.http.javadsl.server.Route;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
+import bmstu.akka.labs.Actors.TestsRouter;
 
 import java.io.IOException;
 import java.net.http.HttpRequest;
@@ -36,6 +37,6 @@ public class JsAppTester {
     }
 
     private Route createRoute(ActorSystem system) {
-        ActorRef testsRouter = system.actorOf()
+        ActorRef testsRouter = system.actorOf(TestsRouter.class, )
     }
 }
