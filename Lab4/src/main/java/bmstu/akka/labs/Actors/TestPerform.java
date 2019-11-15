@@ -1,4 +1,7 @@
 package bmstu.akka.labs.Actors;
 
-public class TestPerform {
+import akka.actor.AbstractActor;
+
+public class TestPerform extends AbstractActor {
+    
 }
