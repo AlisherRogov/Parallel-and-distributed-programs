@@ -37,5 +37,23 @@ public class PackageTests {
         return unexpectedProperties;
     }
 
-    
+    public void setFunctionName(String functionName) {
+        this.functionName = functionName;
+    }
+
+    public void setJsScript(String jsScript) {
+        this.jsScript = jsScript;
+    }
+
+    public void setPackageID(String packageID) {
+        this.packageID = packageID;
+    }
+
+    public void setTests(List<SingleTest> tests) {
+        this.tests = tests;
+    }
+
+    public void setUnexpectedProperties(Map<String, Object> unexpectedProperties) {
+        this.unexpectedProperties = unexpectedProperties;
+    }
 }
