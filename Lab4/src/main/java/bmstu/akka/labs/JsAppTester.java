@@ -54,7 +54,7 @@ public class JsAppTester extends AllDirectives {
                         })
                 ),
                 get(() ->
-                        parameter("packageId", packageID -> {
+                        parameter("packageId", (packageID) -> {
                             Future<Object> result = Patterns.ask(
                                     testsRouter,
                                     new TestResultRequest(packageID),
