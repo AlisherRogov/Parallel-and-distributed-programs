@@ -24,8 +24,8 @@ public class TestsRouter extends AbstractActor {
     @Override
     public Receive createReceive() {
         return receiveBuilder()
-                .match(TestResultRequest.class,  this::receiveTestResultRequest)
-                .match(PackageTests.class)
+                .match(TestResultRequest.class, this::receiveTestResultRequest)
+                .match(PackageTests.class, this::receivePackageTests)
     }
 
     private void receiveTestResultRequest(TestResultRequest req) {
@@ -36,7 +36,7 @@ public class TestsRouter extends AbstractActor {
         tests.getTests().stream()
                 .map(test -> new JsFunction(tests.getPackageID(), tests.getFunctionName(),
                         tests.getJsScript(), test.getParams(), test.getExpectedResults()))
-                .forEach(msg -> this.testPerfomRouter.tell(msg, ));
+                .forEach(msg -> this.testPerfomRouter.tell(msg, this.storeActor));
     }
 
 
