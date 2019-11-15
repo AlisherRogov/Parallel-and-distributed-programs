@@ -32,7 +32,7 @@ public class TestsRouter extends AbstractActor {
     }
 
     private  void receivePackageTests(PackageTests tests) {
-        Stream.of()
+        Stream.of(tests.getTests())
     }
 
 
