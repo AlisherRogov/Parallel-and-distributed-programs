@@ -6,6 +6,9 @@ public class PackageTestsResults {
     private int packageID;
     private ArrayList<String> results;
 
-    public Responce
+    public PackageTestsResults(int packageID, ArrayList<String> results) {
+        this.packageID = packageID;
+        this.results = results;
+    }
 
 }
