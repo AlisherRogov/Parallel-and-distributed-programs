@@ -22,5 +22,5 @@ public class TestsResultStorage extends AbstractActor {
                 )).build();
     }
 
-    
+    private String 
 }
