@@ -31,8 +31,5 @@ public class JsAppTester {
         binding
                 .thenCompose(ServerBinding::unbind)
                 .thenAccept(unbound -> system.terminate());
-
-
-
     }
 }
