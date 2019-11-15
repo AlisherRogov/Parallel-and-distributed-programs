@@ -5,6 +5,7 @@ import akka.actor.ActorRef;
 import akka.actor.Props;
 import akka.routing.RoundRobinPool;
 import bmstu.akka.labs.Messages.TestResultRequest;
+import bmstu.akka.labs.PackageTests;
 
 public class TestsRouter extends AbstractActor {
     private ActorRef storeActor;
@@ -21,12 +22,14 @@ public class TestsRouter extends AbstractActor {
     public Receive createReceive() {
         return receiveBuilder()
                 .match(TestResultRequest.class,  this::receiveTestResultRequest)
-                .match()
+                .match(PackageTests.class)
     }
 
     private void receiveTestResultRequest(TestResultRequest req) {
         this.storeActor.tell(req, getSender());
     }
+
+    
 
 
 }
