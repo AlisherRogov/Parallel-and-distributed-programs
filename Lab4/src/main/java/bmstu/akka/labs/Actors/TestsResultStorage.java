@@ -22,12 +22,14 @@ public class TestsResultStorage extends AbstractActor {
     }
 
     private void getSingleTestResult(SingleTestResult m) {
+        String packageID = m.getPackageID();
+        String singleResult = m.getResult();
         if (store.containsKey(m.getPackageID())) {
-            store.get(m.getPackageID()).add(m.getResult());
+            store.get(packageID).add(singleResult);
         } else {
-            ArrayList<String> res = new ArrayList<>();
-            res.add(m.getResult());
-            store.put(m.getPackageID(), res);
+            ArrayList<String> results = new ArrayList<>();
+            results.add(singleResult);
+            store.put(packageID, results);
         }
     }
 
