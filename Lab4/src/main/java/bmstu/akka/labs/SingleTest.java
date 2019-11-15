@@ -5,5 +5,5 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class SingleTest {
     @JsonProperty("testName") private String testName;
     @JsonProperty("expectedResults") private String expectedResults;
-    @JsonProperty
+    @JsonProperty("params") private String
 }
