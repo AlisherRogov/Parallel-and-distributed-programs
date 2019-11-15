@@ -17,7 +17,9 @@ public class TestsRouter extends AbstractActor {
     }
 
     @Override
-    public Receive 
+    public Receive createReceive() {
+        
+    }
 
 
 }
