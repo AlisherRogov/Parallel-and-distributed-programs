@@ -9,5 +9,5 @@ public class PackageTests {
     @JsonProperty("packageId") private String packageID;
     @JsonProperty("jsScript") private String jsScript;
     @JsonProperty("functionName") private String functionName;
-    @JsonProperty("tests") private List<Test>
+    @JsonProperty("tests") private List<SingleTest> tests = null;
 }
