@@ -24,7 +24,7 @@ public class TestsRouter extends AbstractActor {
     }
 
     private void receiveTestResultRequest(TestResultRequest req) {
-        this.storeActor
+        this.storeActor.tell();
     }
 
 
