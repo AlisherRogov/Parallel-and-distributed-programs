@@ -23,6 +23,6 @@ public class TestsResultStorage extends AbstractActor {
     }
 
     private void getSingleTestResult(SingleTestResult m) {
-        m.
+        
     }
 }
