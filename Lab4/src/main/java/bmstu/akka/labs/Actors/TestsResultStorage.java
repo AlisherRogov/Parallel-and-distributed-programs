@@ -17,7 +17,7 @@ public class TestsResultStorage extends AbstractActor {
                     System.out.println("receive message " + m.toString());
                 })
                 .match(GetMessage.class, req-> sender().tell(
-                        new StoreMessage(req.getKey(), store.get)
+                        new StoreMessage(req.getKey(), store.get(req))
                 ))
     }
 }
