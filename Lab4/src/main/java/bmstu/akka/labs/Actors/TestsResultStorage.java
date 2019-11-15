@@ -2,6 +2,7 @@ package bmstu.akka.labs.Actors;
 
 import akka.actor.AbstractActor;
 import akka.japi.pf.ReceiveBuilder;
+import bmstu.akka.labs.Messages.PackageTestsResults;
 import bmstu.akka.labs.Messages.SingleTestResult;
 import bmstu.akka.labs.Messages.TestResultRequest;
 
@@ -25,6 +26,6 @@ public class TestsResultStorage extends AbstractActor {
     }
 
     private void sendPackageTestsResult(TestResultRequest request) {
-        sender().tell();
+        sender().tell(new PackageTestsResults());
     }
 }
