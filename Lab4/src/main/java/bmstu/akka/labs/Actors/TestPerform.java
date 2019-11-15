@@ -37,8 +37,9 @@ public class TestPerform extends AbstractActor {
         } catch (ScriptException e) {
             return "SctiptError :" + e.getLocalizedMessage();
         } catch (NoSuchMethodException e) {
-            return; ""
+            return; "No such method :" + e.getLocalizedMessage();
         }
+        
     }
 
 }
