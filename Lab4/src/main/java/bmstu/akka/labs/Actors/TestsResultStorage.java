@@ -14,7 +14,7 @@ public class TestsResultStorage extends AbstractActor {
         return ReceiveBuilder.create()
                 .match(StoreMessage.class, m -> {
                     store.put(m.getKey(), m.getValue());
-                    System.out.println("receive ");
+                    System.out.println("receive message");
                 })
     }
 }
