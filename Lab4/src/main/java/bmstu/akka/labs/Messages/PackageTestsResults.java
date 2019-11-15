@@ -10,6 +10,12 @@ public class PackageTestsResults {
         this.packageID = packageID;
         this.results = results;
     }
-    
 
+    public int getPackageID() {
+        return packageID;
+    }
+
+    public ArrayList<String> getResults() {
+        return results;
+    }
 }
