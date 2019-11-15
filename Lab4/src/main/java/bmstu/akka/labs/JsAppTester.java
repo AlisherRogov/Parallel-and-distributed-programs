@@ -37,6 +37,6 @@ public class JsAppTester {
     }
 
     private Route createRoute(ActorSystem system) {
-        ActorRef testsRouter = system.actorOf(TestsRouter.class, TestsRouter)
+        ActorRef testsRouter = system.actorOf(TestsRouter.class, new TestsRouter())
     }
 }
