@@ -22,5 +22,7 @@ public class TestsResultStorage extends AbstractActor {
                 )).build();
     }
 
-    private String 
+    private void getSingleTestResult(SingleTestResult m) {
+        m.
+    }
 }
