@@ -4,6 +4,7 @@ import akka.actor.AbstractActor;
 import akka.actor.ActorRef;
 import akka.japi.pf.ReceiveBuilder;
 import bmstu.akka.labs.Messages.JsFunction;
+import bmstu.akka.labs.Messages.SingleTestResult;
 
 import javax.script.Invocable;
 import javax.script.ScriptEngine;
@@ -41,7 +42,7 @@ public class TestPerform extends AbstractActor {
         } catch (NoSuchMethodException e) {
             return "No such method :" + e.getLocalizedMessage();
         }
-        storeActor.tell(new TestsResultStorage(test.getPackageID(), description), ActorRef.noSender());
+        storeActor.tell(new SingleTestResult(test.getPackageID(), description), ActorRef.noSender());
     }
 
 }
