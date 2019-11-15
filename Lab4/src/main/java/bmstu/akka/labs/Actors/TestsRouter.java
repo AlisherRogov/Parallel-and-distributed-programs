@@ -3,6 +3,7 @@ package bmstu.akka.labs.Actors;
 import akka.actor.AbstractActor;
 import akka.actor.ActorRef;
 import akka.actor.Props;
+import akka.routing.RoundRobinGroup;
 
 public class TestsRouter extends AbstractActor {
     private ActorRef storeActor;
@@ -10,7 +11,7 @@ public class TestsRouter extends AbstractActor {
 
     public TestsRouter() {
         this.storeActor = getContext().actorOf(Props.create(TestsResultStorage::new), "TestsResultStorage");
-        this.testPerfomRouter = getContext().actorOf(new Round);
+        this.testPerfomRouter = getContext().actorOf(new RoundRobinGroup());
     }
 
 
