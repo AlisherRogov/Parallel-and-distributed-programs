@@ -30,6 +30,7 @@ public class TestPerform extends AbstractActor {
     public Receive createReceive() {
         return ReceiveBuilder.create()
                 .match(JsFunction.class, this::runTest)
+                .build();
     }
 
     private void runTest(JsFunction test) {
