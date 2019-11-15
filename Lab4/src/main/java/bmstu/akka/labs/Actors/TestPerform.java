@@ -32,7 +32,9 @@ public class TestPerform extends AbstractActor {
     }
 
     private void runTest(JsFunction test) {
-        
+        try {
+            
+        }
     }
 
 }
