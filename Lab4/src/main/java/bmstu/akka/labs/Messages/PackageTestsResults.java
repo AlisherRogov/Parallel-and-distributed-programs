@@ -10,5 +10,6 @@ public class PackageTestsResults {
         this.packageID = packageID;
         this.results = results;
     }
+    
 
 }
