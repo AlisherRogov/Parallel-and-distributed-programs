@@ -9,5 +9,7 @@ public class TestsResultStorage extends AbstractActor {
     private Map<String, String> store = new HashMap<>();
 
     @Override
-    public Receive createReceive() {}
+    public Receive createReceive() {
+        
+    }
 }
