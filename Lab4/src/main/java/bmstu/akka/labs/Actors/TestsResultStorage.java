@@ -12,6 +12,6 @@ public class TestsResultStorage extends AbstractActor {
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create()
-                .match(StoreMessage.class)
+                .match(StoreMessage.class, m ->)
     }
 }
