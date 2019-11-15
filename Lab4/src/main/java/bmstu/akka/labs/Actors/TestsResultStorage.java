@@ -23,7 +23,9 @@ public class TestsResultStorage extends AbstractActor {
 
     private void getSingleTestResult(SingleTestResult m) {
         if (store.containsKey(m.getPackageID())) {
-            store.get(m.getPackageID()).add(m)
+            store.get(m.getPackageID()).add(m.getResult());
+        } else {
+            
         }
         store.put(m.getPackageID(), m.getResult());
     }
