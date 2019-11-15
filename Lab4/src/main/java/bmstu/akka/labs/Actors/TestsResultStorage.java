@@ -26,6 +26,7 @@ public class TestsResultStorage extends AbstractActor {
     }
 
     private void sendPackageTestsResult(TestResultRequest request) {
-        sender().tell(new PackageTestsResults(request.getPackageID(), store.));
+        String packageID = request.getPackageID();
+        sender().tell(new PackageTestsResults(packageID, store.get(packageID)), );
     }
 }
