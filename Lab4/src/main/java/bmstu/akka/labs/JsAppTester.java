@@ -45,7 +45,7 @@ public class JsAppTester {
         return route(
                 path("test", () ->
                         post(() -> entity(Jackson.unmarshaller(PackageTests) , msg ->
-                                )))
+                                TestsRouter)))
 
         );
     }
