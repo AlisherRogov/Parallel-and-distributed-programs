@@ -26,6 +26,7 @@ public class TestsRouter extends AbstractActor {
         return receiveBuilder()
                 .match(TestResultRequest.class, this::receiveTestResultRequest)
                 .match(PackageTests.class, this::receivePackageTests)
+                .build();
     }
 
     private void receiveTestResultRequest(TestResultRequest req) {
