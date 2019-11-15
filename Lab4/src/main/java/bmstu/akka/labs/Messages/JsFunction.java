@@ -9,5 +9,14 @@ public class JsFunction {
     private List<Object> params;
     private String expectedResult;
 
-    public JsFunction(String packageID, String functionName, )
+    public JsFunction(String packageID, String functionName,
+                      String script, List<Object> params, String expectedResult) {
+        this.expectedResult = expectedResult;
+        this.functionName = functionName;
+        this.packageID = packageID;
+        this.params = params;
+        this.script = script;
+    }
+
+    
 }
