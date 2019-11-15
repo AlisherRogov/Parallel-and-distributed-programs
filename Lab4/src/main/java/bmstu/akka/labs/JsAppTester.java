@@ -45,7 +45,8 @@ public class JsAppTester {
         return route(
                 path("test", () ->
                         post(() -> entity(Jackson.unmarshaller(PackageTests) , msg ->
-                                testsRouter.tell(msg, ActorRef.noSender()); )))
+                                testsRouter.tell(msg, ActorRef.noSender());
+                        )))
 
         );
     }
