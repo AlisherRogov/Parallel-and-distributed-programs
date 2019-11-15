@@ -8,5 +8,6 @@ import java.util.Map;
 public class TestsResultStorage extends AbstractActor {
     private Map<String, String> store = new HashMap<>();
 
-    public Receive createReceive
+    @Override
+    public Receive createReceive()
 }
