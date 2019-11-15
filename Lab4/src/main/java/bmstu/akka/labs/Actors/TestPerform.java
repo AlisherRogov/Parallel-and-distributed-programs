@@ -3,6 +3,7 @@ package bmstu.akka.labs.Actors;
 import akka.actor.AbstractActor;
 import akka.actor.ActorRef;
 import akka.japi.pf.ReceiveBuilder;
+import bmstu.akka.labs.Messages.JsFunction;
 
 import javax.script.Invocable;
 import javax.script.ScriptEngine;
@@ -27,7 +28,11 @@ public class TestPerform extends AbstractActor {
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create()
+                .match(JsFunction.class)
     }
 
+    private void runTest(JsFunction test) {
+        
+    }
 
 }
