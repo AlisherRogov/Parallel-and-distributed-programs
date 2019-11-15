@@ -46,7 +46,7 @@ public class JsAppTester extends AllDirectives {
     }
 
     private Route createRoute(ActorSystem system) {
-        ActorRef testsRouter = system.actorOf(Props.create(TestsRouter::new));
+        ActorRef testsRouter = system.actorOf(Props.create(TestsRouter.class,  ));
         return route(
                 post(() ->
                         entity(Jackson.unmarshaller(PackageTests.class) , msg -> {
