@@ -5,6 +5,7 @@ import akka.actor.ActorSystem;
 import akka.http.javadsl.ConnectHttp;
 import akka.http.javadsl.Http;
 import akka.http.javadsl.ServerBinding;
+import akka.http.javadsl.server.Route;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 
@@ -33,5 +34,5 @@ public class JsAppTester {
                 .thenAccept(unbound -> system.terminate());
     }
 
-    private R
+    private Route createRoute()
 }
