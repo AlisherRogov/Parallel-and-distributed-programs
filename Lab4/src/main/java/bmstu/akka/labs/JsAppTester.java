@@ -59,7 +59,7 @@ public class JsAppTester {
                                     new TestResultRequest(packageID),
                                     5000
                             );
-                            return completeOKWithFuture()
+                            return completeOKWithFuture(result, )
                         }))
 
         );
