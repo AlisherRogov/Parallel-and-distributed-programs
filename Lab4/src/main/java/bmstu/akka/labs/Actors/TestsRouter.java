@@ -7,7 +7,7 @@ public class TestsRouter {
     private ActorRef testPerfomRouter;
 
     public TestsRouter() {
-        this.storeActor = storeActor;
+        this.storeActor = get;
         this.testPerfomRouter = testPerfomRouter;
     }
 
