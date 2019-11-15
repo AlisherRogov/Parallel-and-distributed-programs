@@ -11,5 +11,7 @@ public class SingleTest {
     @JsonProperty("testName") private String testName;
     @JsonProperty("expectedResults") private String expectedResults;
     @JsonProperty("params") private List<Object> params = null;
-    @JsonIgnore private Map<String, Object> unexpectedProperties = new HashMap<>()
+    @JsonIgnore private Map<String, Object> unexpectedProperties = new HashMap<>();
+
+    
 }
