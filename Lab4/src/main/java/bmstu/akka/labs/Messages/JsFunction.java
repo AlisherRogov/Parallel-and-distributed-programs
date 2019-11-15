@@ -7,5 +7,8 @@ public class JsFunction {
     private String functionName;
     private String script;
     private List<Object> params;
-    private String expectef
+    private String expectedResult;
+
+
+    
 }
