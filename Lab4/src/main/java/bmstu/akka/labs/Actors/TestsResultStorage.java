@@ -3,6 +3,7 @@ package bmstu.akka.labs.Actors;
 import akka.actor.AbstractActor;
 import akka.japi.pf.ReceiveBuilder;
 import bmstu.akka.labs.Messages.SingleTestResult;
+import bmstu.akka.labs.Messages.TestResultRequest;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,7 +15,7 @@ public class TestsResultStorage extends AbstractActor {
     public Receive createReceive() {
         return ReceiveBuilder.create()
                 .match(SingleTestResult.class, this::getSingleTestResult)
-                .match(GetMessage.class, req-> sender().tell(
+                .match(TestResultRequest.class, req-> sender().tell(
                         new StoreMessage(req.getKey(), store.get(req.getKey()),self())
                 )).build();
     }
@@ -23,5 +24,7 @@ public class TestsResultStorage extends AbstractActor {
         store.put(m.getPackageID(), m.getResult());
     }
 
-    private void sendPackageTestsResult()
+    private void sendPackageTestsResult(TestResultRequest request) {
+        
+    }
 }
