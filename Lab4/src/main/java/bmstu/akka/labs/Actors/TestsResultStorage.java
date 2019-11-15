@@ -23,5 +23,5 @@ public class TestsResultStorage extends AbstractActor {
         store.put(m.getPackageID(), m.getResult());
     }
 
-    private void sendPackageTests
+    private void sendPackageTestsResult
 }
