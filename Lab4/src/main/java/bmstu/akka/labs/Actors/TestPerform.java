@@ -14,7 +14,7 @@ public class TestPerform extends AbstractActor {
     private static String performScript(String functionName, String script,
                                         Object... args) throws ScriptException, NoSuchMethodException {
         ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
-        engine.eval("jscript");
+        engine.eval(script);
         Invocable invocable = (Invocable) engine;
         return invocable.invokeFunction(functionName, args).toString();
     }
