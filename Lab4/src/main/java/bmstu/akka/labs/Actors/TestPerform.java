@@ -29,18 +29,18 @@ public class TestPerform extends AbstractActor {
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create()
-                .match(JsFunction.class)
+                .match(JsFunction.class, this::runTest)
     }
 
-    private String runTest(JsFunction test) {
+    private void runTest(JsFunction test) {
         String description;
         try {
             String actualResult = performScript(test.getFunctionName(), test.getScript(),test.getParams());
             description = actualResult.equals(test.getExpectedResult()) ? "Right answer" : "Wrong";
         } catch (ScriptException e) {
-            return "SctiptError :" + e.getLocalizedMessage();
+            description =  "SctiptError :" + e.getLocalizedMessage();
         } catch (NoSuchMethodException e) {
-            return "No such method :" + e.getLocalizedMessage();
+            description =  "No such method :" + e.getLocalizedMessage();
         }
         storeActor.tell(new SingleTestResult(test.getPackageID(), description), ActorRef.noSender());
     }
