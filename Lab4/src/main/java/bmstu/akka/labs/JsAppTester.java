@@ -53,7 +53,7 @@ public class JsAppTester {
                 ),
                 get(() ->
                         parameter("packageId", packageID -> {
-                            Future<Object> result = Patterns
+                            Future<Object> result = Patterns.ask
                         }))
 
         );
