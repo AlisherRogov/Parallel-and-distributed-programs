@@ -17,6 +17,8 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.concurrent.CompletionStage;
 
+import static akka.http.javadsl.server.Directives.route;
+
 public class JsAppTester {
     public static void main(String[] args) throws IOException {
         ActorSystem system = ActorSystem.create("Lab4");
