@@ -39,7 +39,7 @@ public class TestPerform extends AbstractActor {
         } catch (NoSuchMethodException e) {
             return "No such method :" + e.getLocalizedMessage();
         }
-        String description
+        String description = 
     }
 
 }
