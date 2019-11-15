@@ -36,7 +36,7 @@ public class TestsRouter extends AbstractActor {
         tests.getTests().stream()
                 .map(test -> new JsFunction(tests.getPackageID(), tests.getFunctionName(),
                         tests.getJsScript(), test.getParams(), test.getExpectedResults()))
-                .forEach(msg -> this.testPerfomRouter);
+                .forEach(msg -> this.testPerfomRouter.tell());
     }
 
 
