@@ -25,6 +25,6 @@ public class TestPerform extends AbstractActor {
 
     @Override
     public Receive createReceive() {
-        return  Receive
+        return  ReceiveBu
     }
 }
