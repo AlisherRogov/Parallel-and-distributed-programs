@@ -2,6 +2,7 @@ package bmstu.akka.labs;
 
 
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -53,6 +54,7 @@ public class PackageTests {
         this.tests = tests;
     }
 
+    @JsonAnySetter
     public void setUnexpectedProperties(Map<String, Object> unexpectedProperties) {
         this.unexpectedProperties = unexpectedProperties;
     }
