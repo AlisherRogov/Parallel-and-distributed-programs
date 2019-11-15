@@ -6,10 +6,10 @@ public class TestsRouter {
     private ActorRef storeActor;
     private ActorRef testPerfomRouter;
 
-    public TestsRouter(ActorRef storeActor, ActorRef testPerfomRouter) {
+    public TestsRouter() {
         this.storeActor = storeActor;
         this.testPerfomRouter = testPerfomRouter;
     }
 
-    
+
 }
