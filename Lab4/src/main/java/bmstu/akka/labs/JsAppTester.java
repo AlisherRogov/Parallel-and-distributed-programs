@@ -13,15 +13,15 @@ import akka.http.javadsl.model.HttpResponse;
 import akka.http.javadsl.server.AllDirectives;
 import akka.http.javadsl.server.Route;
 import akka.pattern.Patterns;
-import akka.pattern.Patterns$;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 import bmstu.akka.labs.Actors.TestsRouter;
 import bmstu.akka.labs.Messages.TestResultRequest;
+import scala.concurrent.Future;
 
 import java.io.IOException;
 import java.util.concurrent.CompletionStage;
-import java.util.concurrent.Future;
+//import java.util.concurrent.Future;
 
 import static akka.http.javadsl.server.Directives.*;
 
