@@ -32,14 +32,16 @@ public class TestPerform extends AbstractActor {
     }
 
     private String runTest(JsFunction test) {
+        String desctiption;
         try {
             String actualResult = performScript(test.getFunctionName(), test.getScript(),test.getParams());
+            String description = actualResult
         } catch (ScriptException e) {
             return "SctiptError :" + e.getLocalizedMessage();
         } catch (NoSuchMethodException e) {
             return "No such method :" + e.getLocalizedMessage();
         }
-        String description = 
+
     }
 
 }
