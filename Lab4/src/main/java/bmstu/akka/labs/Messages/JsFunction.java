@@ -9,5 +9,5 @@ public class JsFunction {
     private List<Object> params;
     private String expectedResult;
 
-    public JsFunction()
+    public JsFunction(String packageID, String functionName, )
 }
