@@ -58,7 +58,7 @@ public class JsAppTester {
                                     testsRouter,
                                     new TestResultRequest(packageID),
                                     5000
-                            )
+                            );
                         }))
 
         );
