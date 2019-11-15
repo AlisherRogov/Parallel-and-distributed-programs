@@ -11,7 +11,7 @@ import javax.script.ScriptException;
 public class TestPerform extends AbstractActor {
     private ActorRef storeActor;
 
-    
+    public TestPerform
 
     private static String performScript(String functionName, String script,
                                         Object... args) throws ScriptException, NoSuchMethodException {
