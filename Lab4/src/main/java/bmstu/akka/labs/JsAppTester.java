@@ -43,7 +43,7 @@ public class JsAppTester {
         ActorRef testsRouter = system.actorOf(Props.create(TestsRouter::new));
         return route(
                 path("test", () ->
-                        post(() -> ))
+                        post(() -> entity()))
 
         )
     }
