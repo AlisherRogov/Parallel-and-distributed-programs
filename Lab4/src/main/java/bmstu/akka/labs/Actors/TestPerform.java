@@ -2,6 +2,7 @@ package bmstu.akka.labs.Actors;
 
 import akka.actor.AbstractActor;
 import akka.actor.ActorRef;
+import akka.japi.pf.ReceiveBuilder;
 
 import javax.script.Invocable;
 import javax.script.ScriptEngine;
@@ -25,6 +26,6 @@ public class TestPerform extends AbstractActor {
 
     @Override
     public Receive createReceive() {
-        return  ReceiveBu
+        return ReceiveBuilder.
     }
 }
