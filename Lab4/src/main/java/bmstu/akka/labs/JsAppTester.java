@@ -52,7 +52,7 @@ public class JsAppTester {
                 ),
                 get(() ->
                         parameter("packageId", packageID -> {
-                            Future<Object> result
+                            Future<Object> result = Patt
                         }))
 
         );
