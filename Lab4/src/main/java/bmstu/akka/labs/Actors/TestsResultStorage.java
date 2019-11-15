@@ -5,5 +5,5 @@ import akka.actor.AbstractActor;
 import java.util.Map;
 
 public class TestsResultStorage extends AbstractActor {
-    private Map<>
+    private Map<String>
 }
