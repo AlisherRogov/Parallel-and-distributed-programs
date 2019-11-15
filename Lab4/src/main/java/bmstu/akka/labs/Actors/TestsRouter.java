@@ -23,7 +23,7 @@ public class TestsRouter extends AbstractActor {
                 .match(TestResultRequest.class, )
     }
 
-    private void 
+    private void receiveTestResultRequest
 
 
 }
