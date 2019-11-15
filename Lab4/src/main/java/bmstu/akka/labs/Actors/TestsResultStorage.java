@@ -22,7 +22,7 @@ public class TestsResultStorage extends AbstractActor {
     }
 
     private void getSingleTestResult(SingleTestResult m) {
-        if 
+        if ()
         store.put(m.getPackageID(), m.getResult());
     }
 
