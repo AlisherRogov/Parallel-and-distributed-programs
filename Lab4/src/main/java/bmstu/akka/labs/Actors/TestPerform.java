@@ -12,7 +12,7 @@ public class TestPerform extends AbstractActor {
     private ActorRef storeActor;
 
     private static String performScript(String functionName, String script,
-                                        Object... args) throws ScriptException,  {
+                                        Object... args) throws ScriptException, NoSuchMethodException {
         ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
         engine.eval("jscript");
         Invocable invocable = (Invocable) engine;
