@@ -10,7 +10,7 @@ public class TestsRouter extends AbstractActor {
 
     public TestsRouter() {
         this.storeActor = getContext().actorOf(Props.create(TestsResultStorage::new), "TestsResultStorage");
-        this.testPerfomRouter = getContext;
+        this.testPerfomRouter = getContext();
     }
 
 
