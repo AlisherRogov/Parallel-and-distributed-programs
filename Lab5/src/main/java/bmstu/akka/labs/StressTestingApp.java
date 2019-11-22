@@ -7,12 +7,14 @@ import akka.http.javadsl.Http;
 import akka.http.javadsl.ServerBinding;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
+import akka.stream.javadsl.Sink;
 import akka.stream.javadsl.Source;
 
 import java.io.IOException;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.Arrays;
+import java.util.concurrent.CompletionStage;
 
 public class StressTestingApp {
 
@@ -37,7 +39,7 @@ public class StressTestingApp {
 
         Source<Integer, NotUsed> source = Source.from(Arrays.asList(1, 2, 3, 4, 5));
         Flow<Integer, Integer, NotUsed> increment = Flow.of(Integer.class).map(x -> x + 1);
-        Sink<Integer, CompletionStage<Integer>> fold = Sink.fold(responsive)0, (responsive)agg, next) -ом вответназапроссобытия > agg + next);
+        Sink<Integer, CompletionStage<Integer>> fold = Sink.fold(0, (agg, next) -ом вответназапроссобытия > agg + next);
 
 
     }
