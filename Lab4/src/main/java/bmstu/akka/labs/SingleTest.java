@@ -1,13 +1,17 @@
 package bmstu.akka.labs;
 
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.*;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({
+        "testName",
+        "expectedResult",
+        "params"
+})
 
 public class SingleTest {
     @JsonProperty("testName") private String testName;
@@ -20,31 +24,37 @@ public class SingleTest {
         return unexpectedProperties;
     }
 
+    @JsonProperty("params")
     public List<Object> getParams() {
         return params;
     }
 
+    @JsonProperty("expectedResults")
     public String getExpectedResults() {
         return expectedResults;
     }
 
+    @JsonProperty("testName")
     public String getTestName() {
         return testName;
     }
 
-    public void setUnexpectedProperties(Map<String, Object> unexpectedProperties) {
-        this.unexpectedProperties = unexpectedProperties;
+    @JsonAnySetter
+    public void setUnexpectedProperties(String key, Object value) {
+        unexpectedProperties.put(key, value);
     }
 
-    @JsonAnySetter
+    @JsonProperty("expectedResults")
     public void setExpectedResults(String expectedResults) {
         this.expectedResults = expectedResults;
     }
 
+    @JsonProperty("params")
     public void setParams(List<Object> params) {
         this.params = params;
     }
 
+    @JsonProperty("testName")
     public void setTestName(String testName) {
         this.testName = testName;
     }

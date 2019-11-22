@@ -8,7 +8,6 @@ import bmstu.akka.labs.Messages.JsFunction;
 import bmstu.akka.labs.Messages.TestResultRequest;
 import bmstu.akka.labs.PackageTests;
 
-import java.util.stream.Stream;
 
 public class TestsRouter extends AbstractActor {
     private ActorRef storeActor;
@@ -16,7 +15,8 @@ public class TestsRouter extends AbstractActor {
     private int TEST_PERFORM_POOL_SIZE = 5;
 
     public TestsRouter() {
-        this.storeActor = getContext().actorOf(Props.create(TestsResultStorage::new), "TestsResultStorage");
+        this.storeActor = getContext().actorOf(Props.create(TestsResultStorage.class, TestsResultStorage::new)
+                , "TestsResultStorage");
         this.testPerfomRouter = getContext().actorOf(new RoundRobinPool(TEST_PERFORM_POOL_SIZE)
                 .props(Props.create(TestPerform.class, storeActor)), "router");
     }

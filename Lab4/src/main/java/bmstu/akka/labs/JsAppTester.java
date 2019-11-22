@@ -21,9 +21,6 @@ import scala.concurrent.Future;
 
 import java.io.IOException;
 import java.util.concurrent.CompletionStage;
-//import java.util.concurrent.Future;
-
-import static akka.http.javadsl.server.Directives.*;
 
 public class JsAppTester extends AllDirectives {
     public static void main(String[] args) throws IOException {
