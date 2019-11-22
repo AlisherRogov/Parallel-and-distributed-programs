@@ -1,4 +1,6 @@
 package bmstu.akka.labs.Messages;
 
-public class GetTest {
+public class GetTestResult {
+    private String Url;
+    private int 
 }
