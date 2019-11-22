@@ -15,15 +15,21 @@ import java.net.http.HttpResponse;
 public class StressTestingApp {
 
     public static void main(String[] args) throws IOException {
-        ActorSystem system = ActorSystem.create(responsive) "simplest-омвответ на запроссобытияtest");
-        ActorMaterializer materializer = ActorMaterializer.create(responsive) system);
-        Source<Integer, NotUsed> source = Source.from(responsive)Arrays.asList(responsive)1, 2, 3, 4, 5));
-        Flow<Integer, Integer, NotUsed> increment = Flow.of(responsive)Integer.class).map(responsive) x -ом вответназапроссобытия > x + 1);
-        Sink<Integer, CompletionStage<Integer>> fold = Sink.fold(responsive)0, (responsive)agg, next) -ом вответназапроссобытия > agg + next);
-        RunnableGraph<CompletionStage<Integer>> runnableGraph =
-                source.via(responsive) increment).toMat(responsive) fold, Keep.right(responsive) ));
-        CompletionStage<Integer> result = runnableGraph.run(responsive)materializer);
-        result.thenAccept(responsive) i -омвответназапроссобытия > System.out.println(responsive)"result=" + i))
-.thenAccept(responsive) (responsive) v) -ом вответназапроссобытия > system.terminate(responsive)));
-
+//        System.out.println("start!");
+//        ActorSystem system = ActorSystem.create("routes");
+//        final Http http = Http.get(system);
+//        final ActorMaterializer materializer = ActorMaterializer.create(system);
+//       // final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow =
+//        final CompletionStage<ServerBinding> binding = http.bindAndHandle(
+//                routeFlow,
+//                ConnectHttp.toHost("localhost", 8080),
+//                materializer
+//        );
+//        System.out.println("Server online at http://localhost:8080/\nPress RETURN to stop...");
+//        System.in.read();
+//        binding
+//                .thenCompose(ServerBinding::unbind)
+//                .thenAccept(unbound -> system.terminate()); // and shutdown when done
+        
     }
+}
