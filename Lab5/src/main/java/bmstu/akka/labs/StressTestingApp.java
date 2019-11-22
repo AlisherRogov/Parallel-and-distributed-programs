@@ -7,6 +7,7 @@ import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.ConnectHttp;
 import akka.http.javadsl.Http;
 import akka.http.javadsl.ServerBinding;
+import akka.pattern.Patterns;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 import jdk.internal.util.xml.impl.Pair;
@@ -33,7 +34,7 @@ public class StressTestingApp {
                        return new Pair<>(url, count);
                })
                .mapAsync(4, pair ->
-                       Patt)
+                       Patterns)
 
 
 
