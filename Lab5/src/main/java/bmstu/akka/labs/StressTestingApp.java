@@ -28,7 +28,7 @@ public class StressTestingApp {
        final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = Flow.of(HttpRequest.class)
                .map(request -> {
                        String url = request.getUri().query().get("testURL").orElse("ufc.com");
-                       
+                       Int count = Integer.Pa request.getUri().query().get("count").orElse("10").;
                })
 
 
