@@ -41,7 +41,7 @@ public class StressTestingApp {
                        return new GetTestResult(url, count);
                })
                .mapAsync(4, pair ->
-                       Patterns.ask(StorageActor, pair, )))
+                       Patterns.ask(store, pair, 5000)))
 
 
 
