@@ -36,9 +36,10 @@ public class StressTestingApp {
         Source<Integer, Cancellable> source = Source.tick(
              FiniteDuration.create( 0, TimeUnit.SECONDS),
                 FiniteDuration.create( 100, TimeUnit.MILLISECONDS), 1);
-        
+
         Source<Integer, Cancellable> incremented = source.map( x -> x + 1);
         Sink<Integer, CompletionStage<Integer>> fold = Sink.fold( 0, ( agg, next) -> agg + next);
+
         RunnableGraph<Pair<Cancellable, CompletionStage<Integer>>> graph =
                 incremented.toMat(fold, Keep.both());// 0
         Pair<Cancellable, CompletionStage<Integer>> run = graph.run( materializer);
