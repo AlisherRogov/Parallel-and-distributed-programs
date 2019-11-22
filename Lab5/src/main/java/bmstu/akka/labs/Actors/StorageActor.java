@@ -23,7 +23,7 @@ public class StorageActor extends AbstractActor {
                     }
                 })
                 .match(StoreTestResult.class, msg -> {
-                    storage
+                    storage.put(msg.)
                 })
     }
 }
