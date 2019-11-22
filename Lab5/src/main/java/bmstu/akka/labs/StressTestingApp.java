@@ -6,9 +6,7 @@ import akka.http.javadsl.ConnectHttp;
 import akka.http.javadsl.Http;
 import akka.http.javadsl.ServerBinding;
 import akka.stream.ActorMaterializer;
-import akka.stream.javadsl.Flow;
-import akka.stream.javadsl.Sink;
-import akka.stream.javadsl.Source;
+import akka.stream.javadsl.*;
 
 import java.io.IOException;
 import java.net.http.HttpRequest;
@@ -40,6 +38,12 @@ public class StressTestingApp {
         Source<Integer, NotUsed> source = Source.from(Arrays.asList(1, 2, 3, 4, 5));
         Flow<Integer, Integer, NotUsed> increment = Flow.of(Integer.class).map(x -> x + 1);
         Sink<Integer, CompletionStage<Integer>> fold = Sink.fold(0, (agg, next) -> agg + next);
+
+        RunnableGraph<CompletionStage<Integer>> runnableGraph =
+                source.via(increment).toMat(fold, Keep.right());
+        CompletionStage<Integer> result = runnableGraph.run(materializer);
+        result.thenAccept(i -> System.out.println("result=" + i))
+.thenAccept(v) -> system.terminate());
 
 
     }
