@@ -1,4 +1,4 @@
 package bmstu.akka.labs.Actors;
 
-public class StorageActor {
+public class StorageActor  {
 }
