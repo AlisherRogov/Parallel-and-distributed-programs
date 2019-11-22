@@ -9,7 +9,7 @@ public class StorageActor extends AbstractActor {
     public Receive createReceive() {
         return ReceiveBuilder
                 .create()
-                .match(GetTestRe.class)
+                .match(GetTestResult.class)
                 .match(TestResult.class)
     }
 }
