@@ -1,11 +1,11 @@
 package bmstu.akka.labs.Messages;
 
 public class GetTestResult {
-    private String Url;
+    private String url;
     private int count;
 
-    public  GetTestResult(String Url, int count) {
-        this.Url = Url;
+    public  GetTestResult(String url, int count) {
+        this.url = url;
         this.count = count;
     }
 
@@ -14,6 +14,6 @@ public class GetTestResult {
     }
 
     public String getUrl() {
-        return Url;
+        return url;
     }
 }

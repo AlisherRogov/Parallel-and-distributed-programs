@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="ecfb37b9-613a-4aa0-8f16-1f2ec9e1acdc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/bmstu/akka/labs/Actors/StorageActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bmstu/akka/labs/Actors/StorageActor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bmstu/akka/labs/Messages/GetTestResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bmstu/akka/labs/Messages/GetTestResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bmstu/akka/labs/Messages/ResponseTestResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bmstu/akka/labs/Messages/ResponseTestResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bmstu/akka/labs/Messages/StoreTestResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bmstu/akka/labs/Messages/StoreTestResult.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

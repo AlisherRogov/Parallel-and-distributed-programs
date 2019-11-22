@@ -2,12 +2,12 @@ package bmstu.akka.labs.Messages;
 
 public class ResponseTestResult {
     private boolean hasInfo;
-    private String Url;
+    private String url;
     private Long time;
 
-    public ResponseTestResult(boolean hasInfo, String Url, Long time) {
+    public ResponseTestResult(boolean hasInfo, String url, Long time) {
         this.hasInfo = hasInfo;
-        this.Url = Url;
+        this.url = url;
         this.time = time;
     }
 
@@ -16,7 +16,7 @@ public class ResponseTestResult {
     }
 
     public String getUrl() {
-        return Url;
+        return url;
     }
 
     public Long getTime() {
