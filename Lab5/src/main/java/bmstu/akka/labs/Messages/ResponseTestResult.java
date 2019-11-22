@@ -11,7 +11,9 @@ public class ResponseTestResult {
         this.time = time;
     }
 
-    public boolean 
+    public boolean isCounted() {
+        return hasInfo;
+    }
 
     public String getUrl() {
         return Url;
