@@ -1,6 +1,7 @@
 package bmstu.akka.labs;
 
 
+import akka.NotUsed;
 import akka.actor.ActorSystem;
 
 import akka.http.javadsl.ConnectHttp;
@@ -10,17 +11,22 @@ import akka.stream.ActorMaterializer;
 
 import java.io.IOException;
 
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 import java.util.concurrent.CompletionStage;
 
 
 public class StressTestingApp {
 
     public static void main(String[] args) throws IOException {
-        System.out.println("start!");
         ActorSystem system = ActorSystem.create("routes");
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
-       // final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow =
+
+       final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = 
+
+
+
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(
                 routeFlow,
                 ConnectHttp.toHost("localhost", 8080),
