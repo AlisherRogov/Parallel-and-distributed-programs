@@ -1,5 +1,7 @@
 package bmstu.akka.labs.Messages;
 
 public class ResponseTestResult {
-    private 
+    private boolean hasInfo;
+    private String Url;
+    private int 
 }
