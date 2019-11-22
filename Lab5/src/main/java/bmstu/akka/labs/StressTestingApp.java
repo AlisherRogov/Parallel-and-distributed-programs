@@ -42,6 +42,7 @@ public class StressTestingApp {
 
         RunnableGraph<Pair<Cancellable, CompletionStage<Integer>>> graph =
                 incremented.toMat(fold, Keep.both());// 0
+
         Pair<Cancellable, CompletionStage<Integer>> run = graph.run( materializer);
         Thread.sleep( 2000);
         run.second().thenAccept( i -> System.out.println("result=" + i));
