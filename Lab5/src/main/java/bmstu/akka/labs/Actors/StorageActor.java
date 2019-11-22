@@ -17,8 +17,9 @@ public class StorageActor extends AbstractActor {
                 .create()
                 .match(GetTestResult.class, msg -> {
                     boolean isCounted = storage.containsKey(msg.getUrl());
+                    String url = msg.getUrl();
                     if(isCounted) {
-                        sender().tell(new ResponseTestResult(isCounted, msg.getUrl(), storage.get(msg.getUrl()) ))
+                        sender().tell(new ResponseTestResult(isCounted, url, storage.get(url)))
                     }
                 })
                 .match(StoreTestResult.class)
