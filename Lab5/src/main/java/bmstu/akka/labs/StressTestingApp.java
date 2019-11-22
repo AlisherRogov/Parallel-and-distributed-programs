@@ -13,7 +13,7 @@ import jdk.internal.util.xml.impl.Pair;
 
 import java.io.IOException;
 
-import java.net.http.HttpRequest;
+
 import java.net.http.HttpResponse;
 import java.util.concurrent.CompletionStage;
 
@@ -26,7 +26,7 @@ public class StressTestingApp {
         final ActorMaterializer materializer = ActorMaterializer.create(system);
 
        final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = Flow.of(HttpRequest.class)
-               .map(request -> request
+               .map(request -> request.getUri().
                })
 
 
