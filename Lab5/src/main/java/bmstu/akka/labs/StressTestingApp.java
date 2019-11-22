@@ -2,12 +2,16 @@ package bmstu.akka.labs;
 
 import akka.NotUsed;
 import akka.actor.ActorSystem;
+import akka.actor.Cancellable;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.*;
+import jdk.internal.util.xml.impl.Pair;
+import scala.concurrent.duration.FiniteDuration;
 
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.concurrent.CompletionStage;
+import java.util.concurrent.TimeUnit;
 
 public class StressTestingApp {
 
@@ -29,15 +33,18 @@ public class StressTestingApp {
 //                .thenAccept(unbound -> system.terminate()); // and shutdown when done
         ActorSystem system = ActorSystem.create("simpple-test");
         ActorMaterializer materializer = ActorMaterializer.create( system);
-
-        Source<Integer, NotUsed> source = Source.from(Arrays.asList(1, 2, 3, 4, 5));
-        Flow<Integer, Integer, NotUsed> increment = Flow.of(Integer.class).map(x -> x + 1);
-        Sink<Integer, CompletionStage<Integer>> fold = Sink.fold(0, (agg, next) -> agg + next);
-
-        RunnableGraph<CompletionStage<Integer>> runnableGraph =
-                source.via(increment).toMat(fold, Keep.right());
-        CompletionStage<Integer> result = runnableGraph.run(materializer);
-        result.thenAccept(i -> System.out.println("result=" + i)).thenAccept((v) -> system.terminate());
+        Source<Integer, Cancellable> source = Source.tick(
+        FiniteDuration.create( 0, TimeUnit.SECONDS),
+        FiniteDuration.create( 100, TimeUnit.MILLISECONDS), 1);
+        Source<Integer, Cancellable> incremented = source.map( x -> x + 1);
+        Sink<Integer, CompletionStage<Integer>> fold = Sink.fold( 0, ( agg, next) -> agg + next);
+        RunnableGraph<Pair<Cancellable, CompletionStage<Integer>>> graph =
+                incremented.toMat(fold, Keep.both());// 0
+        Pair<Cancellable, CompletionStage<Integer>> run = graph.run( materializer);
+        Thread.sleep( 2000);
+        run.second().thenAccept( i -> System.out.println("result=" + i));
+        run.first().cancel();
+        system.terminate();
 
 
     }
