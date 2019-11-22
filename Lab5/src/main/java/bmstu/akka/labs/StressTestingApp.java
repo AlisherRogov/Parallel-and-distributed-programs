@@ -2,6 +2,7 @@ package bmstu.akka.labs;
 
 
 import akka.NotUsed;
+import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.ConnectHttp;
@@ -25,6 +26,7 @@ public class StressTestingApp {
 
     public static void main(String[] args) throws IOException {
         ActorSystem system = ActorSystem.create("routes");
+        ActorRef 
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
 
