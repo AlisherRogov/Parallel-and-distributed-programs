@@ -32,7 +32,8 @@ public class StressTestingApp {
                        Integer count = Integer.parseInt(request.getUri().query().get("count").orElse("10"));
                        return new Pair<>(url, count);
                })
-               .mapAsync(4, )
+               .mapAsync(4, pair ->
+                       )
 
 
 
