@@ -10,6 +10,6 @@ public class StorageActor extends AbstractActor {
         return ReceiveBuilder
                 .create()
                 .match(GetTestResult.class)
-                .match(TestResult.class)
+                .match(StoreTestResult.class)
     }
 }
