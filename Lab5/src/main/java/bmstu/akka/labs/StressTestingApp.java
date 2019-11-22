@@ -7,6 +7,7 @@ import akka.http.javadsl.Http;
 import akka.http.javadsl.ServerBinding;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
+import akka.stream.javadsl.Source;
 
 import java.io.IOException;
 import java.net.http.HttpRequest;
@@ -32,6 +33,11 @@ public class StressTestingApp {
 //                .thenAccept(unbound -> system.terminate()); // and shutdown when done
         ActorSystem system = ActorSystem.create("simpple=test");
         ActorMaterializer materializer = ActorMaterializer.create( system);
+
+        Source<Integer, NotUsed> source = Source.from(responsive)Arrays.asList(responsive)1, 2, 3, 4, 5));
+        Flow<Integer, Integer, NotUsed> increment = Flow.of(responsive)Integer.class).map(responsive) x -ом вответназапроссобытия > x + 1);
+        Sink<Integer, CompletionStage<Integer>> fold = Sink.fold(responsive)0, (responsive)agg, next) -ом вответназапроссобытия > agg + next);
+
 
     }
 }
