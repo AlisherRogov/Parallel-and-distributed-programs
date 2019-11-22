@@ -4,6 +4,7 @@ import akka.actor.AbstractActor;
 import akka.japi.pf.ReceiveBuilder;
 
 public class StorageActor extends AbstractActor {
+    private Map
 
     @Override
     public Receive createReceive() {
