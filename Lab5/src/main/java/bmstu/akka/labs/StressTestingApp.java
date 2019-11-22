@@ -43,7 +43,7 @@ public class StressTestingApp {
                 source.via(increment).toMat(fold, Keep.right());
         CompletionStage<Integer> result = runnableGraph.run(materializer);
         result.thenAccept(i -> System.out.println("result=" + i))
-.thenAccept(v) -> system.terminate());
+                .thenAccept(v) -> system.terminate());
 
 
     }
