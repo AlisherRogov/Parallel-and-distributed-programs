@@ -26,7 +26,7 @@ public class StressTestingApp {
 
     public static void main(String[] args) throws IOException {
         ActorSystem system = ActorSystem.create("routes");
-        ActorRef 
+        ActorRef store = 
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
 
