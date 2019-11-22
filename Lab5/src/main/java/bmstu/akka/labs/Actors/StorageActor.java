@@ -5,5 +5,5 @@ import akka.actor.AbstractActor;
 public class StorageActor extends AbstractActor {
 
     @Override
-    public Receive create
+    public Receive createReceive
 }
