@@ -22,6 +22,8 @@ public class StorageActor extends AbstractActor {
                         sender().tell(new ResponseTestResult(isCounted, url, storage.get(url)), getSelf());
                     }
                 })
-                .match(StoreTestResult.class, msg -> )
+                .match(StoreTestResult.class, msg -> {
+                    storage
+                })
     }
 }
