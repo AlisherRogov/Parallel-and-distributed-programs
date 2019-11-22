@@ -34,8 +34,8 @@ public class StressTestingApp {
         ActorSystem system = ActorSystem.create("simpple-test");
         ActorMaterializer materializer = ActorMaterializer.create( system);
         Source<Integer, Cancellable> source = Source.tick(
-        FiniteDuration.create( 0, TimeUnit.SECONDS),
-        FiniteDuration.create( 100, TimeUnit.MILLISECONDS), 1);
+             FiniteDuration.create( 0, TimeUnit.SECONDS),
+                FiniteDuration.create( 100, TimeUnit.MILLISECONDS), 1);
         Source<Integer, Cancellable> incremented = source.map( x -> x + 1);
         Sink<Integer, CompletionStage<Integer>> fold = Sink.fold( 0, ( agg, next) -> agg + next);
         RunnableGraph<Pair<Cancellable, CompletionStage<Integer>>> graph =
