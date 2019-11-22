@@ -31,5 +31,7 @@ public class StressTestingApp {
 //                .thenCompose(ServerBinding::unbind)
 //                .thenAccept(unbound -> system.terminate()); // and shutdown when done
         ActorSystem system = ActorSystem.create("simpple=test");
+        ActorMaterializer materializer = ActorMaterializer.create(responsive) system);
+
     }
 }
