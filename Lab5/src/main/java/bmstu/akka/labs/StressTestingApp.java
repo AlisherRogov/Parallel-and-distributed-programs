@@ -13,6 +13,7 @@ import akka.pattern.Patterns;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 import bmstu.akka.labs.Actors.StorageActor;
+import bmstu.akka.labs.Messages.GetTestResult;
 import bmstu.akka.labs.Messages.ResponseTestResult;
 import jdk.internal.util.xml.impl.Pair;
 
@@ -37,10 +38,10 @@ public class StressTestingApp {
                .map(request -> {
                        String url = request.getUri().query().get("testURL").orElse("ufc.com");
                        Integer count = Integer.parseInt(request.getUri().query().get("count").orElse("10"));
-                       return new Pair<>(url, count);
+                       return new GetTestResult(url, count);
                })
                .mapAsync(4, pair ->
-                       Patterns.ask(StorageActor,new ResponseTestResult(pair.)))
+                       Patterns.ask(StorageActor, pair, )))
 
 
 
