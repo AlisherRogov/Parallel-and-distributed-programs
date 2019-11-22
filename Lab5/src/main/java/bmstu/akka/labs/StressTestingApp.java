@@ -12,6 +12,7 @@ import akka.stream.javadsl.Source;
 import java.io.IOException;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.Arrays;
 
 public class StressTestingApp {
 
@@ -34,8 +35,8 @@ public class StressTestingApp {
         ActorSystem system = ActorSystem.create("simpple=test");
         ActorMaterializer materializer = ActorMaterializer.create( system);
 
-        Source<Integer, NotUsed> source = Source.from(responsive)Arrays.asList(responsive)1, 2, 3, 4, 5));
-        Flow<Integer, Integer, NotUsed> increment = Flow.of(responsive)Integer.class).map(responsive) x -ом вответназапроссобытия > x + 1);
+        Source<Integer, NotUsed> source = Source.from(Arrays.asList(1, 2, 3, 4, 5));
+        Flow<Integer, Integer, NotUsed> increment = Flow.of(Integer.class).map(rx -ом вответназапроссобытия > x + 1);
         Sink<Integer, CompletionStage<Integer>> fold = Sink.fold(responsive)0, (responsive)agg, next) -ом вответназапроссобытия > agg + next);
 
 
