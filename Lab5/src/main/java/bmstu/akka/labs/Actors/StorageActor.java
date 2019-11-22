@@ -16,7 +16,7 @@ public class StorageActor extends AbstractActor {
                 .create()
                 .match(GetTestResult.class, msg -> {
                     if(storage.containsKey(msg.getUrl())) {
-                        sender().tell
+                        sender().tell()
                     }
                 })
                 .match(StoreTestResult.class)
