@@ -27,7 +27,7 @@ public class StressTestingApp {
 //        binding
 //                .thenCompose(ServerBinding::unbind)
 //                .thenAccept(unbound -> system.terminate()); // and shutdown when done
-        ActorSystem system = ActorSystem.create("simpple=test");
+        ActorSystem system = ActorSystem.create("simpple-test");
         ActorMaterializer materializer = ActorMaterializer.create( system);
 
         Source<Integer, NotUsed> source = Source.from(Arrays.asList(1, 2, 3, 4, 5));
