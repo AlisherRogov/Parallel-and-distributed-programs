@@ -32,7 +32,7 @@ public class StressTestingApp {
 //                .thenCompose(ServerBinding::unbind)
 //                .thenAccept(unbound -> system.terminate()); // and shutdown when done
         ActorSystem system = ActorSystem.create("simpple-test");
-        ActorMaterializer materializer = ActorMaterializer.create( system);
+        ActorMaterializer materializer = ActorMaterializer.create(system);
         Source<Integer, Cancellable> source = Source.tick(
              FiniteDuration.create( 0, TimeUnit.SECONDS),
                 FiniteDuration.create( 100, TimeUnit.MILLISECONDS), 1);
@@ -43,7 +43,7 @@ public class StressTestingApp {
         RunnableGraph<Pair<Cancellable, CompletionStage<Integer>>> graph =
                 incremented.toMat(fold, Keep.both());// 0
 
-        Pair<Cancellable, CompletionStage<Integer>> run = graph.run( materializer);
+        Pair<Cancellable, CompletionStage<Integer>> run = graph.run(materializer);
         Thread.sleep( 2000);
         run.second().thenAccept( i -> System.out.println("result=" + i));
         run.first().cancel();
