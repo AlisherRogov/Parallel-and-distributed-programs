@@ -15,6 +15,7 @@ import java.io.IOException;
 
 
 import java.net.http.HttpResponse;
+import java.util.Map;
 import java.util.concurrent.CompletionStage;
 
 
@@ -28,7 +29,8 @@ public class StressTestingApp {
        final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = Flow.of(HttpRequest.class)
                .map(request -> {
                        String url = request.getUri().query().get("testURL").orElse("ufc.com");
-                       Int count = Integer.Pa request.getUri().query().get("count").orElse("10").;
+                       Integer count = Integer.parseInt(request.getUri().query().get("count").orElse("10"));
+                       return new Map<String, Integer>(url, count);
                })
 
 
