@@ -23,7 +23,7 @@ public class StressTestingApp {
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
 
-       final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = Flow.of(Http)
+       final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = Flow.of(HttpRequest)
 
 
 
