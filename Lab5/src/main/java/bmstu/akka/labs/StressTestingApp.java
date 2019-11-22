@@ -30,7 +30,7 @@ public class StressTestingApp {
                .map(request -> {
                        String url = request.getUri().query().get("testURL").orElse("ufc.com");
                        Integer count = Integer.parseInt(request.getUri().query().get("count").orElse("10"));
-                       return new Pair<String, Integer>(url, count);
+                       return new Pair<>(url, count);
                })
 
 
