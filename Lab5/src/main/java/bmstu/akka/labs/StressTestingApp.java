@@ -39,7 +39,7 @@ public class StressTestingApp {
 
         Source<Integer, NotUsed> source = Source.from(Arrays.asList(1, 2, 3, 4, 5));
         Flow<Integer, Integer, NotUsed> increment = Flow.of(Integer.class).map(x -> x + 1);
-        Sink<Integer, CompletionStage<Integer>> fold = Sink.fold(0, (agg, next) -ом вответназапроссобытия > agg + next);
+        Sink<Integer, CompletionStage<Integer>> fold = Sink.fold(0, (agg, next) -> agg + next);
 
 
     }
