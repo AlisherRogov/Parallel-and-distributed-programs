@@ -4,6 +4,7 @@ import akka.actor.AbstractActor;
 import akka.japi.pf.ReceiveBuilder;
 import bmstu.akka.labs.Messages.GetTestResult;
 import bmstu.akka.labs.Messages.ResponseTestResult;
+import bmstu.akka.labs.Messages.StoreTestResult;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -23,7 +24,8 @@ public class StorageActor extends AbstractActor {
                     }
                 })
                 .match(StoreTestResult.class, msg -> {
-                    storage.put(msg.)
+                    storage.put(msg.getUrl(), msg.getTime());
                 })
+                .build();
     }
 }
