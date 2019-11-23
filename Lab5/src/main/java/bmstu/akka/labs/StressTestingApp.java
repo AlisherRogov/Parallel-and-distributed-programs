@@ -66,7 +66,7 @@ public class StressTestingApp {
                .map(response -> {
                    if(response.isCounted()) {
                        StoreTestResult storeTestResult = new StoreTestResult(response.getUrl(), response.getTime());
-                       
+                       storeRef
                    }
                })
 
