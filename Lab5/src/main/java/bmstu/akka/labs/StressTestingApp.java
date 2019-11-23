@@ -80,7 +80,7 @@ public class StressTestingApp {
         return Flow.<GetTestResult>create()
                 .mapConcat(msg -> Collections.nCopies(msg.getCount(), msg.getUrl()))
                 .mapAsync(4,  pair -> {
-                    
+                    Lo
                 })
     }
         .
