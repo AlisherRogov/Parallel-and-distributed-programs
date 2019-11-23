@@ -45,7 +45,10 @@ public class StressTestingApp {
                        Patterns.ask(storeRef, pair, Duration.ofMillis(5000))
                                .thenCompose(msg -> {
                                    ResponseTestResult response = (ResponseTestResult) msg;
-                                       }
+                                   if(response.isCounted()) {
+                                       
+                                   }
+                               }
                                        )
 
                }
