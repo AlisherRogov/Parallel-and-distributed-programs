@@ -83,7 +83,7 @@ public class StressTestingApp {
                 .mapConcat(msg -> Collections.nCopies(msg.getCount(), msg.getUrl()))
                 .mapAsync(4,  pair -> {
                     Long startTime = System.currentTimeMillis();
-                    Asssync
+                    AsyncHttpClient
                 })
     }
         .
