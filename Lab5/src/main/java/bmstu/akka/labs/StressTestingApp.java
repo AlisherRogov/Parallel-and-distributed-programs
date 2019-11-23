@@ -18,6 +18,7 @@ import akka.stream.javadsl.Source;
 import bmstu.akka.labs.Actors.StorageActor;
 import bmstu.akka.labs.Messages.GetTestResult;
 import bmstu.akka.labs.Messages.ResponseTestResult;
+import bmstu.akka.labs.Messages.StoreTestResult;
 import org.asynchttpclient.AsyncHttpClient;
 
 import java.io.IOException;
@@ -64,7 +65,7 @@ public class StressTestingApp {
                                }))
                .map(response -> {
                    if(response.isCounted()) {
-                       
+                       StoreTestResult 
                    }
                })
 
