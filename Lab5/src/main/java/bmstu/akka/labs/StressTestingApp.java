@@ -65,7 +65,7 @@ public class StressTestingApp {
 
                                });
                }).map(response -> {
-                   if(response)
+                   if(response.)
                })
 
 
