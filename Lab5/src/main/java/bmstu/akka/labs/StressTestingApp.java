@@ -91,7 +91,8 @@ public class StressTestingApp {
                             .prepareGet(pair)
                             .execute()
                             .toCompletableFuture()
-                            .thenCompose(response -> )
+                            .thenCompose(response ->
+                                    )
                 })
     }
         .
