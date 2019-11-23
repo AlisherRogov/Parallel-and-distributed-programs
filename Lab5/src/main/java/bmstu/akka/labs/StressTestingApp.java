@@ -54,15 +54,16 @@ public class StressTestingApp {
                        Patterns.ask(storeRef, pair, Duration.ofMillis(5000))
                                .thenCompose(msg -> {
                                    ResponseTestResult response = (ResponseTestResult) msg;
-                                   if(response.isCounted()) {
+                                   if (response.isCounted()) {
                                        return CompletableFuture.completedFuture(response);
                                    }
                                    return Source.from(Collections.singleton(pair))
                                            .toMat(testSink(), Keep.right()).run(materializer)
                                            .thenCompose(time -> CompletableFuture.completedFuture(
-                                                   new ResponseTestResult(false, pair.getUrl(), time / pair.getCount()))))
-                   if()
+                                                   new ResponseTestResult(false, pair.getUrl(), time / pair.getCount())));
+                               }); return null;
                })
+               .map()
 
 
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(
