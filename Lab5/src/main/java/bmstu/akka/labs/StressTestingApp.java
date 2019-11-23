@@ -23,6 +23,7 @@ import java.io.IOException;
 
 import java.net.http.HttpResponse;
 import java.time.Duration;
+import java.util.Collection;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
@@ -50,7 +51,7 @@ public class StressTestingApp {
                                    if(response.isCounted()) {
                                        return CompletableFuture.completedFuture(response);
                                    } else {
-                                       Source.from()
+                                       Source.from(Collection
                                    }
                                }
                                        )
