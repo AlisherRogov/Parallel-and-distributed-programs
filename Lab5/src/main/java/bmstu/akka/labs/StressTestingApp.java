@@ -52,11 +52,11 @@ public class StressTestingApp {
                                    ResponseTestResult response = (ResponseTestResult) msg;
                                    if(response.isCounted()) {
                                        return CompletableFuture.completedFuture(response);
-                                   } else {
-                                       Source.from(Collections.singleton(pair))
-                                               .toMat(, Keep.right()).run(materializer)
-                                               .thenCompose()
                                    }
+                                   Source.from(Collections.singleton(pair))
+                                           .toMat(, Keep.right()).run(materializer)
+                                           .thenCompose()
+
                                }
                                        )
 
