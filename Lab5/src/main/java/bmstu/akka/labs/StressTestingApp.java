@@ -76,9 +76,9 @@ public class StressTestingApp {
 
     }
 
-    static Sink<ResponseTestResult, CompletionStage<Long>> testSink() {
+    static Sink<GetTestResult, CompletionStage<Long>> testSink() {
         return Flow.<ResponseTestResult>create()
-                .mapConcat(msg -> Collections.nCopies())
+                .mapConcat(msg -> Collections.nCopies(msg.))
     }
         .
 }
