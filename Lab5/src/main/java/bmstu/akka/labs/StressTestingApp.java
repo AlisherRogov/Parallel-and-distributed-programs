@@ -52,7 +52,7 @@ public class StressTestingApp {
                                    if(response.isCounted()) {
                                        return CompletableFuture.completedFuture(response);
                                    } else {
-                                       Source.from(Collections
+                                       Source.from(Collections.singleton()
                                    }
                                }
                                        )
