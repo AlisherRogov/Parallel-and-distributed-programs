@@ -68,6 +68,7 @@ public class StressTestingApp {
                        StoreTestResult storeTestResult = new StoreTestResult(response.getUrl(), response.getTime());
                        storeRef.tell(storeTestResult, ActorRef.noSender());
                    }
+                   return HttpResponse
                })
 
 
