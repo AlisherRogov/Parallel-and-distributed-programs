@@ -93,7 +93,7 @@ public class StressTestingApp {
                             .toCompletableFuture()
                             .thenCompose(response ->
                                     CompletableFuture.completedFuture(System.currentTimeMillis() - startTime));
-                }).toMat(Sink.fold)
+                }).toMat(Sink.fold())
     }
         .
 }
