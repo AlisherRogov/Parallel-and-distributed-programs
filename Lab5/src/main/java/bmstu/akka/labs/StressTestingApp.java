@@ -53,7 +53,7 @@ public class StressTestingApp {
                                        return CompletableFuture.completedFuture(response);
                                    } else {
                                        Source.from(Collections.singleton(pair))
-                                               .toMat(testSink, Keep)
+                                               .toMat(testSink, Keep.right)
                                    }
                                }
                                        )
