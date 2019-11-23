@@ -51,7 +51,7 @@ public class StressTestingApp {
                        return new GetTestResult(url, count);
                })
                .mapAsync(4, pair ->
-                       Patterns.ask(storeRef, pair, Duration.ofMillis(5000))    
+                       Patterns.ask(storeRef, pair, Duration.ofMillis(5000))
                                .thenCompose(msg -> {
                                    ResponseTestResult response = (ResponseTestResult) msg;
                                    if (response.isCounted()) {
@@ -61,8 +61,7 @@ public class StressTestingApp {
                                            .toMat(testSink(), Keep.right()).run(materializer)
                                            .thenCompose(time -> CompletableFuture.completedFuture(
                                                    new ResponseTestResult(false, pair.getUrl(), time / pair.getCount())));
-                               })
-               })
+                               }))
                .map()
 
 
