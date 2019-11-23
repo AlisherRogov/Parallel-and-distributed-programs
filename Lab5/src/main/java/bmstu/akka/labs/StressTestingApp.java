@@ -76,5 +76,5 @@ public class StressTestingApp {
 
     }
 
-    static Sink<ResponseTestResult,>
+    static Sink<ResponseTestResult, CompletionStage<>>
 }
