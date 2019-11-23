@@ -86,7 +86,7 @@ public class StressTestingApp {
     }
 
 
-    static Sink<GetTestResult, CompletionStage<Long>> testSink() {
+    static final Sink<GetTestResult, CompletionStage<Long>> testSink() {
         return Flow.<GetTestResult>create()
                 .mapConcat(msg -> Collections.nCopies(msg.getCount(), msg.getUrl()))
                 .mapAsync(4,  pair -> {
