@@ -87,6 +87,7 @@ public class StressTestingApp {
                 .mapAsync(4,  pair -> {
                     Long startTime = System.currentTimeMillis();
                     AsyncHttpClient asyncHttpClient = asyncHttpClient();
+                    return 
                 })
     }
         .
