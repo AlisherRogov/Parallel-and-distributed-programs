@@ -77,7 +77,7 @@ public class StressTestingApp {
     }
 
     static Sink<ResponseTestResult, CompletionStage<Long>> testSink() {
-        return Flow.<ResponseTestResult>
+        return Flow.<ResponseTestResult>create()
     }
         .
 }
