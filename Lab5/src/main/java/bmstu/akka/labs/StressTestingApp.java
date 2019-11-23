@@ -92,7 +92,7 @@ public class StressTestingApp {
                             .execute()
                             .toCompletableFuture()
                             .thenCompose(response ->
-                                    CompletableFuture.completedFuture(System.currentTimeMillis()))
+                                    CompletableFuture.completedFuture(System.currentTimeMillis() - startTime));
                 })
     }
         .
