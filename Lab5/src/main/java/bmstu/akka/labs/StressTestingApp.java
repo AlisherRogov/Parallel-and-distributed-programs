@@ -12,6 +12,7 @@ import akka.http.javadsl.ServerBinding;
 import akka.pattern.Patterns;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
+import akka.stream.javadsl.Keep;
 import akka.stream.javadsl.Source;
 import bmstu.akka.labs.Actors.StorageActor;
 import bmstu.akka.labs.Messages.GetTestResult;
