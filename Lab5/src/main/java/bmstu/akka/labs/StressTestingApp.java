@@ -55,7 +55,7 @@ public class StressTestingApp {
                                    } else {
                                        Source.from(Collections.singleton(pair))
                                                .toMat(testSink, Keep.right()).run(materializer)
-                                               .then
+                                               .thenCompose
                                    }
                                }
                                        )
