@@ -63,10 +63,8 @@ public class StressTestingApp {
                                                    new ResponseTestResult(false, pair.getUrl(), time / pair.getCount())
                                            ));
 
-                               })
-
-
-               }
+                               });
+               }).map     
 
 
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(
