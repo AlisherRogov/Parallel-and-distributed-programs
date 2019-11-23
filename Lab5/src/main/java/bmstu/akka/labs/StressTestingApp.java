@@ -18,6 +18,7 @@ import akka.stream.javadsl.Source;
 import bmstu.akka.labs.Actors.StorageActor;
 import bmstu.akka.labs.Messages.GetTestResult;
 import bmstu.akka.labs.Messages.ResponseTestResult;
+import org.asynchttpclient.AsyncHttpClient;
 
 import java.io.IOException;
 
@@ -82,7 +83,7 @@ public class StressTestingApp {
                 .mapConcat(msg -> Collections.nCopies(msg.getCount(), msg.getUrl()))
                 .mapAsync(4,  pair -> {
                     Long startTime = System.currentTimeMillis();
-                    return As
+                    return AsyncHttpClient
                 })
     }
         .
