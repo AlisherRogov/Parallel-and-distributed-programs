@@ -65,7 +65,7 @@ public class StressTestingApp {
                                }))
                .map(response -> {
                    if(response.isCounted()) {
-                       StoreTestResult 
+                       StoreTestResult storeTestResult
                    }
                })
 
