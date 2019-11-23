@@ -90,6 +90,7 @@ public class StressTestingApp {
                     return asyncHttpClient
                             .prepareGet(pair)
                             .execute()
+                            .toCompletableFuture()
                             .
                 })
     }
