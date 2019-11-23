@@ -43,7 +43,8 @@ public class StressTestingApp {
                })
                .mapAsync(4, pair -> {
                        Patterns.ask(storeRef, pair, Duration.ofMillis(5000))
-                               .thenCompose()
+                               .thenCompose(msg ->
+                                       )
 
                }
 
