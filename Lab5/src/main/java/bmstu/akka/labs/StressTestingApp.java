@@ -47,7 +47,7 @@ public class StressTestingApp {
                                .thenCompose(msg -> {
                                    ResponseTestResult response = (ResponseTestResult) msg;
                                    if(response.isCounted()) {
-                                       return CompletableFuture.completedFuture()
+                                       return CompletableFuture.completedFuture(response);
                                    }
                                }
                                        )
