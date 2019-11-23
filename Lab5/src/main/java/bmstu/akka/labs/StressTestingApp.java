@@ -57,14 +57,14 @@ public class StressTestingApp {
                                    if(response.isCounted()) {
                                        return CompletableFuture.completedFuture(response);
                                    }
-                                   Source.from(Collections.singleton(pair))
+                                   return Source.from(Collections.singleton(pair))
                                            .toMat(testSink(), Keep.right()).run(materializer)
                                            .thenCompose(time -> CompletableFuture.completedFuture(
                                                    new ResponseTestResult(false, pair.getUrl(), time / pair.getCount())
-                                           ))
+                                           ));
 
-                               }
-                                       )
+                               })
+                               .map
 
                }
 
