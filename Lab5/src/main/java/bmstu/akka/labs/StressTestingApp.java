@@ -12,6 +12,7 @@ import akka.http.javadsl.ServerBinding;
 import akka.pattern.Patterns;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
+import akka.stream.javadsl.Source;
 import bmstu.akka.labs.Actors.StorageActor;
 import bmstu.akka.labs.Messages.GetTestResult;
 import bmstu.akka.labs.Messages.ResponseTestResult;
@@ -49,7 +50,7 @@ public class StressTestingApp {
                                    if(response.isCounted()) {
                                        return CompletableFuture.completedFuture(response);
                                    } else {
-                                       
+                                       Source.from()
                                    }
                                }
                                        )
