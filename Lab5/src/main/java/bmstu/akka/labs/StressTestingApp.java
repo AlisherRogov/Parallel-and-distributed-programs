@@ -63,7 +63,7 @@ public class StressTestingApp {
                                                    new ResponseTestResult(false, pair.getUrl(), time / pair.getCount())));
                                }))
                .map(response -> {
-                   if()
+                   if(response.isCounted())
                })
 
 
