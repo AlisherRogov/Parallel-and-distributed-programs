@@ -68,7 +68,7 @@ public class StressTestingApp {
                        StoreTestResult storeTestResult = new StoreTestResult(response.getUrl(), response.getTime());
                        storeRef.tell(storeTestResult, ActorRef.noSender());
                    }
-                   return akka.http.javadsl.model.HttpResponse.create().withStatus()t
+                   return akka.http.javadsl.model.HttpResponse.create().withStatus()
                })
 
 
