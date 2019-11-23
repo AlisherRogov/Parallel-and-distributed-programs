@@ -22,6 +22,7 @@ import bmstu.akka.labs.Messages.ResponseTestResult;
 import java.io.IOException;
 
 
+import java.net.http.HttpClient;
 import java.net.http.HttpResponse;
 import java.time.Duration;
 import java.util.Collection;
@@ -81,7 +82,7 @@ public class StressTestingApp {
                 .mapConcat(msg -> Collections.nCopies(msg.getCount(), msg.getUrl()))
                 .mapAsync(4,  pair -> {
                     Long startTime = System.currentTimeMillis();
-                    return Http
+                    return HttpClient
                 })
     }
         .
