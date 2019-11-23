@@ -88,7 +88,7 @@ public class StressTestingApp {
                     Long startTime = System.currentTimeMillis();
                     AsyncHttpClient asyncHttpClient = asyncHttpClient();
                     return asyncHttpClient
-                            .prepareGet()
+                            .prepareGet(pair)
                 })
     }
         .
