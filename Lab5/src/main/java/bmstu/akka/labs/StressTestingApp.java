@@ -17,7 +17,6 @@ import akka.stream.javadsl.Source;
 import bmstu.akka.labs.Actors.StorageActor;
 import bmstu.akka.labs.Messages.GetTestResult;
 import bmstu.akka.labs.Messages.ResponseTestResult;
-import jdk.internal.util.xml.impl.Pair;
 
 import java.io.IOException;
 
