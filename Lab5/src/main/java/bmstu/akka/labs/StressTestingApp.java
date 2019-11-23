@@ -52,13 +52,13 @@ public class StressTestingApp {
                                    if (response.isCounted()) {
                                        return CompletableFuture.completedFuture(response);
                                    }
-                                   return Source.from(Collections.singleton(pair))
+                                   return Source.from(Collections.singletonList(pair))
                                            .toMat(testSink(), Keep.right()).run(materializer)
                                            .thenCompose(time -> CompletableFuture.completedFuture(
                                                    new ResponseTestResult(false, pair.getUrl(), time / pair.getCount())));
                                }))
                .map(response -> {
-                   if(response.isCounted()) {
+                   if(!response.isCounted()) {
                        StoreTestResult storeTestResult = new StoreTestResult(response.getUrl(), response.getTime());
                        storeRef.tell(storeTestResult, ActorRef.noSender());
                    }
