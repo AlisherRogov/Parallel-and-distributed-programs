@@ -54,8 +54,8 @@ public class StressTestingApp {
                                        return CompletableFuture.completedFuture(response);
                                    } else {
                                        Source.from(Collections.singleton(pair))
-                                               .toMat(testSink, Keep.right()).run(materializer)
-                                               .thenCompose
+                                               .toMat(, Keep.right()).run(materializer)
+                                               .thenCompose()
                                    }
                                }
                                        )
