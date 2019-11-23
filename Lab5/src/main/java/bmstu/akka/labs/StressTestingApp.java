@@ -48,6 +48,8 @@ public class StressTestingApp {
                                    ResponseTestResult response = (ResponseTestResult) msg;
                                    if(response.isCounted()) {
                                        return CompletableFuture.completedFuture(response);
+                                   } else {
+                                       
                                    }
                                }
                                        )
