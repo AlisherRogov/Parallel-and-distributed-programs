@@ -69,7 +69,7 @@ public class StressTestingApp {
                        storeRef.tell(storeTestResult, ActorRef.noSender());
                    }
                    return akka.http.javadsl.model.HttpResponse.create().withStatus(200).withEntity(response.getTime() + "ms");
-               })
+               });
 
 
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(
