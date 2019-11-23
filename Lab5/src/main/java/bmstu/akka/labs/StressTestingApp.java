@@ -59,7 +59,9 @@ public class StressTestingApp {
                                    }
                                    Source.from(Collections.singleton(pair))
                                            .toMat(testSink(), Keep.right()).run(materializer)
-                                           .thenCompose(time -> CompletableFuture.completedFuture())
+                                           .thenCompose(time -> CompletableFuture.completedFuture(
+                                                   new ResponseTestResult()
+                                           ))
 
                                }
                                        )
