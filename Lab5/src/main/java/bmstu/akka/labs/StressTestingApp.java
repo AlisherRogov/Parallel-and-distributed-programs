@@ -89,6 +89,8 @@ public class StressTestingApp {
                     AsyncHttpClient asyncHttpClient = asyncHttpClient();
                     return asyncHttpClient
                             .prepareGet(pair)
+                            .execute()
+                            .
                 })
     }
         .
