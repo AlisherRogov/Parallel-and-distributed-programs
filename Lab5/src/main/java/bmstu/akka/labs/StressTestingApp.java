@@ -64,7 +64,7 @@ public class StressTestingApp {
                                            ));
 
                                });
-               }).map(response)
+               }).map(response ->)
 
 
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(
