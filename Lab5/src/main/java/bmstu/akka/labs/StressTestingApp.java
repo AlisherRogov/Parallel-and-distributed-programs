@@ -62,7 +62,7 @@ public class StressTestingApp {
                                            .thenCompose(time -> CompletableFuture.completedFuture(
                                                    new ResponseTestResult(false, pair.getUrl(), time / pair.getCount())));
                                }))
-               .map()
+               .map(response -> )
 
 
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(
