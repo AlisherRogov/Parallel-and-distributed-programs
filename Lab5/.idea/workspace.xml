@@ -45,7 +45,6 @@
   <component name="RunManager">
     <configuration name="StressTestingApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="$USER_HOME$/jdk1.8.0_181" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="bmstu.akka.labs.StressTestingApp" />
       <module name="Lab5" />
       <extension name="coverage">
