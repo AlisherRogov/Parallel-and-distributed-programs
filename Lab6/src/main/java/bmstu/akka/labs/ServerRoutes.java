@@ -53,6 +53,7 @@ public class ServerRoutes {
        FutureConverters.toJava( Patterns.ask(storeActor, new GetMessage(), 5000))
                .thenApply(o -> (ResponseMessage)o)
                .thenCompose(msg -> requestUrl(getUri(msg.getAddress())
-                       .query(Query.create(Pair.create("url", url), Pair.create(("count", Integer.toString(count - 1))))).toString()_
+                       .query(Query.create(Pair.create("url", url), Pair.create(("count", Integer.toString(count - 1)))))
+                       .toString()_
     }
 }
