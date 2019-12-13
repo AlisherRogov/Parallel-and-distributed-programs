@@ -25,7 +25,7 @@ public class PseudoAnonymizationApp {
 
         String zkAddress = args[0];
         String hostAddress = args[1];
-        Uri hostUri
+        Uri hostUri = getUri
 
 
         final ServersHandler serversHandler = new ServersHandler(zkAddress, storeActor, )
