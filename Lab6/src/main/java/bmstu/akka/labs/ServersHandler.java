@@ -4,6 +4,7 @@ import akka.actor.ActorRef;
 import org.apache.zookeeper.*;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class ServersHandler {
     private final String ROOT_PATH = "/servers";
@@ -33,6 +34,6 @@ public class ServersHandler {
     }
 
     private void watchNodes() {
-        String[] addresses = Objects. 
+        String[] addresses = Objects.requireNonNull()
     }
 }
