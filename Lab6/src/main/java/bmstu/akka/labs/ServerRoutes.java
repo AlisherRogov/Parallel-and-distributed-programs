@@ -55,6 +55,5 @@ public class ServerRoutes {
                .thenCompose(msg -> requestUrl(getUri(msg.getAddress())
                        .query(Query.create(Pair.create("url", url), Pair.create(("count", Integer.toString(count - 1)))))
                        .toString());
-
     }
 }
