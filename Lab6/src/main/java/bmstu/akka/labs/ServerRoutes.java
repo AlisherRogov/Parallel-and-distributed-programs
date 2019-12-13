@@ -2,6 +2,7 @@ package bmstu.akka.labs;
 
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
+import akka.http.javadsl.Http;
 import akka.http.javadsl.server.Route;
 ;import java.net.http.HttpResponse;
 import java.util.concurrent.CompletionStage;
@@ -30,7 +31,7 @@ public class ServerRoutes {
         )
     }
 
-    private static CompletionStage<HttpResponse> requestUrl () {
-        return Http.
+    private CompletionStage<HttpResponse> requestUrl () {
+        return Http.get(system)
     }
 }
