@@ -70,7 +70,7 @@ public class ServersHandler {
     public void terminate() {
         try {
             zoo.close();
-        } catch (KeeperException | InterruptedException e) {
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
