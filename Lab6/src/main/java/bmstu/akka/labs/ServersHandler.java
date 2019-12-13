@@ -4,6 +4,7 @@ import akka.actor.ActorRef;
 import org.apache.zookeeper.*;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -44,5 +45,6 @@ public class ServersHandler {
         } catch (KeeperException | InterruptedException e) {
             e.printStackTrace();
         }
+        return new ArrayList<>()
     }
 }
