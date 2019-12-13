@@ -10,6 +10,7 @@ public class PseudoAnonymizationApp {
     public static void main (String[] args) {
         ActorSystem system = ActorSystem.create("anonymizer");
         ActorRef storeActor = system.actorOf(Props.create(StoreActor.class));
-        final ActorMaterializer materializer = ActorMaterializer
+        final ActorMaterializer materializer = ActorMaterializer.create(system);
+        
     }
 }
