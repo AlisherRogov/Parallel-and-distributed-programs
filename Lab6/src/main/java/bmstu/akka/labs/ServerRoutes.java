@@ -9,6 +9,7 @@ import akka.http.javadsl.server.Route;
 import akka.pattern.Patterns;
 import akka.pattern.Patterns$;
 import bmstu.akka.labs.Messages.GetMessage;
+import bmstu.akka.labs.Messages.ResponseMessage;
 import scala.compat.java8.FutureConverters;
 ;
 import java.util.concurrent.CompletionStage;
@@ -43,7 +44,7 @@ public class ServerRoutes {
 
     private CompletionStage<HttpResponse> redirectRequest(String url, int count) {
        FutureConverters.toJava( Patterns.ask(storeActor, new GetMessage(), 5000))
-               .thenApply(o -> )
+               .thenApply(o -> (ResponseMessage)o)
                .
     }
 }
