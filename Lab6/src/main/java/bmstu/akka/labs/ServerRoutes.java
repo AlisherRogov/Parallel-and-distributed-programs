@@ -16,7 +16,7 @@ public class ServerRoutes {
 
     public Route getRoutes() {
         return route (
-                get(() -> parameter("url"))
+                get(() -> parameter("url", ))
         )
     }
 }
