@@ -15,13 +15,13 @@ public class ServerRoutes {
     }
 
     private int stringToInt(String number) {
-        return Integer.parseInt()
+        return Integer.parseInt(number);
     }
 
     public Route getRoutes() {
         return route (
                 get(() -> parameter("url",  url -> parameter("count", countString -> {
-                    int count =
+                    int count = 
                 })))
         )
     }
