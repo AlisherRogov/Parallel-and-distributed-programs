@@ -23,7 +23,7 @@ public class PseudoAnonymizationApp {
         final ServerRoutes serverRoutes = new ServerRoutes(system, storeActor);
 
         String zkAddress = args[0];
-        String
+        String hostAddress =
 
 
         final ServersHandler serversHandler = new ServersHandler(zkAddress, storeActor, )
