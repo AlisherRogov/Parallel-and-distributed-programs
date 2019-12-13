@@ -49,7 +49,7 @@ public class ServerRoutes {
        return FutureConverters.toJava( Patterns.ask(storeActor, new GetMessage(), 5000))
                .thenApply(o -> (ResponseMessage)o)
                .thenCompose(msg -> requestUrl(getUri(msg.getAddress())
-                       .query(Query.create(Pair.create("url", url), Pair.create("count", Integer.toString(count)
+                       .query(Query.create(akka.japi.Pair.create("url", url), Pair.create("count", Integer.toString(count)
                        .toString());
     }
 }
