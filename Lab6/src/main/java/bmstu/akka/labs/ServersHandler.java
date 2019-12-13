@@ -20,6 +20,6 @@ public class ServersHandler {
 
     private void watchConnections(WatchedEvent event) {
         if(event.getState() == Watcher.Event.KeeperState.Expired ||
-                event.getState() = Watcher.Event.KeeperState.)
+                event.getState() = Watcher.Event.KeeperState.Disconnected)
     }
 }
