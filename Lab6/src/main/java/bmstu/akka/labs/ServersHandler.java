@@ -8,5 +8,5 @@ public class ServersHandler {
     private final ActorRef storeactor;
     private ZooKeeper zoo;
 
-    
+    public ServersHandler()
 }
