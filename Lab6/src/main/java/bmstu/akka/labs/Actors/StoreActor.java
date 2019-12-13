@@ -16,7 +16,9 @@ public class StoreActor extends AbstractActor {
         this.random = new Random();
     }
 
-    private getRandomAddress
+    private getRandomAddress() {
+        
+    }
 
     @Override
     public Receive createReceive() {
