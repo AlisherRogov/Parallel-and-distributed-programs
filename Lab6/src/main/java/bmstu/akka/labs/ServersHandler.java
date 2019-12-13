@@ -41,6 +41,6 @@ public class ServersHandler {
     private List<String> getChildren() {
         try {
             return  zoo.getChildren(ROOT_PATH, this::watchConnections);
-        }
+        } catch ()
     }
 }
