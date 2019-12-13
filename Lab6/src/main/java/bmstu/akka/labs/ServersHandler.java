@@ -42,7 +42,7 @@ public class ServersHandler {
                 .map(Optional::ofNullable)
                 .filter(Optional::isPresent)
                 .map(Optional::get)
-                .map()
+                .map(this::)
     }
 
     private List<String> getChildren() {
