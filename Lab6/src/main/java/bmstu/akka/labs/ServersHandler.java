@@ -13,7 +13,7 @@ public class ServersHandler {
     private final ActorRef storeActor;
     private ZooKeeper zoo;
 
-    public ServersHandler(String zkAddress, ActorRef storeActor, String address) throws IOException,  {
+    public ServersHandler(String zkAddress, ActorRef storeActor, String address) throws IOException, InterruptedException, KeeperException {
         this.zkAddress = zkAddress;
         this.storeActor = storeActor;
         zoo  = new ZooKeeper(zkAddress, 5000, this::watchConnections);
