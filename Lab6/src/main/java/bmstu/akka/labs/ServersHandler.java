@@ -1,6 +1,7 @@
 package bmstu.akka.labs;
 
 import akka.actor.ActorRef;
+import bmstu.akka.labs.Messages.StoreMessage;
 import org.apache.zookeeper.*;
 
 import java.io.IOException;
@@ -45,7 +46,7 @@ public class ServersHandler {
                 .map(this::getNodeData)
                 .map(String::new)
                 .toArray(String[]::new);
-        storeActor.tell();
+        storeActor.tell(new StoreMessage());
     }
 
     private List<String> getChildren() {
