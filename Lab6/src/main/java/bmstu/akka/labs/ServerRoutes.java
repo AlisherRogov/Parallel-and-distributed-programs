@@ -15,7 +15,7 @@ public class ServerRoutes {
     }
 
     private int stringToInt(String number) {
-        return 
+        return Integer.ParseInt
     }
 
     public Route getRoutes() {
