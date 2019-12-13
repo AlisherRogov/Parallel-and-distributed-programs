@@ -1,6 +1,7 @@
 package bmstu.akka.labs;
 
 import akka.actor.ActorRef;
+import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;
 import org.apache.zookeeper.ZooKeeper;
@@ -19,7 +20,7 @@ public class ServersHandler {
         this.zkAddress = zkAddress;
         this.storeActor = storeActor;
         zoo  = new ZooKeeper(zkAddress, 5000, this::watchConnections);
-        zoo.create(NODE_PATH, address, )
+        zoo.create(NODE_PATH, address, CreateMode.)
     }
 
     private void watchConnections(WatchedEvent event) {
