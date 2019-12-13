@@ -27,5 +27,5 @@ public class ServerRoutes {
         )
     }
 
-    private 
+    private static 
 }
