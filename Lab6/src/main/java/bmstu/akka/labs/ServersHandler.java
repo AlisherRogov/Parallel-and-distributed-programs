@@ -15,14 +15,14 @@ public class ServersHandler {
     public ServersHandler(String zkAddress, ActorRef storeActor, String address) throws IOException {
         this.zkAddress = zkAddress;
         this.storeActor = storeActor;
-        zoo  = new ZooKeeper(zkAddress, 5000, this);
+        zoo  = new ZooKeeper(zkAddress, 5000, this::watchConnections);
     }
 
     private void watchConnections(WatchedEvent event) {
         if(event.getState() == Watcher.Event.KeeperState.Expired ||
                 event.getState() == Watcher.Event.KeeperState.Disconnected) {
             try {
-                zoo  = new ZooKeeper(zkAddress, 5000, this);
+                zoo  = new ZooKeeper(zkAddress, 5000, this::watchConnections);
             }
         }
     }
