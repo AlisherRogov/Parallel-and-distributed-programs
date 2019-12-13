@@ -40,7 +40,8 @@ public class ServersHandler {
         String[] addresses = Objects.requireNonNull(getChildren())
                 .stream()
                 .map(Optional::ofNullable)
-                .filter()
+                .filter(Optional::isPresent)
+                .
     }
 
     private List<String> getChildren() {
