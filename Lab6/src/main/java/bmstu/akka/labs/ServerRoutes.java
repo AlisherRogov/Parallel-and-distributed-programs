@@ -32,7 +32,7 @@ public class ServerRoutes {
         )
     }
 
-    private CompletionStage<HttpResponse> requestUrl () {
-        return Http.get(system).singleRequest(HttpRequest.create())
+    private CompletionStage<HttpResponse> requestUrl (String url) {
+        return Http.get(system).singleRequest(HttpRequest.create(url));
     }
 }
