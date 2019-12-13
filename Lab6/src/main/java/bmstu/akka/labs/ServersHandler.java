@@ -42,7 +42,8 @@ public class ServersHandler {
                 .map(Optional::ofNullable)
                 .filter(Optional::isPresent)
                 .map(Optional::get)
-                .map(this::)
+                .map(this::getNodeData)
+                .
     }
 
     private List<String> getChildren() {
