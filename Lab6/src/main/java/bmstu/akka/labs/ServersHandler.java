@@ -11,6 +11,6 @@ public class ServersHandler {
     public ServersHandler(String zkAddress, ActorRef storeActor, String address) {
         this.zkAddress = zkAddress;
         this.storeActor = storeActor;
-        zoo  = new ZooKeeper()
+        zoo  = new ZooKeeper(zkAddress, )
     }
 }
