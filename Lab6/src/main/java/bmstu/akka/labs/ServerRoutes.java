@@ -21,7 +21,7 @@ public class ServerRoutes {
     public Route getRoutes() {
         return route (
                 get(() -> parameter("url",  url -> parameter("count", countString -> {
-                    int count = 
+                    int count = stringToInt()
                 })))
         )
     }
