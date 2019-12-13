@@ -30,5 +30,5 @@ public class ServerRoutes {
         )
     }
 
-    private static CompletionStage<HttpResponse> requestUrl 
+    private static CompletionStage<HttpResponse> requestUrl ()
 }
