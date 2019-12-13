@@ -38,6 +38,7 @@ public class ServersHandler {
     private void watchNodes() {
         String[] addresses = Objects.requireNonNull(getChildren())
                 .stream()
+                .map
     }
 
     private List<String> getChildren() {
