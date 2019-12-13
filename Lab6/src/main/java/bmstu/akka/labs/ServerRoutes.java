@@ -27,5 +27,5 @@ public class ServerRoutes {
         )
     }
 
-    private static Complet
+    private static Completion
 }
