@@ -8,5 +8,7 @@ public class ServersHandler {
     private final ActorRef storeActor;
     private ZooKeeper zoo;
 
-    public ServersHandler(String zkAddress, ActorRef storeActor, String address)
+    public ServersHandler(String zkAddress, ActorRef storeActor, String address) {
+        
+    }
 }
