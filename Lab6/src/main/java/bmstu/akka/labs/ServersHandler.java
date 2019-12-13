@@ -60,6 +60,6 @@ public class ServersHandler {
         } catch (KeeperException | InterruptedException e) {
             e.printStackTrace();
         }
-        return 
+        return new byte[0];
     }
 }
