@@ -38,6 +38,6 @@ public class ServerRoutes {
     }
 
     private CompletionStage<HttpResponse> redirectRequest(String url, int count) {
-        
+
     }
 }
