@@ -17,7 +17,7 @@ public class StoreActor extends AbstractActor {
     }
 
     private getRandomAddress() {
-        
+
     }
 
     @Override
