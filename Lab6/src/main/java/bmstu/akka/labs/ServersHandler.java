@@ -8,6 +8,9 @@ import org.apache.zookeeper.ZooKeeper;
 import java.io.IOException;
 
 public class ServersHandler {
+    private final String ROOT_PATH = "/servers";
+    private final String NODE_PATH = ROOT_PATH + "/s";
+
     private final String zkAddress;
     private final ActorRef storeActor;
     private ZooKeeper zoo;
