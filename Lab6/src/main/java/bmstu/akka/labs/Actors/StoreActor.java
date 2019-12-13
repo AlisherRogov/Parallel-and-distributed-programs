@@ -11,4 +11,6 @@ public class StoreActor extends AbstractActor {
     public StoreActor() {
         this.random = new Random();
     }
+
+    
 }
