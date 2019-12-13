@@ -36,7 +36,7 @@ public class ServersHandler {
     }
 
     private void watchNodes() {
-        String[] addresses = Objects.requireNonNull()
+        String[] addresses = Objects.requireNonNull(getChildren())
     }
 
     private List<String> getChildren() {
@@ -45,6 +45,6 @@ public class ServersHandler {
         } catch (KeeperException | InterruptedException e) {
             e.printStackTrace();
         }
-        return new ArrayList<>()
+        return new ArrayList<>();
     }
 }
