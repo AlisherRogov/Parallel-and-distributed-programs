@@ -42,7 +42,8 @@ public class ServerRoutes {
     }
 
     private CompletionStage<HttpResponse> redirectRequest(String url, int count) {
-       FutureConverters.toJava( Patterns.ask(storeActor, new GetMessage(), 5000)).thenApply()
+       FutureConverters.toJava( Patterns.ask(storeActor, new GetMessage(), 5000))
+               .thenApply()
                .
     }
 }
