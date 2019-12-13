@@ -4,4 +4,6 @@ import akka.actor.AbstractActor;
 
 public class StoreActor extends AbstractActor {
     private String[] addresses;
+
+    public 
 }
