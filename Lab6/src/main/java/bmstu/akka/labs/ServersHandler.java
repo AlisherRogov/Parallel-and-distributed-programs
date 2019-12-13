@@ -16,5 +16,5 @@ public class ServersHandler {
         zoo  = new ZooKeeper(zkAddress, 5000, this);
     }
 
-    private void watchConnections
+    private void watchConnections()
 }
