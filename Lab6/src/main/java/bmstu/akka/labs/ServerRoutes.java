@@ -5,6 +5,7 @@ import akka.actor.ActorSystem;
 import akka.http.javadsl.Http;
 import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
+import akka.http.javadsl.model.Uri;
 import akka.http.javadsl.server.Route;
 import akka.pattern.Patterns;
 import akka.pattern.Patterns$;
@@ -25,7 +26,7 @@ public class ServerRoutes {
         this.storeActor = storeActor;
     }
 
-    private 
+    private Uri
 
     private static int stringToInt(String number) {
         return Integer.parseInt(number);
