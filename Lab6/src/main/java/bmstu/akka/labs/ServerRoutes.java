@@ -32,6 +32,6 @@ public class ServerRoutes {
     }
 
     private CompletionStage<HttpResponse> requestUrl () {
-        return Http.get(system)
+        return Http.get(system).single
     }
 }
