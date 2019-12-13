@@ -1,5 +1,6 @@
 package bmstu.akka.labs;
 
+import akka.NotUsed;
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.actor.Props;
@@ -15,6 +16,6 @@ public class PseudoAnonymizationApp {
         ActorSystem system = ActorSystem.create("anonymizer");
         ActorRef storeActor = system.actorOf(Props.create(StoreActor.class));
         final ActorMaterializer materializer = ActorMaterializer.create(system);
-        final Flow<HttpRequest, HttpResponse>
+        final Flow<HttpRequest, HttpResponse, NotUsed>
     }
 }
