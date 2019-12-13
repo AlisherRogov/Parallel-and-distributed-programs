@@ -16,7 +16,7 @@ public class ServersHandler {
         this.zkAddress = zkAddress;
         this.storeActor = storeActor;
         zoo  = new ZooKeeper(zkAddress, 5000, this::watchConnections);
-        
+        zoo.create()
     }
 
     private void watchConnections(WatchedEvent event) {
