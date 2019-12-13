@@ -9,6 +9,7 @@ public class ServersHandler {
     private ZooKeeper zoo;
 
     public ServersHandler(String zkAddress, ActorRef storeActor, String address) {
+        this.zkAddress = zkAddress;
         
     }
 }
