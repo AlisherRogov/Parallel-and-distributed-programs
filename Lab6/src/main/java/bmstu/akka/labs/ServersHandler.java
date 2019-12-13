@@ -42,7 +42,7 @@ public class ServersHandler {
         try {
             return  zoo.getChildren(ROOT_PATH, this::watchConnections);
         } catch (KeeperException | InterruptedException e) {
-            
+            e.printStackTrace();
         }
     }
 }
