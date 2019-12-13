@@ -57,6 +57,8 @@ public class ServersHandler {
     private byte[] getNodeData(String server) {
         try {
             return zoo.getData(ROOT_PATH + '/' + server, false, null);
-        } catch ()
+        } catch (KeeperException | InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
