@@ -6,5 +6,7 @@ import org.apache.zookeeper.ZooKeeper;
 public class ServersHandler {
     private final String zkAddress;
     private final ActorRef storeactor;
-    private ZooKeeper
+    private ZooKeeper zoo;
+
+    
 }
