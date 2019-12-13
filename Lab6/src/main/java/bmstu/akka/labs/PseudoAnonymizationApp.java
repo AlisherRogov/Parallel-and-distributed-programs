@@ -11,6 +11,8 @@ import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 import bmstu.akka.labs.Actors.StoreActor;
 
+import java.util.concurrent.CompletionStage;
+
 public class PseudoAnonymizationApp {
     public static void main (String[] args) {
         ActorSystem system = ActorSystem.create("anonymizer");
@@ -21,7 +23,7 @@ public class PseudoAnonymizationApp {
                 .getRoutes()
                 .flow(system, materializer);
 
-        final CompletionStage<ServerBinding> binding = http.bindAndHandle(
+        final CompletionStage<ServerBinding> binding = .bindAndHandle(
                 routeFlow,
                 ConnectHttp.toHost(HOST, PORT),
                 materializer
