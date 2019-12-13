@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 public class ServersHandler {
     private final String ROOT_PATH = "/servers";
@@ -38,7 +39,7 @@ public class ServersHandler {
     private void watchNodes() {
         String[] addresses = Objects.requireNonNull(getChildren())
                 .stream()
-                .map(Optional)
+                .map(Optional::ofNullable)
     }
 
     private List<String> getChildren() {
