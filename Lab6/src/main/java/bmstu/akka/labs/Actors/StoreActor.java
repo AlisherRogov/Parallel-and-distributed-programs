@@ -1,6 +1,7 @@
 package bmstu.akka.labs.Actors;
 
 import akka.actor.AbstractActor;
+import akka.japi.pf.ReceiveBuilder;
 
 import java.util.Random;
 
@@ -14,6 +15,6 @@ public class StoreActor extends AbstractActor {
 
     @Override
     public Receive createReceive() {
-        return 
+        return ReceiveBuilder
     }
 }
