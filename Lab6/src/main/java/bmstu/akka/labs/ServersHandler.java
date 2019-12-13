@@ -10,6 +10,7 @@ public class ServersHandler {
 
     public ServersHandler(String zkAddress, ActorRef storeActor, String address) {
         this.zkAddress = zkAddress;
-        this.
+        this.storeActor = storeActor;
+        
     }
 }
