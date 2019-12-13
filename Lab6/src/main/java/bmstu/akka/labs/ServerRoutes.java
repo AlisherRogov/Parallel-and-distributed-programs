@@ -40,6 +40,6 @@ public class ServerRoutes {
     }
 
     private CompletionStage<HttpResponse> redirectRequest(String url, int count) {
-        Patterns.ask(storeActor, new GetMessage(), 5000).
+        Patterns.ask(storeActor, new GetMessage(), 5000).thenA
     }
 }
