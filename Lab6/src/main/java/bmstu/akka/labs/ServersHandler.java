@@ -33,6 +33,6 @@ public class ServersHandler {
     }
 
     private void watchNodes() {
-        String[]
+        String[] addresses = 
     }
 }
