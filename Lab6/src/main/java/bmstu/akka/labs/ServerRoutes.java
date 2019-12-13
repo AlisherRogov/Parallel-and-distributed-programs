@@ -3,7 +3,7 @@ package bmstu.akka.labs;
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.http.javadsl.server.Route;
-;
+;import static akka.http.javadsl.server.Directives.route;
 
 public class ServerRoutes {
     private ActorSystem system;
