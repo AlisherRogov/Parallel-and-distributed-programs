@@ -19,6 +19,7 @@ public class ServersHandler {
     }
 
     private void watchConnections(WatchedEvent event) {
-        if(event.getState() == Watcher.Event.KeeperState.Expired)
+        if(event.getState() == Watcher.Event.KeeperState.Expired ||
+                )
     }
 }
