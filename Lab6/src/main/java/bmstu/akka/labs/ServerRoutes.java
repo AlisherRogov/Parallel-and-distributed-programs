@@ -27,7 +27,7 @@ public class ServerRoutes {
     }
 
     private Uri getUri(String address) {
-        return Uri.create("http")
+        return Uri.create("http://")
     }
 
     private static int stringToInt(String number) {
