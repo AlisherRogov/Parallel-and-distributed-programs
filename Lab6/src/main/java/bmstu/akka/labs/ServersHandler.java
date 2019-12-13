@@ -22,7 +22,7 @@ public class ServersHandler {
         if(event.getState() == Watcher.Event.KeeperState.Expired ||
                 event.getState() == Watcher.Event.KeeperState.Disconnected) {
             try {
-                
+                zoo  = new ZooKeeper(zkAddress, 5000, this);
             }
         }
     }
