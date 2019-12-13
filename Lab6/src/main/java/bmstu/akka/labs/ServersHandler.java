@@ -41,6 +41,7 @@ public class ServersHandler {
                 .stream()
                 .map(Optional::ofNullable)
                 .filter(Optional::isPresent)
+                .map(Optional::get)
                 .
     }
 
