@@ -37,5 +37,5 @@ public class ServerRoutes {
         return Http.get(system).singleRequest(HttpRequest.create(url));
     }
 
-    private CompletionStage<>
+    private CompletionStage<HttpResponse> 
 }
