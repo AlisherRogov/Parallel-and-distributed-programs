@@ -44,7 +44,7 @@ public class ServersHandler {
                 .map(Optional::get)
                 .map(this::getNodeData)
                 .map(String::new)
-                .toArray()
+                .toArray(String[]::new)
     }
 
     private List<String> getChildren() {
