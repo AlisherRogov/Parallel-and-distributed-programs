@@ -17,5 +17,6 @@ public class PseudoAnonymizationApp {
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         final ServerRoutes serverRoutes = new ServerRoutes(system, storeActor);
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = ServerRoutes
+                .
     }
 }
