@@ -25,5 +25,6 @@ public class StoreActor extends AbstractActor {
         return ReceiveBuilder.create()
                 .match(StoreMessage.class, msg -> addresses = msg.getAddresses())
                 .match(GetMessage.class, msg -> sender().tell(new ResponseMessage(getRandomAddress())), self())
+                .build();
     }
 }
