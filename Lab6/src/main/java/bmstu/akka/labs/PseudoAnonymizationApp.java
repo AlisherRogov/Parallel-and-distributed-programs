@@ -13,11 +13,13 @@ import akka.http.javadsl.model.Uri;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 import bmstu.akka.labs.Actors.StoreActor;
+import org.apache.zookeeper.KeeperException;
 
+import java.io.IOException;
 import java.util.concurrent.CompletionStage;
 
 public class PseudoAnonymizationApp {
-    public static void main (String[] args) {
+    public static void main (String[] args) throws InterruptedException, KeeperException, IOException {
         ActorSystem system = ActorSystem.create("anonymizer");
         ActorRef storeActor = system.actorOf(Props.create(StoreActor.class));
         final ActorMaterializer materializer = ActorMaterializer.create(system);
