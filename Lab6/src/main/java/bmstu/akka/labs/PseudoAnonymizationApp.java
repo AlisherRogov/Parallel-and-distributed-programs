@@ -37,7 +37,7 @@ public class PseudoAnonymizationApp {
 
         final CompletionStage<ServerBinding> binding = Http.get(system).bindAndHandle(
                 routeFlow,
-                ConnectHttp.toHost(HOST, PORT),
+                ConnectHttp.toHost(hostUri.getHost().toString(), hostUri.getPort()),
                 materializer
         );
         System.out.println("Server online at http://localhost:8080/\nPress RETURN to stop...");
