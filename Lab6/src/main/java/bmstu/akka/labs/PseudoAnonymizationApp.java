@@ -23,7 +23,7 @@ public class PseudoAnonymizationApp {
         final ServerRoutes serverRoutes = new ServerRoutes(system, storeActor);
         String zkAddress = args[0];
         String
-        final ServersHandler serversHandler = new ServersHandler(zkAddress, )
+        final ServersHandler serversHandler = new ServersHandler(zkAddress, storeActor, )
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = serverRoutes
                 .getRoutes()
                 .flow(system, materializer);
