@@ -17,7 +17,7 @@ public class StoreActor extends AbstractActor {
     }
 
     private String getRandomAddress() {
-        return addresses[]
+        return addresses[random.nextInt()]
     }
 
     @Override
