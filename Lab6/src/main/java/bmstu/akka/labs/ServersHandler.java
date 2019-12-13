@@ -1,5 +1,6 @@
 package bmstu.akka.labs;
 
 public class ServersHandler {
-    private final String 
+    private final String zkAddress;
+    
 }
