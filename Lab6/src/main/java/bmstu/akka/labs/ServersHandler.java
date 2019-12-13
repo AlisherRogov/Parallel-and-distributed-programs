@@ -4,5 +4,5 @@ import akka.actor.ActorRef;
 
 public class ServersHandler {
     private final String zkAddress;
-    private final ActorRef
+    private final ActorRef storeactor;
 }
