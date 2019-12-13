@@ -14,14 +14,14 @@ public class ServerRoutes {
         this.storeActor = storeActor;
     }
 
-    private int stringToInt(String number) {
+    private static int stringToInt(String number) {
         return Integer.parseInt(number);
     }
 
     public Route getRoutes() {
         return route (
                 get(() -> parameter("url",  url -> parameter("count", countString -> {
-                    int count = stringToInt()
+                    int count = stringToInt(countString)
                 })))
         )
     }
