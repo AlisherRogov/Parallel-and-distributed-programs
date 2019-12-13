@@ -14,7 +14,7 @@ public class ServerRoutes {
         this.storeActor = storeActor;
     }
 
-    
+    private 
 
     public Route getRoutes() {
         return route (
