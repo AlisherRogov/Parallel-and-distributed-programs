@@ -12,6 +12,6 @@ public class PseudoAnonymizationApp {
         ActorSystem system = ActorSystem.create("anonymizer");
         ActorRef storeActor = system.actorOf(Props.create(StoreActor.class));
         final ActorMaterializer materializer = ActorMaterializer.create(system);
-        final Flow<>
+        final Flow<Http>
     }
 }
