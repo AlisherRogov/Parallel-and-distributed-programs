@@ -12,6 +12,7 @@ import akka.pattern.Patterns;
 import akka.pattern.Patterns$;
 import bmstu.akka.labs.Messages.GetMessage;
 import bmstu.akka.labs.Messages.ResponseMessage;
+import jdk.internal.vm.compiler.collections.Pair;
 import scala.compat.java8.FutureConverters;
 ;
 import java.util.concurrent.CompletionStage;
@@ -52,6 +53,6 @@ public class ServerRoutes {
        FutureConverters.toJava( Patterns.ask(storeActor, new GetMessage(), 5000))
                .thenApply(o -> (ResponseMessage)o)
                .thenCompose(msg -> requestUrl(getUri(msg.getAddress())
-                       .query(Query.create(Pair))
+                       .query(Query.create(Pair.create()))
     }
 }
