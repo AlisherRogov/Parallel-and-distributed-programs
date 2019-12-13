@@ -5,10 +5,10 @@ import akka.actor.ActorSystem;
 import akka.http.javadsl.Http;
 import akka.http.javadsl.model.*;
 import akka.http.javadsl.server.Route;
+import akka.japi.Pair;
 import akka.pattern.Patterns;
 import bmstu.akka.labs.Messages.GetMessage;
 import bmstu.akka.labs.Messages.ResponseMessage;
-import jdk.internal.vm.compiler.collections.Pair;
 import scala.compat.java8.FutureConverters;
 ;
 import java.util.concurrent.CompletionStage;
@@ -49,7 +49,7 @@ public class ServerRoutes {
        return FutureConverters.toJava( Patterns.ask(storeActor, new GetMessage(), 5000))
                .thenApply(o -> (ResponseMessage)o)
                .thenCompose(msg -> requestUrl(getUri(msg.getAddress())
-                       .query(Query.create(akka.japi.Pair.create("url", url), Pair.create("count", Integer.toString(count)
-                       .toString());
+                       .query(Query.create(Pair.create("url", url), Pair.create("count", Integer.toString(count))))
+                       .toString()));
     }
 }
