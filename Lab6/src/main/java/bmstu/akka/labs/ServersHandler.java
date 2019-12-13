@@ -38,5 +38,5 @@ public class ServersHandler {
         String[] addresses = Objects.requireNonNull()
     }
 
-    private List
+    private List<String> getChildren
 }
