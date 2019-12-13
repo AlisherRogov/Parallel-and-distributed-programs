@@ -45,6 +45,6 @@ public class ServerRoutes {
     private CompletionStage<HttpResponse> redirectRequest(String url, int count) {
        FutureConverters.toJava( Patterns.ask(storeActor, new GetMessage(), 5000))
                .thenApply(o -> (ResponseMessage)o)
-               .thenCompose(msg -> )
+               .thenCompose(msg -> requestUrl())
     }
 }
