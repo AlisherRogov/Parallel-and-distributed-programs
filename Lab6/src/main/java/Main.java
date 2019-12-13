@@ -1,2 +1,2 @@
-public class PseudoAno {
+public class PseudoAnonymizationApp {
 }
