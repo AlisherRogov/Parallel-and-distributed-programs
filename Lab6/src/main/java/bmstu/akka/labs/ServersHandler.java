@@ -68,6 +68,10 @@ public class ServersHandler {
     }
 
     public void terminate() {
-        
+        try {
+            zoo.close();
+        } catch (KeeperException | InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
