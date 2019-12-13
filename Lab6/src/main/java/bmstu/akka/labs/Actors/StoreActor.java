@@ -1,4 +1,6 @@
 package bmstu.akka.labs.Actors;
 
-public class StoreActor {
+import akka.actor.AbstractActor;
+
+public class StoreActor extends AbstractActor {
 }
