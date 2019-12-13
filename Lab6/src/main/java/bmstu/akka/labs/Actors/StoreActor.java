@@ -12,5 +12,8 @@ public class StoreActor extends AbstractActor {
         this.random = new Random();
     }
 
-    
+    @Override
+    public Receive createReceive() {
+        return null;
+    }
 }
