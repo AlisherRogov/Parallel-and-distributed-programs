@@ -66,4 +66,8 @@ public class ServersHandler {
         }
         return new byte[0];
     }
+
+    public void terminate() {
+        
+    }
 }
