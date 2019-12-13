@@ -46,7 +46,7 @@ public class ServersHandler {
                 .map(this::getNodeData)
                 .map(String::new)
                 .toArray(String[]::new);
-        storeActor.tell(new StoreMessage(addresses));
+        storeActor.tell(new StoreMessage(addresses), ActorRef.noSender());
     }
 
     private List<String> getChildren() {
