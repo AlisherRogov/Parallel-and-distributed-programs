@@ -29,5 +29,5 @@ public class ServerRoutes {
         )
     }
 
-    private static CompletionStage<>
+    private static CompletionStage<HttpRes>
 }
