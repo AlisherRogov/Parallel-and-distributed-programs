@@ -3,7 +3,8 @@ package bmstu.akka.labs;
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.http.javadsl.server.Route;
-;import java.util.concurrent.CompletionStage;
+;import java.net.http.HttpResponse;
+import java.util.concurrent.CompletionStage;
 
 import static akka.http.javadsl.server.Directives.*;
 
@@ -29,5 +30,5 @@ public class ServerRoutes {
         )
     }
 
-    private static CompletionStage<HttpRes>
+    private static CompletionStage<HttpResponse> 
 }
