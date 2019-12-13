@@ -4,6 +4,7 @@ import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.actor.Props;
 import akka.stream.ActorMaterializer;
+import akka.stream.javadsl.Flow;
 import bmstu.akka.labs.Actors.StoreActor;
 
 public class PseudoAnonymizationApp {
@@ -11,6 +12,6 @@ public class PseudoAnonymizationApp {
         ActorSystem system = ActorSystem.create("anonymizer");
         ActorRef storeActor = system.actorOf(Props.create(StoreActor.class));
         final ActorMaterializer materializer = ActorMaterializer.create(system);
-        final F
+        final Flow<>
     }
 }
