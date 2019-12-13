@@ -28,7 +28,7 @@ public class ServerRoutes {
         return route (
                 get(() -> parameter("url",  url -> parameter("count", countString -> {
                     int count = stringToInt(countString);
-                    return count == 0 ? completeWithFuture(requestUrl(url)) : 
+                    return count == 0 ? completeWithFuture(requestUrl(url)) :  completeWithFuture()
                 })))
         )
     }
