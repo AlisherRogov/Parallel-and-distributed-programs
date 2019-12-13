@@ -28,7 +28,7 @@ public class PseudoAnonymizationApp {
         Uri hostUri = Uri.create("http://" + hostAddress);
 
 
-        final ServersHandler serversHandler = new ServersHandler(zkAddress, storeActor, hostUri.getHost() )
+        final ServersHandler serversHandler = new ServersHandler(zkAddress, storeActor, hostUri.getHost().toString() + ':' + hostUri.getPort() )
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = serverRoutes
                 .getRoutes()
                 .flow(system, materializer);
