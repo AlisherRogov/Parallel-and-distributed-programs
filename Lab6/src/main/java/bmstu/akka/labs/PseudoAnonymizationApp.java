@@ -18,6 +18,6 @@ public class PseudoAnonymizationApp {
         final ServerRoutes serverRoutes = new ServerRoutes(system, storeActor);
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = serverRoutes
                 .getRoutes()
-                .flow()
+                .flow(system, materializer);
     }
 }
