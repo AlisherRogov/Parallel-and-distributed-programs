@@ -5,8 +5,8 @@ import org.apache.zookeeper.ZooKeeper;
 
 public class ServersHandler {
     private final String zkAddress;
-    private final ActorRef storeactor;
+    private final ActorRef storeActor;
     private ZooKeeper zoo;
 
-    public ServersHandler()
+    public ServersHandler(String zkAddress, ActorRef storeActor, )
 }
