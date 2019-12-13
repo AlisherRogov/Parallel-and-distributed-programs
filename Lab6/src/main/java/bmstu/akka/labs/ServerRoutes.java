@@ -26,7 +26,9 @@ public class ServerRoutes {
         this.storeActor = storeActor;
     }
 
-    private Uri getUri(String )
+    private Uri getUri(String address) {
+        
+    }
 
     private static int stringToInt(String number) {
         return Integer.parseInt(number);
