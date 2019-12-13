@@ -5,6 +5,7 @@ import akka.actor.ActorSystem;
 import akka.http.javadsl.Http;
 import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
+import akka.http.javadsl.model.Query;
 import akka.http.javadsl.model.Uri;
 import akka.http.javadsl.server.Route;
 import akka.pattern.Patterns;
@@ -50,6 +51,6 @@ public class ServerRoutes {
     private CompletionStage<HttpResponse> redirectRequest(String url, int count) {
        FutureConverters.toJava( Patterns.ask(storeActor, new GetMessage(), 5000))
                .thenApply(o -> (ResponseMessage)o)
-               .thenCompose(msg -> requestUrl(getUri(msg.getAddress()).query()
+               .thenCompose(msg -> requestUrl(getUri(msg.getAddress()).query(Query)
     }
 }
