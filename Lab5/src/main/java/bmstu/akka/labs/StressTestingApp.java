@@ -31,6 +31,15 @@ import static org.asynchttpclient.Dsl.asyncHttpClient;
 
 
 public class StressTestingApp {
+    private static final String URL_KEY = "testUrl";
+    private static final String COUNT_KEY = "count";
+
+    private static final String DEFAULT_URL = "http://bmstu.ru/";
+    private static final String DEFAULT_COUNT = "1";
+
+    private static final int TIMEOUT_MS = 5000;
+    static final String HOST = "http://localhost";
+    private static final int PORT = 8080;
 
     public static void main(String[] args) throws IOException {
         ActorSystem system = ActorSystem.create("routes");
@@ -41,12 +50,12 @@ public class StressTestingApp {
 
        final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = Flow.of(HttpRequest.class)
                .map(request -> {
-                       String url = request.getUri().query().get("testURL").orElse("ufc.com");
-                       Integer count = Integer.parseInt(request.getUri().query().get("count").orElse("10"));
+                       String url = request.getUri().query().get(URL_KEY).orElse(DEFAULT_URL);
+                       Integer count = Integer.parseInt(request.getUri().query().get(COUNT_KEY).orElse(DEFAULT_COUNT));
                        return new GetTestResult(url, count);
                })
                .mapAsync(4, pair ->
-                       Patterns.ask(storeRef, pair, Duration.ofMillis(5000))
+                       Patterns.ask(storeRef, pair, Duration.ofMillis(TIMEOUT_MS))
                                .thenCompose(msg -> {
                                    ResponseTestResult response = (ResponseTestResult) msg;
                                    if (response.isCounted()) {
@@ -68,7 +77,7 @@ public class StressTestingApp {
 
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(
                 routeFlow,
-                ConnectHttp.toHost("localhost", 8080),
+                ConnectHttp.toHost(HOST, PORT),
                 materializer
         );
         System.out.println("Server online at http://localhost:8080/\nPress RETURN to stop...");
