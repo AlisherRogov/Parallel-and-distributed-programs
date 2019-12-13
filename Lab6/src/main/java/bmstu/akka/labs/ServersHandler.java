@@ -43,7 +43,7 @@ public class ServersHandler {
                 .filter(Optional::isPresent)
                 .map(Optional::get)
                 .map(this::getNodeData)
-                .
+                .map()
     }
 
     private List<String> getChildren() {
