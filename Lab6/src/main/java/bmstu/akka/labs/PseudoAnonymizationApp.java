@@ -21,7 +21,8 @@ public class PseudoAnonymizationApp {
         ActorRef storeActor = system.actorOf(Props.create(StoreActor.class));
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         final ServerRoutes serverRoutes = new ServerRoutes(system, storeActor);
-        final ServersHandler serversHandler = new ServersHandler()
+        String zkAddress = args[0];
+        final ServersHandler serversHandler = new ServersHandler(args[0])
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = serverRoutes
                 .getRoutes()
                 .flow(system, materializer);
