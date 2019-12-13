@@ -4,11 +4,11 @@ import akka.NotUsed;
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.actor.Props;
+import akka.http.javadsl.model.HttpRequest;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 import bmstu.akka.labs.Actors.StoreActor;
 
-import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class PseudoAnonymizationApp {
