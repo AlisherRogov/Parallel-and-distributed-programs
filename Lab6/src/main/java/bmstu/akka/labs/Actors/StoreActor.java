@@ -6,6 +6,6 @@ public class StoreActor extends AbstractActor {
     private String[] addresses;
 
     public StoreActor() {
-        
+
     }
 }
