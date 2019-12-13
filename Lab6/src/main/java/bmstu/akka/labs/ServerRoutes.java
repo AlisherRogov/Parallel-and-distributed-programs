@@ -15,6 +15,8 @@ public class ServerRoutes {
     }
 
     public Route getRoutes() {
-        return route 
+        return route (
+                getRoutes().toString()
+        )
     }
 }
