@@ -4,6 +4,7 @@ import akka.actor.ActorRef;
 import org.apache.zookeeper.*;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Objects;
 
 public class ServersHandler {
@@ -37,5 +38,5 @@ public class ServersHandler {
         String[] addresses = Objects.requireNonNull()
     }
 
-    private 
+    private List
 }
