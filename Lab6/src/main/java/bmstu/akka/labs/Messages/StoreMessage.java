@@ -6,4 +6,8 @@ public class StoreMessage {
     public StoreMessage(String[] addresses) {
         this.addresses = addresses;
     }
+
+    public String[] getAddresses() {
+        return addresses;
+    }
 }
