@@ -1,6 +1,7 @@
 package bmstu.akka.labs;
 
 import akka.actor.ActorRef;
+import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.ZooKeeper;
 
 import java.io.IOException;
@@ -16,5 +17,5 @@ public class ServersHandler {
         zoo  = new ZooKeeper(zkAddress, 5000, this);
     }
 
-    private void watchConnections()
+    private void watchConnections(WatchedEvent )
 }
