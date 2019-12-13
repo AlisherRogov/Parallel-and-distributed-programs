@@ -7,5 +7,7 @@ public class ResponseMessage {
         this.address = address;
     }
 
-    
+    public String getAddress() {
+        return address;
+    }
 }
