@@ -24,7 +24,7 @@ public class ServersHandler {
             try {
                 zoo  = new ZooKeeper(zkAddress, 5000, this::watchConnections);
             } catch (IOException e) {
-                
+                e.printStackTrace();
             }
         }
     }
