@@ -17,7 +17,7 @@ public class ServersHandler {
         this.zkAddress = zkAddress;
         this.storeActor = storeActor;
         zoo  = new ZooKeeper(zkAddress, 5000, this::watchConnections);
-        zoo.create(NODE_PATH, address.getBytes(), ZooDefs. CreateMode.EPHEMERAL_SEQUENTIAL);
+        zoo.create(NODE_PATH, address.getBytes(), ZooDefs.Ids. CreateMode.EPHEMERAL_SEQUENTIAL);
     }
 
     private void watchConnections(WatchedEvent event) {
