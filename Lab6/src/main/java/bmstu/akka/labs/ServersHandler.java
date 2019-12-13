@@ -2,6 +2,7 @@ package bmstu.akka.labs;
 
 import akka.actor.ActorRef;
 import org.apache.zookeeper.WatchedEvent;
+import org.apache.zookeeper.Watcher;
 import org.apache.zookeeper.ZooKeeper;
 
 import java.io.IOException;
@@ -18,6 +19,6 @@ public class ServersHandler {
     }
 
     private void watchConnections(WatchedEvent event) {
-        if(event.getState() == Wat)
+        if(event.getState() == Watcher.Event)
     }
 }
