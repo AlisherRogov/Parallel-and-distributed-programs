@@ -40,7 +40,7 @@ public class PseudoAnonymizationApp {
                 ConnectHttp.toHost(hostUri.getHost().toString(), hostUri.getPort()),
                 materializer
         );
-        System.out.println("Server online at http://localhost:8080/\nPress RETURN to stop...");
+        System.out.println("Server online at" + Press RETURN to stop...");
         System.in.read();
         binding
                 .thenCompose(ServerBinding::unbind)
