@@ -18,6 +18,6 @@ public class ServersHandler {
     }
 
     private void watchConnections(WatchedEvent event) {
-        if(event.getState())
+        if(event.getState() == Wat)
     }
 }
