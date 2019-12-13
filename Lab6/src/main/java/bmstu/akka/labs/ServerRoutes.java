@@ -35,7 +35,7 @@ public class ServerRoutes {
                     int count = stringToInt(countString);
                     return count == 0 ? completeWithFuture(requestUrl(url)) :  completeWithFuture()
                 })))
-        )
+        );
     }
 
     private CompletionStage<HttpResponse> requestUrl (String url) {
