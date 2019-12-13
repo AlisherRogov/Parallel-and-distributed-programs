@@ -23,7 +23,7 @@ public class ServersHandler {
                 event.getState() == Watcher.Event.KeeperState.Disconnected) {
             try {
                 zoo  = new ZooKeeper(zkAddress, 5000, this::watchConnections);
-            }
+            } catch (IOException)
         }
     }
 }
