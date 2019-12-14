@@ -16,6 +16,12 @@ import java.util.concurrent.CompletionStage;
 import static akka.http.javadsl.server.Directives.*;
 
 public class ServerRoutes {
+
+    private final static String SCHEME = "http://";
+    private static final String URL_ARG_NAME = "url";
+    private static final String COUNT_ARG_NAME = "count";
+    private static final int TIMEOUT_MS = 5000;
+
     private ActorSystem system;
     private ActorRef storeActor;
 
@@ -25,7 +31,7 @@ public class ServerRoutes {
     }
 
     private Uri getUri(String address) {
-        return Uri.create("http://" + address);
+        return Uri.create(SCHEME + address);
     }
 
     private static int stringToInt(String number) {
@@ -34,7 +40,7 @@ public class ServerRoutes {
 
     public Route getRoutes() {
         return route (
-                get(() -> parameter("url",  url -> parameter("count", countString -> {
+                get(() -> parameter(URL_ARG_NAME,  url -> parameter(COUNT_ARG_NAME, countString -> {
                     int count = stringToInt(countString);
                     return count == 0 ? completeWithFuture(requestUrl(url)) :  completeWithFuture(redirectRequest(url, count - 1));
                 })))
@@ -46,10 +52,10 @@ public class ServerRoutes {
     }
 
     private CompletionStage<HttpResponse> redirectRequest(String url, int count) {
-       return FutureConverters.toJava( Patterns.ask(storeActor, new GetMessage(), 5000))
+       return FutureConverters.toJava( Patterns.ask(storeActor, new GetMessage(), TIMEOUT_MS))
                .thenApply(o -> (ResponseMessage)o)
                .thenCompose(msg -> requestUrl(getUri(msg.getAddress())
-                       .query(Query.create(Pair.create("url", url), Pair.create("count", Integer.toString(count))))
+                       .query(Query.create(Pair.create(URL_ARG_NAME, url), Pair.create(COUNT_ARG_NAME, Integer.toString(count))))
                        .toString()));
     }
 }

@@ -10,27 +10,46 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
-public class ServersHandler {
+public class Coordinator {
     private final String ROOT_PATH = "/servers";
     private final String NODE_PATH = ROOT_PATH + "/s";
+    private final int SESSION_TIMEOUT_MS = 5000;
 
     private final String zkAddress;
     private final ActorRef storeActor;
     private ZooKeeper zoo;
 
-    public ServersHandler(String zkAddress, ActorRef storeActor, String address) throws IOException, InterruptedException, KeeperException {
+    public Coordinator(String zkAddress, ActorRef storeActor, String address) throws IOException, InterruptedException, KeeperException {
         this.zkAddress = zkAddress;
         this.storeActor = storeActor;
-        zoo  = new ZooKeeper(zkAddress, 5000, this::watchConnections);
-        zoo.create(NODE_PATH, address.getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL_SEQUENTIAL);
+        tryConnect();
+        createNode(ROOT_PATH, "0", CreateMode.PERSISTENT);
+        createNode(NODE_PATH, address, CreateMode.EPHEMERAL_SEQUENTIAL);
         watchNodes();
+    }
+
+    private void tryConnect() throws IOException {
+        zoo = connect();
+    }
+
+    private ZooKeeper connect() throws IOException {
+        return new ZooKeeper(zkAddress, SESSION_TIMEOUT_MS, this::watchConnections);
+    }
+
+    private void createNode(String path, String address, CreateMode mode) throws KeeperException, InterruptedException {
+        zoo.create(
+                path,
+                address.getBytes(),
+                ZooDefs.Ids.OPEN_ACL_UNSAFE,
+                mode
+        );
     }
 
     private void watchConnections(WatchedEvent event) {
         if(event.getState() == Watcher.Event.KeeperState.Expired ||
                 event.getState() == Watcher.Event.KeeperState.Disconnected) {
             try {
-                zoo  = new ZooKeeper(zkAddress, 5000, this::watchConnections);
+                tryConnect();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -49,9 +68,14 @@ public class ServersHandler {
         storeActor.tell(new StoreMessage(addresses), ActorRef.noSender());
     }
 
+    private void watchChildren(WatchedEvent watchedEvent) {
+        if(watchedEvent.getType() == Watcher.Event.EventType.NodeChildrenChanged) {
+            watchNodes();
+        }
+    }
     private List<String> getChildren() {
         try {
-            return  zoo.getChildren(ROOT_PATH, this::watchConnections);
+            return  zoo.getChildren(ROOT_PATH, this::watchChildren);
         } catch (KeeperException | InterruptedException e) {
             e.printStackTrace();
         }
@@ -74,4 +98,5 @@ public class ServersHandler {
             e.printStackTrace();
         }
     }
+    
 }

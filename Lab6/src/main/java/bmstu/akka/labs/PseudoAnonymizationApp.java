@@ -19,6 +19,12 @@ import java.io.IOException;
 import java.util.concurrent.CompletionStage;
 
 public class PseudoAnonymizationApp {
+    private final static String SCHEME = "http://";
+
+    private static Uri getUri(String address) {
+        return Uri.create(SCHEME + address);
+    }
+
     public static void main (String[] args) throws InterruptedException, KeeperException, IOException {
         ActorSystem system = ActorSystem.create("anonymizer");
         ActorRef storeActor = system.actorOf(Props.create(StoreActor.class));
@@ -27,10 +33,10 @@ public class PseudoAnonymizationApp {
 
         String zkAddress = args[0];
         String hostAddress = args[1];
-        Uri hostUri = Uri.create("http://" + hostAddress);
+        Uri hostUri = getUri(hostAddress);
 
-
-        final ServersHandler serversHandler = new ServersHandler(zkAddress, storeActor, hostUri.getHost().toString() + ':' + hostUri.getPort());
+       // BasicConfigurator.configure();
+        final Coordinator coordinator = new Coordinator(zkAddress, storeActor, hostUri.getHost().toString() + ':' + hostUri.getPort());
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = serverRoutes
                 .getRoutes()
                 .flow(system, materializer);
@@ -44,7 +50,11 @@ public class PseudoAnonymizationApp {
         System.in.read();
         binding
                 .thenCompose(ServerBinding::unbind)
-                .thenAccept(unbound -> system.terminate()); // and shutdown when done
+                .thenAccept(unbound -> {
+                     system.terminate(); // and shutdown when done
+                    coordinator.terminate();
+                });
+
 
     }
 }
