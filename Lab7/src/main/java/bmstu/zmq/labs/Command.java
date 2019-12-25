@@ -4,4 +4,5 @@ public class Command {
     enum Type {
         GET, PUT, NOTIFY
     }
+    
 }
