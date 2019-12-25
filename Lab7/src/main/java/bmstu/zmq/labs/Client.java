@@ -9,5 +9,9 @@ public class Client {
         ZContext context = new ZContext();
         ZMQ.Socket socket = context.createSocket(SocketType.REQ);
         socket.connect("tcp://localhost:5555");
+
+        for (int i = 0; i < 10; i++) {
+            
+        }
     }
 }
