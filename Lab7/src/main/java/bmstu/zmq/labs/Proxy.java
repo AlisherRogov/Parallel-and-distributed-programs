@@ -27,7 +27,7 @@ public class Proxy {
 //        }
         ZContext context = new ZContext();
         ZMQ.Socket socket = context.createSocket(SocketType.REP);
-        socket.connect("tcp://localhost:5555");
+        socket.bind("tcp://localhost:5555");
 
         for (int i = 0; i < 10; i++) {
             socket.send("request"+i, 0);
