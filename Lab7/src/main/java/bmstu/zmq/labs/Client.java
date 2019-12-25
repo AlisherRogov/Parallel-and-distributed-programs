@@ -8,6 +8,6 @@ public class Client {
     public static void main(String[] args) {
         ZContext context = new ZContext();
         ZMQ.Socket socket = context.createSocket(SocketType.REQ);
-        socket.connect("tcp")
+        socket.connect("tcp://localhost")
     }
 }
