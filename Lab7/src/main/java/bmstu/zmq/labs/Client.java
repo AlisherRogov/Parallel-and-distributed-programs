@@ -14,6 +14,7 @@ public class Client {
             socket.send("request"+i, 0);
             String reply = socket.recvStr();
             System.out.println("reply" + i+ "result="+ reply);
+            
         }
     }
 }
