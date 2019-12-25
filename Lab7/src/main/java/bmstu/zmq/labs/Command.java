@@ -6,9 +6,10 @@ public class Command {
     }
     private static final String DELIMETER = " ";
     private Type type;
-    private Integer[] args;
+    private ArrayList args;
 
     public Command(String cmd) {
+
         parseCommand(cmd);
     }
 
@@ -16,7 +17,7 @@ public class Command {
         String[] split = cmd.trim().split(DELIMETER);
         if(split[0] = "GET") {
             this.type = Type.GET;
-            
+            args.
         }
     }
 
