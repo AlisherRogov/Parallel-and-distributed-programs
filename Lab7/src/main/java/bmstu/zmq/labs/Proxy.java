@@ -29,11 +29,8 @@ public class Proxy {
         ZMQ.Socket socket = context.createSocket(SocketType.REP);
         socket.bind("tcp://localhost:5555");
         System.out.println("bind");
-        for (int i = 0; i < 10; i++) {
-            socket.send("request"+i, 0);
-            String reply = socket.recvStr();
-            System.out.println("reply" + i+ "result="+ reply);
-        }
+
+        while
         context.destroySocket(socket);
         context.destroy();
     }
