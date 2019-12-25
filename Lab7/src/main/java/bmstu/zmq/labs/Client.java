@@ -17,7 +17,7 @@ public class Client {
             String command = in.nextLine();
             Command cmd = new Command(command);
             socket.send(command, 0);
-            System.out.println(socket.recv());
+            System.out.println(socket.recvStr());
         }
 
         context.destroySocket(socket);
