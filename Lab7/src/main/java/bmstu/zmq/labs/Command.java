@@ -11,4 +11,6 @@ public class Command {
         this.type = type;
         this.args = args;
     }
+
+    
 }
