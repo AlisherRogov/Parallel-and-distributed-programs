@@ -30,7 +30,9 @@ public class Proxy {
         socket.bind("tcp://localhost:5555");
         System.out.println("bind");
 
-        while(!Thread.currentThread().isInterrupted())
+        while(!Thread.currentThread().isInterrupted()){
+            
+        }
         context.destroySocket(socket);
         context.destroy();
     }
