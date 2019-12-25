@@ -6,6 +6,6 @@ import org.zeromq.ZMQ;
 public class Client {
     public static void main(String[] args) {
         ZContext context = new ZContext();
-        ZMQ.Socket socket = new ZMQ.Socket();
+        ZMQ.Socket socket = context.createSocket()
     }
 }
