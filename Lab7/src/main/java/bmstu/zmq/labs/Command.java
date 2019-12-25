@@ -21,6 +21,7 @@ public class Command {
             this.type = Type.GET;
             args.add(Integer.parseInt(split[1]));
         }
+        if()
     }
 
 }
