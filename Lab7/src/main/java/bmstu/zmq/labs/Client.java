@@ -11,7 +11,7 @@ public class Client {
         socket.connect("tcp://localhost:5555");
 
         while(!Thread.currentThread().isInterrupted()){
-            
+            String 
         }
 
         context.destroySocket(socket);
