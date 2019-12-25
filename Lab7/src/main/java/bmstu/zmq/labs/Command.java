@@ -21,8 +21,9 @@ public class Command {
             this.type = Type.GET;
             args.add(Integer.parseInt(split[1]));
         }
-        if(split[1] == "SET") {
-            this.type = Type.SET
+        if(split[1] == "PUT") {
+            this.type = Type.PUT;
+            
         }
     }
 
