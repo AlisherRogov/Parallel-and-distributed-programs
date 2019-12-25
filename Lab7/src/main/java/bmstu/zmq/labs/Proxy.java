@@ -12,8 +12,7 @@ public class Proxy {
 
     public static void main(String[] args) {
         ZContext context = new ZContext();
-
-
+        
         ZMQ.Socket backend = context.createSocket(SocketType.ROUTER);
         ZMQ.Socket frontend = context.createSocket(SocketType.ROUTER);
 
