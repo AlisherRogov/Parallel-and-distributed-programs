@@ -11,10 +11,10 @@ public class Client {
         ZContext context = new ZContext();
         ZMQ.Socket socket = context.createSocket(SocketType.REQ);
         socket.connect("tcp://localhost:5555");
-        Scanner scanner = new Scanner();
+        Scanner scanner = new Scanner(System.in);
 
         while(!Thread.currentThread().isInterrupted()){
-            String
+            String cmd = 
         }
 
         context.destroySocket(socket);
