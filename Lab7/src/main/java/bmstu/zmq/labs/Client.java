@@ -13,8 +13,9 @@ public class Client {
         socket.connect("tcp://localhost:5555");
         Scanner in = new Scanner(System.in);
 
-        while(!Thread.currentThread().isInterrupted()){
+        while(!Thread.currentThread().isInterrupted()) {
             Command cmd = new Command(in.nextLine());
+            
         }
 
         context.destroySocket(socket);
