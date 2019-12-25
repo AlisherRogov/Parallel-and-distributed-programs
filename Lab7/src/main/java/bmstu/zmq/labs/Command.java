@@ -7,10 +7,12 @@ public class Command {
     private Type type;
     private Integer[] args;
 
-    public Command(Type type, Integer ...args) {
-        this.type = type;
-        this.args = args;
+    public Command(String cmd) {
+        parseCommand(cmd);
     }
 
-    
+    private void parseCommand(String cmd){
+        
+    }
+
 }
