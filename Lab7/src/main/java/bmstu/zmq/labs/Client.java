@@ -15,6 +15,6 @@ public class Client {
             String reply = socket.recvStr();
             System.out.println("reply" + i+ "result="+ reply);
         }
-        
+        context.destroySocket();
     }
 }
