@@ -23,7 +23,7 @@ public class Command {
         }
         if(split[1] == "PUT") {
             this.type = Type.PUT;
-            args.add
+            args.add(Integer.parseInt())
         }
     }
 
