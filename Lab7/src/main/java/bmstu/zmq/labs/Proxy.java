@@ -18,7 +18,8 @@ public class Proxy {
         backend.bind(address);
         frontend.bind(ClientAddress);
 
-        ZMQ.Poller items = 
+        ZMQ.Poller items = context.createPoller(2);
+        
     }
 
 }
