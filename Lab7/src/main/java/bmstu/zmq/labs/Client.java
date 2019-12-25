@@ -4,6 +4,7 @@ import org.zeromq.ZContext;
 
 public class Client {
     public static void main(String[] args) {
-        ZContext =
+        ZContext context = new ZContext();
+        
     }
 }
