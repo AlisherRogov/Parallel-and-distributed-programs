@@ -33,7 +33,7 @@ public class Command {
         }
     }
 
-    public Type getType() {
-        return type;
+    public String getType() {
+        return type.toString();
     }
 }
