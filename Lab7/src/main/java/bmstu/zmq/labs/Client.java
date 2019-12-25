@@ -11,9 +11,9 @@ public class Client {
         socket.connect("tcp://localhost:5555");
 
         for (int i = 0; i < 10; i++) {
-            socket.send("request"+i, 0);
+            socket.send("request "+i, 0);
             String reply = socket.recvStr();
-            System.out.println("reply" + i+ "result="+ reply);
+            System.out.println("reply " + i+ "result = "+ reply);
         }
         context.destroySocket(socket);
         context.destroy();
