@@ -6,6 +6,6 @@ import org.zeromq.ZMQ;
 public class Cache {
     public static void main(String[] args) {
         ZContext context = new ZContext();
-        ZMQ.
+        ZMQ.Socket socket = 
     }
 }
