@@ -33,7 +33,4 @@ public class Command {
         }
     }
 
-    public String getType() {
-        return type.toString();
-    }
-}
+    public boolean matchType(Type t)
