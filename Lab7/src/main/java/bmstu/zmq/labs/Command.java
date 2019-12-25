@@ -33,4 +33,7 @@ public class Command {
         }
     }
 
+    public Type getType() {
+        return type;
+    }
 }
