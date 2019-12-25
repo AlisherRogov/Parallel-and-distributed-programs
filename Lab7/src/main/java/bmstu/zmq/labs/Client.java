@@ -15,7 +15,7 @@ public class Client {
 
         while(!Thread.currentThread().isInterrupted()) {
             String command = in.nextLine();
-            Command cmd = new Command(command);
+        //    Command cmd = new Command(command);
             socket.send(command, 0);
             System.out.println(socket.recvStr(0));
         }
