@@ -32,7 +32,7 @@ public class Proxy {
 
         while(!Thread.currentThread().isInterrupted()){
             String req = socket.recvStr();
-            socket.send("reply")
+            socket.send("reply" + req);
         }
         context.destroySocket(socket);
         context.destroy();
