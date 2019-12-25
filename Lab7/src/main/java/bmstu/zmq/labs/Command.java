@@ -1,5 +1,5 @@
 package bmstu.zmq.labs;
 
 public class Command {
-    enum 
+    enum Type 
 }
