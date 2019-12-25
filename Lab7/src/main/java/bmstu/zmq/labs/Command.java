@@ -1,23 +1,25 @@
 package bmstu.zmq.labs;
 
+import java.util.ArrayList;
+
 public class Command {
     enum Type {
         GET, PUT, NOTIFY
     }
     private static final String DELIMETER = " ";
     private Type type;
-    private ArrayList args;
+    private ArrayList<Integer> args;
 
     public Command(String cmd) {
-
+        args = new ArrayList<>();
         parseCommand(cmd);
     }
 
     private void parseCommand(String cmd){
         String[] split = cmd.trim().split(DELIMETER);
-        if(split[0] = "GET") {
+        if(split[0] == "GET") {
             this.type = Type.GET;
-            args.
+            args.add(Integer.parseInt(split[1]));
         }
     }
 
