@@ -12,7 +12,8 @@ public class Client {
 
         for (int i = 0; i < 10; i++) {
             socket.send("request"+i, 0);
-            String reply = socket.
+            String reply = socket.recvStr();
+            
         }
     }
 }
