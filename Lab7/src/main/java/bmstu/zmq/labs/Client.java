@@ -16,6 +16,6 @@ public class Client {
             System.out.println("reply" + i+ "result="+ reply);
         }
         context.destroySocket(socket);
-        
+        context.destroy();
     }
 }
