@@ -5,6 +5,7 @@ public class Command {
         GET, PUT, NOTIFY
     }
 
+    private Type type;
     private 
     public Command(Type type, Integer ...args) {
 
