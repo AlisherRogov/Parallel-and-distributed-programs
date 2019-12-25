@@ -4,7 +4,7 @@ public class Command {
     enum Type {
         GET, PUT, NOTIFY
     }
-    private static final DELIMETER =
+    private static final String DELIMETER = " ";
     private Type type;
     private Integer[] args;
 
