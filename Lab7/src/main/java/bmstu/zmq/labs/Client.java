@@ -15,7 +15,7 @@ public class Client {
 
         while(!Thread.currentThread().isInterrupted()) {
             Command cmd = new Command(in.nextLine());
-            
+            if ()
         }
 
         context.destroySocket(socket);
