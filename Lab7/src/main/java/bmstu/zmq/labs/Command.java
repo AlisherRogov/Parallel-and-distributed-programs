@@ -14,7 +14,9 @@ public class Command {
 
     private void parseCommand(String cmd){
         String[] split = cmd.trim().split(DELIMETER);
-    if(split[0] = "GET")
+        if(split[0] = "GET") {
+            
+        }
     }
 
 }
