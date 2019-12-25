@@ -4,10 +4,10 @@ public class Command {
     enum Type {
         GET, PUT, NOTIFY
     }
-
     private Type type;
     private Integer[] args;
-    public Command(Type type, Integer ...args) {
 
+    public Command(Type type, Integer ...args) {
+        
     }
 }
