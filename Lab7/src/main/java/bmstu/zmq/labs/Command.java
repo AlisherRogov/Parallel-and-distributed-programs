@@ -5,5 +5,5 @@ public class Command {
         GET, PUT, NOTIFY
     }
 
-    
+    public 
 }
