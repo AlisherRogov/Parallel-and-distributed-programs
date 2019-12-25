@@ -4,6 +4,7 @@ public class Command {
     enum Type {
         GET, PUT, NOTIFY
     }
+    private static final 
     private Type type;
     private Integer[] args;
 
