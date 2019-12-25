@@ -14,7 +14,7 @@ public class Client {
         Scanner in = new Scanner(System.in);
 
         while(!Thread.currentThread().isInterrupted()){
-            String cmd =  in.nextLine();
+            String cmd = in.nextLine();
         }
 
         context.destroySocket(socket);
