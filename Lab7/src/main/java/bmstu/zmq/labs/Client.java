@@ -11,7 +11,7 @@ public class Client {
         socket.connect("tcp://localhost:5555");
 
         for (int i = 0; i < 10; i++) {
-            
+            socket.send("request"+i)
         }
     }
 }
