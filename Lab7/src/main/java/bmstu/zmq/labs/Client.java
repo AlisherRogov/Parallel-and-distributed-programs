@@ -10,7 +10,9 @@ public class Client {
         ZMQ.Socket socket = context.createSocket(SocketType.REQ);
         socket.connect("tcp://localhost:5555");
 
-        
+        while(!Thread.currentThread().isInterrupted()){
+            
+        }
 
         context.destroySocket(socket);
         context.destroy();
