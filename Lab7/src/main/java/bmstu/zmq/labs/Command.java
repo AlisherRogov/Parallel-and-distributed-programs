@@ -12,7 +12,7 @@ public class Command {
     }
 
     private void parseCommand(String cmd){
-        String[] split = cmd.trim().
+        String[] split = cmd.trim().split()
     }
 
 }
