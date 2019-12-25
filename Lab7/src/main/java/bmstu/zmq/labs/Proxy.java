@@ -31,7 +31,7 @@ public class Proxy {
         System.out.println("bind");
 
         while(!Thread.currentThread().isInterrupted()){
-            
+            String req = 
         }
         context.destroySocket(socket);
         context.destroy();
