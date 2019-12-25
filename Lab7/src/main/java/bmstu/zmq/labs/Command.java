@@ -6,7 +6,7 @@ public class Command {
     }
 
     private Type type;
-    private 
+    private Integer[] args;
     public Command(Type type, Integer ...args) {
 
     }
