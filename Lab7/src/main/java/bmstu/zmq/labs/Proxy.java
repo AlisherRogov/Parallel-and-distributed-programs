@@ -22,7 +22,7 @@ public class Proxy {
         items.register(frontend, ZMQ.Poller.POLLIN);
         items.register(backend, ZMQ.Poller.POLLIN);
 
-        while (!Thread)
+        while (!Thread.currentThread())
     }
 
 }
