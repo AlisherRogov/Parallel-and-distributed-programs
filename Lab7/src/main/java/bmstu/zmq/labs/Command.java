@@ -59,6 +59,10 @@ public class Command {
         if (this.type == Type.NOTIFY) return args.get(1);
         return null;
     }
+
+    public static void response(int result) {
+        
+    }
 }
 
 
