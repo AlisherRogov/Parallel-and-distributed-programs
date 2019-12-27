@@ -12,6 +12,7 @@ public class Cache {
         socket.connect(CACHE_ADDRESS);
 
         int start = Integer.parseInt(args[0]);
+        int end = Integer.parseInt(args[1]);
 
 
 
