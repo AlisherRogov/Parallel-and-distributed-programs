@@ -57,10 +57,8 @@ public class Proxy {
             }
             removeDeadStorages();
         }
-
-
-
-
+        context.destroySocket(frontend);
+        context.destroySocket(backend);
         context.destroy();
     }
 

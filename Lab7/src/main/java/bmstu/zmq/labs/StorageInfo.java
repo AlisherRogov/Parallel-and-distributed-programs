@@ -5,7 +5,7 @@ public class StorageInfo {
     String storageID;
     int firstIndex;
     int lastIndex;
-    long lastNotifyTime:
+    long lastNotifyTime;
 
     public StorageInfo(String storageID, int firstIndex, int lastIndex) {
         this.storageID = storageID;
