@@ -12,6 +12,8 @@ public class StorageInfo {
         this.lastIndex = lastIndex;
     }
 
+    
+
     public String getStorageID() {
         return storageID;
     }
