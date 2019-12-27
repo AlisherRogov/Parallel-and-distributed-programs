@@ -4,5 +4,8 @@ import java.util.List;
 
 public class CacheStorage {
     private List<Integer> list;
-    private int firstInd
+    private int firstInd;
+    private int lastInd;
+
+    
 }
