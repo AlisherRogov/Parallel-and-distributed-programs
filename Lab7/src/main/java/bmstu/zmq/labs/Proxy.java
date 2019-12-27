@@ -32,7 +32,7 @@ public class Proxy {
                 Command cmd = new Command(msg.getLast().toString());
 
                 if (cmd.getType() == "GET") {
-                    
+
                 }
             }
 
@@ -44,7 +44,7 @@ public class Proxy {
         context.destroy();
     }
 
-    private static void sendToCache(ZFrame clientId, Command cmd) {
+    private static void sendGet(ZFrame clientId, Command cmd) {
         ZMsg msg = new ZMsg();
         m
     }
