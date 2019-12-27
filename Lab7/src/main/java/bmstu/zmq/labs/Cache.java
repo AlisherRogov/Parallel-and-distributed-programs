@@ -30,7 +30,8 @@ public class Cache {
                 if (command.getType() == "GET") {
                     Integer key = command.getIndex();
                     Integer value = storage.get(key);
-                    ZMsg reply = 
+                    ZMsg reply = new ZMsg();
+                    
 
                     String response = value == null ? "null" : Integer.toString(value);
                    // msg.getLast().reset();
