@@ -26,11 +26,9 @@ public class Proxy {
 
         while (!Thread.currentThread().isInterrupted()) {
             items.poll();
+            ZMsg msg = ZMsg.recvMsg(frontend);
+            Command cmd = new Command(msg.getLast().toString());
             if (items.pollin(0)) {
-                ZMsg msg = ZMsg.recvMsg(frontend);
-
-                Command cmd = new Command(msg.getLast().toString());
-
                 if (cmd.getType() == "GET") {
 
                 }
