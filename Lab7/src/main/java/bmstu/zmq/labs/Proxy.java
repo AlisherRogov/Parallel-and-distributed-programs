@@ -50,7 +50,7 @@ public class Proxy {
                 String cmd = msg.getLast().toString();
                 Command command = new Command(cmd);
 
-                if ()
+                if (command.getType() == "NOTIFY")
 
             }
 
