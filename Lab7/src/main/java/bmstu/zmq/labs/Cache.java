@@ -9,6 +9,6 @@ public class Cache {
         ZContext context = new ZContext();
         ZMQ.Socket socket = context.createSocket(SocketType.DEALER);
 
-        
+
     }
 }
