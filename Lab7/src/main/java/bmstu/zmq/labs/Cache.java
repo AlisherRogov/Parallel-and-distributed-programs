@@ -26,7 +26,7 @@ public class Cache {
             if (msg != null) {
                 String cmd = msg.getLast().toString();
                 Command command = new Command(cmd);
-
+                
                 if (command.getType() == "GET") {
                     Integer key = command.getIndex();
                     Integer value = storage.get(key);
