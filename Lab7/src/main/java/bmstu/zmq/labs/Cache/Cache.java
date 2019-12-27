@@ -20,7 +20,7 @@ public class Cache {
 
         int start = Integer.parseInt(args[0]);
         int end = Integer.parseInt(args[1]);
-        sen
+        sendNotify(socket, start, end);
 
         while (!Thread.currentThread().isInterrupted()) {
             ZMsg msg = ZMsg.recvMsg(socket);
@@ -50,7 +50,7 @@ public class Cache {
         context.destroy();
     }
 
-    private void sendNotify(ZMQ.Socket socket, int firstIndex, int lastIndex) {
+    private static void sendNotify(ZMQ.Socket socket, int firstIndex, int lastIndex) {
         socket.send(Command.notify(firstIndex, lastIndex));
     }
 }
