@@ -13,7 +13,7 @@ public class StorageInfo {
     }
 
     public void updateNotifyTime() {
-        lastNotifyTime = System.
+        lastNotifyTime = System.currentTimeMillis();
     }
 
     public String getStorageID() {
