@@ -5,9 +5,11 @@ import org.zeromq.ZContext;
 import org.zeromq.ZMQ;
 
 public class Cache {
+    private static String cacheAddress = "tcp://localhost:5569";
     public static void main(String[] args) {
         ZContext context = new ZContext();
         ZMQ.Socket socket = context.createSocket(SocketType.DEALER);
+        socket.connect(cacheAddress);
 
 
     }

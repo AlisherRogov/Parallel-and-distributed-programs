@@ -7,8 +7,8 @@ import java.util.ArrayList;
 
 public class Proxy {
 
-    private static String ClientAddress = "tcp://localhost:5555";
-    private static String CacheAddress = "tcp://localhost:5569";
+    private static String clientAddress = "tcp://localhost:5555";
+    private static String cacheAddress = "tcp://localhost:5569";
     private static ArrayList<StorageInfo> activeStorages = new ArrayList<>();
 
     public static void main(String[] args) {
@@ -17,8 +17,8 @@ public class Proxy {
         ZMQ.Socket backend = context.createSocket(SocketType.ROUTER);
         ZMQ.Socket frontend = context.createSocket(SocketType.ROUTER);
 
-        backend.bind(CacheAddress);
-        frontend.bind(ClientAddress);
+        backend.bind(cacheAddress);
+        frontend.bind(clientAddress);
 
         ZMQ.Poller items = context.createPoller(2);
         items.register(frontend, ZMQ.Poller.POLLIN);
