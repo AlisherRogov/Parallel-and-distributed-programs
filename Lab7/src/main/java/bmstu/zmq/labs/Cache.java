@@ -3,6 +3,7 @@ package bmstu.zmq.labs;
 import org.zeromq.SocketType;
 import org.zeromq.ZContext;
 import org.zeromq.ZMQ;
+import org.zeromq.ZMsg;
 
 public class Cache {
     private static String CACHE_ADDRESS = "tcp://localhost:5569";
@@ -15,7 +16,7 @@ public class Cache {
         int end = Integer.parseInt(args[1]);
 
         while (!Thread.currentThread().isInterrupted()) {
-            
+            ZMsg msg = ZMsg.recvMsg()
         }
 
 
