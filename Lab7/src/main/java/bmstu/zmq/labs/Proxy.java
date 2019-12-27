@@ -51,7 +51,7 @@ public class Proxy {
                 Command command = new Command(cmd);
 
                 if (command.getType() == "NOTIFY") {
-                    
+
                 }
 
             }
@@ -111,6 +111,8 @@ public class Proxy {
         msg.add(param3);
         return msg;
     }
+
+    private static void insertStorage()
 
 
 
