@@ -35,7 +35,10 @@ public class Command {
         if (split[0] == "ERROR") {
             this.type = Type.ERROR;
         }
-        
+        if (split[0] == "RESULT") {
+            this.type = Type.RESULT;
+            args.add(Integer.parseInt(split[1]));
+        }
     }
 
     public String getType() {
