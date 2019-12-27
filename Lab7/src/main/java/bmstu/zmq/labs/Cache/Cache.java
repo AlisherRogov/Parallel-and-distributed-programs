@@ -46,6 +46,7 @@ public class Cache {
                     msg.destroy();
                 }
             }
+            
         }
 
         context.destroySocket(socket);
