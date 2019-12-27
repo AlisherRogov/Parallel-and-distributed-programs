@@ -19,7 +19,7 @@ public class StorageInfo {
 
     public boolean idDead() {
         long currentTime = System.currentTimeMillis();
-        return (currentTime - lastNotifyTime) 
+        return (currentTime - lastNotifyTime) > 2 * 
     }
 
     public String getStorageID() {
