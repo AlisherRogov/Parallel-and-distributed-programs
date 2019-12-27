@@ -1,4 +1,4 @@
-package bmstu.zmq.labs.Proxy;
+package bmstu.zmq.labs;
 
 import bmstu.zmq.labs.Command;
 import org.zeromq.*;
