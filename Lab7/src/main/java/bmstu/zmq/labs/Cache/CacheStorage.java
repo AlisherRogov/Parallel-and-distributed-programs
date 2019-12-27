@@ -7,5 +7,5 @@ public class CacheStorage {
     private int firstInd;
     private int lastInd;
 
-    
+    public CacheStorage()
 }
