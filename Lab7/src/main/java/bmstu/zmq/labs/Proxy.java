@@ -116,7 +116,7 @@ public class Proxy {
         StorageInfo storageInfo = new StorageInfo(storageId, firstIndex, lastIndex);
         for (StorageInfo storedStorages : activeStorages) {
             if (storedStorages.getStorageID().equals(storageId)) {
-                
+                storedStorages
             }
         }
     }

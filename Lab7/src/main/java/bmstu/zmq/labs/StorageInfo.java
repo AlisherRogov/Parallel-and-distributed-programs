@@ -4,6 +4,7 @@ public class StorageInfo {
     String storageID;
     int firstIndex;
     int lastIndex;
+    
 
     public StorageInfo(String storageID, int firstIndex, int lastIndex) {
         this.storageID = storageID;
