@@ -34,14 +34,15 @@ public class Proxy {
                     int key = cmd.getIndex();
                     boolean isKeyValid = sendGet(key, msg, backend);
                     if(!isKeyValid) {
-                        sendToClient(clientId, "ERROR", );
+                        sendToClient(clientId, "ERROR", frontend);
                     }
                 }
                 if (cmd.getType() == "PUT") {
                     int key = cmd.getIndex();
                     boolean isKeyValid = sendPut(key, msg, backend);
-
-
+                    if(!isKeyValid) {
+                        sendToClient(clientId, "ERROR", frontend);
+                    }
                 }
             }
 
