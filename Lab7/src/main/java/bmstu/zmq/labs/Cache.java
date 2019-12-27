@@ -26,12 +26,13 @@ public class Cache {
             if (msg != null) {
                 String cmd = msg.getLast().toString();
                 Command command = new Command(cmd);
-                
+                String clientId = msg.getFirst().toString();
                 if (command.getType() == "GET") {
                     Integer key = command.getIndex();
                     Integer value = storage.get(key);
                     ZMsg reply = new ZMsg();
-                    reply.add()
+                    reply.add(clientId);
+                    
 
                     String response = value == null ? "null" : Integer.toString(value);
                    // msg.getLast().reset();
