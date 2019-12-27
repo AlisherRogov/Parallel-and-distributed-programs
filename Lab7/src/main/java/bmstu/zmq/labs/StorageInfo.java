@@ -12,7 +12,9 @@ public class StorageInfo {
         this.lastIndex = lastIndex;
     }
 
-    public void updateNotifyTime
+    public void updateNotifyTime() {
+        
+    }
 
     public String getStorageID() {
         return storageID;
