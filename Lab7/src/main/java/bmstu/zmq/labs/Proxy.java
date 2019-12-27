@@ -37,6 +37,9 @@ public class Proxy {
 //                        //error message
 //                    }
                 }
+                if (cmd.getType() == "PUT") {
+                    
+                }
             }
 
         }
