@@ -120,8 +120,7 @@ public class Proxy {
                 return;
             }
         }
-        activeStorages.add()
-
+        activeStorages.add(storageInfo);
     }
 
 
