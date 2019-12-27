@@ -44,7 +44,7 @@ public class Proxy {
 
     private static void sendGet(int key, Command cmd) {
         ZMsg msg = new ZMsg();
-        m
+        for(StorageInfo)
     }
 
 }
