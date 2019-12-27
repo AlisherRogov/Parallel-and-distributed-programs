@@ -28,11 +28,7 @@ public class Proxy {
             items.poll();
             if (items.pollin(0)) {
                 ZMsg msg = ZMsg.recvMsg(frontend);
-                String cmd = new String(msg.getLast().getData(), ZMQ.CHARSET);
-                System.out.println(cmd);
-                System.out.println(msg.getFirst().toString());
-                System.out.println(msg.getLast().toString());
-                System.out.println(msg.toString());
+                
             }
 
         }
