@@ -52,6 +52,6 @@ public class Cache {
 
     private void sendNotify() {
         ZMsg msg = new ZMsg();
-        msg.add(new Command())
+        msg.add()
     }
 }

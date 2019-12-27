@@ -66,10 +66,12 @@ public class Command {
     }
 
     public static String response(int result) {
-        return "RESULT: " + result;
+        return "RESULT:" + DELIMETER + result;
     }
 
-    public static String notify()
+    public static String notify(int firstIndex, int lastIndex) {
+        return "NOTIFY:"+ DELIMETER + firstIndex + DELIMETER + lastIndex;
+    }
 }
 
 
