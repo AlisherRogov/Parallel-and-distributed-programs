@@ -51,7 +51,7 @@ public class Proxy {
                 Command command = new Command(cmd);
 
                 if (command.getType() == "NOTIFY") {
-                    insertStorage(storageId, command.);
+                    insertStorage(storageId, command.getFirstIndex(), command.getSecondIndex());
                 }
 
             }
