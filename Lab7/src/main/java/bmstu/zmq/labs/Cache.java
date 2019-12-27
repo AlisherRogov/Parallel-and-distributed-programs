@@ -29,7 +29,9 @@ public class Cache {
 
                 if (command.getType() == "GET") {
                     int key = command.getIndex();
-                    int value = 
+                    int value = storage.get(key);
+
+                    
                 }
             }
         }
