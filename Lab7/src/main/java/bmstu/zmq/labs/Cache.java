@@ -11,7 +11,7 @@ public class Cache {
         ZMQ.Socket socket = context.createSocket(SocketType.DEALER);
         socket.connect(CACHE_ADDRESS);
 
-        int 
+        int start = 
 
 
 
