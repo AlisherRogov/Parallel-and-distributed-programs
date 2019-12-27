@@ -48,6 +48,8 @@ public class Proxy {
                 ZMsg msg = ZMsg.recvMsg(backend);
                 String storageId = msg.getFirst().toString();
                 String cmd = msg.getLast().toString();
+                Command command = new Command(cmd);
+                
 
             }
 
