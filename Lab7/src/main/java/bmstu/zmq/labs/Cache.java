@@ -18,7 +18,9 @@ public class Cache {
         while (!Thread.currentThread().isInterrupted()) {
             ZMsg msg = ZMsg.recvMsg(socket);
 
-
+            if (msg != null) {
+                
+            }
         }
 
 
