@@ -37,7 +37,7 @@ public class Cache {
                 }
 
                 if (command.getType() == "PUT") {
-                    
+                    storage.put()
                 }
             }
         }
