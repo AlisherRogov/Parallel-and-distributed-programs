@@ -22,7 +22,9 @@ public class Cache {
                 String cmd = msg.getLast().toString();
                 Command command = new Command(cmd);
 
-                if (command.getType() == "GET")
+                if (command.getType() == "GET") {
+                    
+                }
             }
         }
 
