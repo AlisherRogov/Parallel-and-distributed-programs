@@ -16,7 +16,7 @@ public class Cache {
         int end = Integer.parseInt(args[1]);
 
         while (!Thread.currentThread().isInterrupted()) {
-            ZMsg msg = ZMsg.recvMsg()
+            ZMsg msg = ZMsg.recvMsg(socket);
         }
 
 
