@@ -19,7 +19,7 @@ public class Cache {
 
         int start = Integer.parseInt(args[0]);
         int end = Integer.parseInt(args[1]);
-        
+
 
         while (!Thread.currentThread().isInterrupted()) {
             ZMsg msg = ZMsg.recvMsg(socket);
@@ -48,4 +48,6 @@ public class Cache {
         context.destroySocket(socket);
         context.destroy();
     }
+
+    
 }
