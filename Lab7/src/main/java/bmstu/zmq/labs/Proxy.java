@@ -12,7 +12,7 @@ public class Proxy {
 
     private static String ClientAddress = "tcp://localhost:5555";
     private static String address = "tcp://localhost:5569";
-    private ArrayList<StorageInfo> activeStorages;
+    private ArrayList<StorageInfo> activeStorages = new ArrayList<>();
 
     public static void main(String[] args) {
         ZContext context = new ZContext();
