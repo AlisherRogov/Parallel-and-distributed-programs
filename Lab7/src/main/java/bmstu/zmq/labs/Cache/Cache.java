@@ -50,7 +50,7 @@ public class Cache {
         context.destroy();
     }
 
-    private void sendNotify() {
-        
+    private void sendNotify(ZMQ.Socket socket, int firstIndex, int lastIndex) {
+        socket.send(Command.notify(firstIndex, lastIndex));
     }
 }
