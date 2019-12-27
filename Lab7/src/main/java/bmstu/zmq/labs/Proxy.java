@@ -124,7 +124,7 @@ public class Proxy {
     }
 
     private static void removeDeadStorages() {
-        activeStorages.removeIf()
+        activeStorages.removeIf(StorageInfo::idDead);
     }
 
 
