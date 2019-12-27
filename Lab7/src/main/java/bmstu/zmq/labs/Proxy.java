@@ -87,7 +87,9 @@ public class Proxy {
         msg.send(backend);
     }
 
-    private static void sendToClient(ZFrame frame, )
+    private static void sendToClient(ZFrame frame, String result) {
+        
+    }
 
 
 
