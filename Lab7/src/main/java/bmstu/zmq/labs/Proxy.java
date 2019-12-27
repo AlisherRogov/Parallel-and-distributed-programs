@@ -1,9 +1,6 @@
 package bmstu.zmq.labs;
 
-import org.zeromq.SocketType;
-import org.zeromq.ZContext;
-import org.zeromq.ZMQ;
-import org.zeromq.ZMsg;
+import org.zeromq.*;
 
 import java.util.ArrayList;
 
@@ -47,6 +44,6 @@ public class Proxy {
         context.destroy();
     }
 
-    private static void sendToCache()
+    private static void sendToCache(ZFrame storageID)
 
 }
