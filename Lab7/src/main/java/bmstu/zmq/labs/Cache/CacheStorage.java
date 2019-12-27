@@ -12,6 +12,6 @@ public class CacheStorage {
     public CacheStorage(int firstInd, int lastInd, int value) {
         this.firstInd = firstInd;
         this.lastInd = lastInd;
-        list = new ArrayList<>(Collections.nCopies())
+        list = new ArrayList<>(Collections.nCopies(lastInd - firstInd + 1))
     }
 }
