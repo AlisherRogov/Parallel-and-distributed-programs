@@ -33,11 +33,7 @@ public class Cache {
                     ZMsg reply = new ZMsg();
                     reply.add(clientId);
                     reply.add(Command.response(value));
-                    
-
-                    String response = value == null ? "null" : Integer.toString(value);
-                   // msg.getLast().reset();
-
+                    reply.send(socket);
                 }
 
                 if (command.getType() == "PUT") {
