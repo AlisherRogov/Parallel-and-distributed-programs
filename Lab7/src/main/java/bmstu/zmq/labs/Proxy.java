@@ -50,7 +50,7 @@ public class Proxy {
         ZMsg msg = new ZMsg();
         for(StorageInfo storageInfo : activeStorages) {
             if(isInsideInterval(key, storageInfo.firstIndex, storageInfo.lastIndex)) {
-                
+                msg.ad
             }
         }
     }
