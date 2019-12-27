@@ -5,11 +5,14 @@ import org.zeromq.ZContext;
 import org.zeromq.ZMQ;
 import org.zeromq.ZMsg;
 
+import java.util.ArrayList;
+
 
 public class Proxy {
 
     private static String ClientAddress = "tcp://localhost:5555";
     private static String address = "tcp://localhost:5569";
+    private ArrayList<StorageInfo> activeStorages;
 
     public static void main(String[] args) {
         ZContext context = new ZContext();
@@ -32,7 +35,7 @@ public class Proxy {
                 Command cmd = new Command(msg.getLast().toString());
 
                 if (cmd.getType() == "GET") {
-                    
+
                 }
             }
 
