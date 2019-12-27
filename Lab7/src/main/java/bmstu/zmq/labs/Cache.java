@@ -31,7 +31,7 @@ public class Cache {
                     int key = command.getIndex();
                     int value = storage.get(key);
 
-                    String response = value == null ? "null" : Integer
+                    String response = value == null ? "null" : Integer.toString(value);
                 }
             }
         }
