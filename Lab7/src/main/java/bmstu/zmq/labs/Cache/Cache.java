@@ -48,7 +48,7 @@ public class Cache {
             }
             if(System.currentTimeMillis() >= timeoutTime) {
                 timeoutTime = System.currentTimeMillis() + TIMEOUT_MS;
-                
+                sendNotify(socket, start, end);
             }
         }
 
