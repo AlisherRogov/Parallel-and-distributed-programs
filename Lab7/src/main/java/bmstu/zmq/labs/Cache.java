@@ -31,7 +31,7 @@ public class Cache {
                     Integer key = command.getIndex();
                     Integer value = storage.get(key);
                     ZMsg reply = new ZMsg();
-                    
+                    reply.add()
 
                     String response = value == null ? "null" : Integer.toString(value);
                    // msg.getLast().reset();
