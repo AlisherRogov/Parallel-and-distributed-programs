@@ -55,6 +55,7 @@ public class Proxy {
                 msg.add(clientId);
                 msg.add(cmd);
                 System.out.println("message to cache has been sent");
+                msg.send()
 
             }
         }
