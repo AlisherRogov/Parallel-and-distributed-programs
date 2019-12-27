@@ -18,7 +18,7 @@ public class StorageInfo {
     }
 
     public boolean idDead() {
-        
+        long
     }
 
     public String getStorageID() {
