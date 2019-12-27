@@ -52,6 +52,7 @@ public class Proxy {
             if(isInsideInterval(key, storageInfo.firstIndex, storageInfo.lastIndex)) {
                 ZMsg msg = new ZMsg();
                 msg.add(storageInfo.getStorageID());
+                msg.add(clientId);
                 msg.add()
 
             }
