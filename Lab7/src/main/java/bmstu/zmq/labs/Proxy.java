@@ -40,10 +40,8 @@ public class Proxy {
                 if (cmd.getType() == "PUT") {
                     int key = cmd.getIndex();
                     boolean isKeyValid = sendPut(key, msg, backend);
-                   // if(!isKeyValid) {
-//                        //error message
-//                    }
-                    }
+
+
                 }
             }
 
@@ -87,7 +85,12 @@ public class Proxy {
         msg.add(frame.getLast().toString()); // command
         System.out.println("message to cache has been sent");
         msg.send(backend);
-  }
+    }
+
+    private static void sendToClient()
+
+
+
 
 
 
