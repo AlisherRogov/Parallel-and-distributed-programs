@@ -69,7 +69,7 @@ public class Command {
         return "RESULT: " + result;
     }
 
-    public static String
+    public static String notify()
 }
 
 
