@@ -88,6 +88,7 @@ public class Proxy {
     }
 
     private static void sendToClient(ZFrame frame, String result) {
+        ZMsg msg = new ZMsg();
         
     }
 
