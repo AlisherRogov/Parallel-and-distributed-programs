@@ -43,7 +43,7 @@ public class Proxy {
     }
 
     private static boolean isInsideInterval(int key, int start, int end) {
-        return 
+        return (start < key) && 
     }
     private static void sendGet(int key, Command cmd) {
         ZMsg msg = new ZMsg();
