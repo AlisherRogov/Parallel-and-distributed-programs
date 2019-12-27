@@ -117,9 +117,11 @@ public class Proxy {
         for (StorageInfo storedStorages : activeStorages) {
             if (storedStorages.getStorageID().equals(storageId)) {
                 storedStorages.updateNotifyTime();
+                return;
             }
         }
         
+
     }
 
 
