@@ -42,6 +42,7 @@ public class Cache {
             }
         }
 
-
+        context.destroySocket(socket);
+        context.destroy();
     }
 }
