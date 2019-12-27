@@ -45,6 +45,8 @@ public class Command {
         if (this.type == Type.GET) return args.get(1);
         return null;
     }
+
+    public 
 }
 
 
