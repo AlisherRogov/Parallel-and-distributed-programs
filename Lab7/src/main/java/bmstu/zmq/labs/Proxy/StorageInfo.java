@@ -1,4 +1,4 @@
-package bmstu.zmq.labs;
+package bmstu.zmq.labs.Proxy;
 
 public class StorageInfo {
     private static final int DURATION_MS = 500;
