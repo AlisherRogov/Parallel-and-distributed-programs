@@ -115,7 +115,7 @@ public class Proxy {
     private static void insertStorage(String storageId, int firstIndex, int lastIndex) {
         StorageInfo storageInfo = new StorageInfo(storageId, firstIndex, lastIndex);
         for (StorageInfo storedStorages : activeStorages) {
-            if ()
+            if (storedStorages.getStorageID())
         }
     }
 
