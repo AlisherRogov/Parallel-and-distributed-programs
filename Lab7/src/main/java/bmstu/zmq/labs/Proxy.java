@@ -46,7 +46,7 @@ public class Proxy {
         return (start <= key) && (key <= end);
     }
 
-    private static void sendGet(int key, Command cmd) {
+    private static void sendGet(int key, ZFrame clientId, Command cmd) {
         for(StorageInfo storageInfo : activeStorages) {
             if(isInsideInterval(key, storageInfo.firstIndex, storageInfo.lastIndex)) {
                 ZMsg msg = new ZMsg();
