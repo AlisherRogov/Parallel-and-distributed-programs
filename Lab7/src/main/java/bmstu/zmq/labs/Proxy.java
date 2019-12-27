@@ -33,9 +33,9 @@ public class Proxy {
                 if (cmd.getType() == "GET") {
                     int key = cmd.getIndex();
                     boolean isKeyValid = sendGet(key, msg, backend);
-//                    if(!isKeyValid) {
-//                        //error message
-//                    }
+                    if(!isKeyValid) {
+                        //error message
+                    }
                 }
                 if (cmd.getType() == "PUT") {
                     int key = cmd.getIndex();
