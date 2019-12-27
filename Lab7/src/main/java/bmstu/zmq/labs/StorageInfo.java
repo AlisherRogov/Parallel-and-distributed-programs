@@ -18,7 +18,7 @@ public class StorageInfo {
     }
 
     public boolean idDead() {
-        long currentTime
+        long currentTime = System.
     }
 
     public String getStorageID() {
