@@ -83,18 +83,22 @@ public class Proxy {
         msg.add(storageId);
         msg.add(frame.getFirst()); // ClientId
         msg.add(frame.getLast().toString()); // command
+      //  ZMsg msg1 = createMessage(storageId, frame.getFirst())
         System.out.println("message to cache has been sent");
         msg.send(backend);
     }
 
     private static void sendToClient(ZFrame clientId, String result) {
-        ZMsg msg = new ZMsg();
-        msg.add(clientId);
-        msg.add((String) null);
-        msg.add(result);
+        ZMsg msg = createMessage(clientId, (String) null, result);
     }
 
-    private static ZMsg createMessage(ZFrame param1, ZFrame param2, ZFrame param3  )
+    private static ZMsg createMessage(ZFrame param1, String param2, String param3) {
+        ZMsg msg = new ZMsg();
+        msg.add(param1);
+        msg.add(param2);
+        msg.add(param3);
+        return msg;
+    }
 
 
 
