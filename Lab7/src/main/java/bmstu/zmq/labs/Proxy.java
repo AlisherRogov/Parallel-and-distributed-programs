@@ -8,8 +8,8 @@ import org.zeromq.ZMsg;
 
 public class Proxy {
 
-    private static String ClientAddress;
-    private static String address;
+    private static String ClientAddress = "tcp://localhost:5555";
+    private static String address = "tcp://localhost:5569";
 
     public static void main(String[] args) {
         ZContext context = new ZContext();
@@ -28,7 +28,7 @@ public class Proxy {
             items.poll();
             if (items.pollin(0)) {
                 ZMsg msg = ZMsg.recvMsg(frontend);
-
+                System.out.println(msg.toString());
             }
 
         }
