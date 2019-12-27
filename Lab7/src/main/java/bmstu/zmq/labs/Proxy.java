@@ -42,6 +42,9 @@ public class Proxy {
         context.destroy();
     }
 
+    private static boolean isInsideInterval(int key, int start, int end) {
+        return 
+    }
     private static void sendGet(int key, Command cmd) {
         ZMsg msg = new ZMsg();
         for(StorageInfo storageInfo : activeStorages) {
