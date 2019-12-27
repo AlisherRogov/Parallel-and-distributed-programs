@@ -46,7 +46,7 @@ public class Cache {
                     msg.destroy();
                 }
             }
-            if()
+            if(System.currentTimeMillis() )
         }
 
         context.destroySocket(socket);
