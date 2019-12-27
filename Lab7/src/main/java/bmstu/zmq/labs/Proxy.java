@@ -32,7 +32,7 @@ public class Proxy {
                 Command cmd = new Command(msg.getLast().toString());
 
                 if (cmd.getType() == "GET") {
-
+                    
                 }
             }
 
