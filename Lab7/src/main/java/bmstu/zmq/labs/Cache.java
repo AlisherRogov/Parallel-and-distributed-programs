@@ -40,6 +40,7 @@ public class Cache {
                     int index = command.getIndex();
                     int value = command.getValue();
                     storage.put(index, value);
+                    msg.destroy();
                 }
             }
         }
