@@ -23,7 +23,7 @@ public class Cache {
                 Command command = new Command(cmd);
 
                 if (command.getType() == "GET") {
-                    
+                    int key = command.getIndex();
                 }
             }
         }
