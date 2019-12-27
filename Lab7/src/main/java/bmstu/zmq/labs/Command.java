@@ -35,6 +35,7 @@ public class Command {
         if (split[0] == "ERROR") {
             this.type = Type.ERROR;
         }
+        
     }
 
     public String getType() {
