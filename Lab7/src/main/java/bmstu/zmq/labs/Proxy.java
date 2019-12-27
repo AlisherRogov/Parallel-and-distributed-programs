@@ -45,7 +45,7 @@ public class Proxy {
     private static void sendGet(int key, Command cmd) {
         ZMsg msg = new ZMsg();
         for(StorageInfo storageInfo : activeStorages) {
-            if(storageInfo.getFirstIndex() )
+            if(storageInfo.getFirstIndex() <)
         }
     }
 
