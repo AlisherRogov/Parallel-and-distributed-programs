@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Command {
     enum Type {
-        GET, PUT, NOTIFY
+        GET, PUT, NOTIFY, ERROR
     }
 
     private static final String DELIMETER = " ";
