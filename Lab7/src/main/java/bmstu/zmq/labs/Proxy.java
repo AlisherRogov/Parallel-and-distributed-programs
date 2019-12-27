@@ -38,7 +38,7 @@ public class Proxy {
 //                    }
                 }
                 if (cmd.getType() == "PUT") {
-                    
+                    int key = cmd.getIndex();
                 }
             }
 
