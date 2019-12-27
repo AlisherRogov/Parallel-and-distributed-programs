@@ -47,7 +47,7 @@ public class Cache {
                 }
             }
             if(System.currentTimeMillis() >= timeoutTime) {
-                
+                timeoutTime = System.currentTimeMillis() 
             }
         }
 
