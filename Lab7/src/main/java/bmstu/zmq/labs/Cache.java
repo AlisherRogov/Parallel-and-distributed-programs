@@ -36,7 +36,9 @@ public class Cache {
 
                 }
 
-                if ()
+                if (command.getType() == "PUT") {
+                    
+                }
             }
         }
 
