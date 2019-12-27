@@ -112,7 +112,7 @@ public class Proxy {
         return msg;
     }
 
-    private static void insertStorage()
+    private static void insertStorage(ZFrame storageId)
 
 
 
