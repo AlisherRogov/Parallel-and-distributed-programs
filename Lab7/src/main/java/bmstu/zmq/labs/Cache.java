@@ -32,6 +32,7 @@ public class Cache {
                     int value = storage.get(key);
 
                     String response = value == null ? "null" : Integer.toString(value);
+                    
                 }
             }
         }
