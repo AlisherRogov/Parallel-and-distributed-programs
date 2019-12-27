@@ -24,6 +24,6 @@ public class CacheStorage {
     }
 
     public get(int index) {
-        
+        return;
     }
 }
