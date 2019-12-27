@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Cache {
-    private static final int 
+    private static final int TIMEOUT_MS =
     private static final String CACHE_ADDRESS = "tcp://localhost:5569";
     public static void main(String[] args) {
         Map<Integer, Integer> storage = new HashMap<>();
