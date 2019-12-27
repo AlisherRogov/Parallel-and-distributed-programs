@@ -1,6 +1,7 @@
 package bmstu.zmq.labs.Cache;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class CacheStorage {
@@ -11,6 +12,6 @@ public class CacheStorage {
     public CacheStorage(int firstInd, int lastInd, int value) {
         this.firstInd = firstInd;
         this.lastInd = lastInd;
-        list = new ArrayList<>()
+        list = new ArrayList<>(Collections.nCopies())
     }
 }
