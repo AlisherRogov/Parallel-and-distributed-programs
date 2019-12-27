@@ -21,7 +21,7 @@ public class Cache {
 
         int start = Integer.parseInt(args[0]);
         int end = Integer.parseInt(args[1]);
-        int timeoutTime = 
+        int timeoutTime = System.currentTimeMillis() + 
         sendNotify(socket, start, end);
 
         while (!Thread.currentThread().isInterrupted()) {
