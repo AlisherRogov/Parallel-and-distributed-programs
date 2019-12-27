@@ -46,7 +46,9 @@ public class Cache {
                     msg.destroy();
                 }
             }
-            if(System.currentTimeMillis() >= )
+            if(System.currentTimeMillis() >= timeoutTime) {
+                
+            }
         }
 
         context.destroySocket(socket);
