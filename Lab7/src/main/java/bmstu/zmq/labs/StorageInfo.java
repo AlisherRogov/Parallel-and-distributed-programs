@@ -1,7 +1,7 @@
 package bmstu.zmq.labs;
 
 public class StorageInfo {
-    private static final int DURATION_MS = 500
+    private static final int DURATION_MS = 500;
     String storageID;
     int firstIndex;
     int lastIndex;
@@ -20,7 +20,7 @@ public class StorageInfo {
 
     public boolean idDead() {
         long currentTime = System.currentTimeMillis();
-        return (currentTime - lastNotifyTime) > 2 *
+        return (currentTime - lastNotifyTime) > 2 * DURATION_MS;
     }
 
     public String getStorageID() {
