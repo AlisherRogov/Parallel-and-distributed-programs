@@ -30,7 +30,7 @@ public class Cache {
                 String cmd = msg.getLast().toString();
                 Command command = new Command(cmd);
                 String clientId = msg.getFirst().toString();
-                if (command.getType() == "GET") {
+                if (command.getType().equals("GET")) {
                     Integer key = command.getIndex();
                     Integer value = storage.get(key);
                     ZMsg reply = new ZMsg();
@@ -39,7 +39,7 @@ public class Cache {
                     reply.send(socket);
                 }
 
-                if (command.getType() == "PUT") {
+                if (command.getType().equals("PUT")) {
                     int index = command.getIndex();
                     int value = command.getValue();
                     storage.put(index, value);
