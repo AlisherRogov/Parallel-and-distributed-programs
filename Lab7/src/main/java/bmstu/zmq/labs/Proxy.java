@@ -28,6 +28,8 @@ public class Proxy {
             items.poll();
             if (items.pollin(0)) {
                 ZMsg msg = ZMsg.recvMsg(frontend);
+                System.out.println(msg.getFirst().toString());
+                System.out.println(msg.getLast().toString());
                 System.out.println(msg.toString());
             }
 
