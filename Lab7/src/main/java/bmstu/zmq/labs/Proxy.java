@@ -35,7 +35,7 @@ public class Proxy {
                 Command cmd = new Command(msg.getLast().toString());
 
                 if (cmd.getType() == "GET") {
-                    
+
                 }
             }
 
@@ -46,5 +46,7 @@ public class Proxy {
 
         context.destroy();
     }
+
+    private static void 
 
 }
