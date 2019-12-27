@@ -112,7 +112,9 @@ public class Proxy {
         return msg;
     }
 
-    private static void insertStorage(ZFrame storageId, int firstIndex, int )
+    private static void insertStorage(ZFrame storageId, int firstIndex, int lastIndex) {
+        
+    }
 
 
 
