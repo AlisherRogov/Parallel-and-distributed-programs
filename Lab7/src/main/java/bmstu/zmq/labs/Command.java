@@ -39,7 +39,8 @@ public class Command {
     }
 
     public Integer getIndex() {
-        if (this.type = Type.GET)
+        if (this.type == Type.GET) return args.get(1);
+        return null;
     }
 }
 
