@@ -47,7 +47,8 @@ public class Proxy {
         return (start <= key) && (key <= end);
     }
 
-    private static void sendGet(int key, ZMsg frame, ZMQ.Socket backend) {
+    private static boolean sendGet(int key, ZMsg frame, ZMQ.Socket backend) {
+        boolean isKeyValid = false;
         for(StorageInfo storageInfo : activeStorages) {
             if(isInsideInterval(key, storageInfo.firstIndex, storageInfo.lastIndex)) {
                 ZMsg msg = new ZMsg();
@@ -55,10 +56,11 @@ public class Proxy {
                 msg.add(frame.getFirst()); // ClientId
                 msg.add(frame.getLast().toString()); // command
                 System.out.println("message to cache has been sent");
-                msg.send(backend)
-
+                msg.send(backend);
+                isKeyValid = true;
             }
         }
+        return isKeyValid;
     }
 
 }
