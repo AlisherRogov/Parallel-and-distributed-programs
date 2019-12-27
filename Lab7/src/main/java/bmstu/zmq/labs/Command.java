@@ -38,7 +38,9 @@ public class Command {
         return type.name();
     }
 
-    
+    public Integer getIndex() {
+        
+    }
 }
 
 
