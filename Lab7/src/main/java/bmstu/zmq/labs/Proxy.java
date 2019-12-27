@@ -91,7 +91,7 @@ public class Proxy {
         ZMsg msg = new ZMsg();
         msg.add(clientId);
         msg.add((String) null);
-        
+        msg.add(result);
     }
 
 
