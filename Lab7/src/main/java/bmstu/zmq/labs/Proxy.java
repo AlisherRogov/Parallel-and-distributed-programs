@@ -33,17 +33,19 @@ public class Proxy {
                 if (cmd.getType() == "GET") {
                     int key = cmd.getIndex();
                     boolean isKeyValid = sendGet(key, msg, backend);
-                    if(!isKeyValid) {
+                    if (!isKeyValid) {
                         sendToClient(clientId, "ERROR", frontend);
                     }
                 }
                 if (cmd.getType() == "PUT") {
                     int key = cmd.getIndex();
                     boolean isKeyValid = sendPut(key, msg, backend);
-                    if(!isKeyValid) {
+                    if (!isKeyValid) {
                         sendToClient(clientId, "ERROR", frontend);
                     }
                 }
+            } else if (items.pollin(1)) {
+                
             }
 
         }
