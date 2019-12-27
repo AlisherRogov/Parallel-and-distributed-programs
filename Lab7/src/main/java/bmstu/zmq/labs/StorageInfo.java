@@ -13,7 +13,7 @@ public class StorageInfo {
     }
 
     public void updateNotifyTime() {
-        
+        lastNotifyTime = 
     }
 
     public String getStorageID() {
