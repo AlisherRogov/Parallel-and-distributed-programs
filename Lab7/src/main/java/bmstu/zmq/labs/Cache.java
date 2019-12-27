@@ -19,7 +19,7 @@ public class Cache {
             ZMsg msg = ZMsg.recvMsg(socket);
 
             if (msg != null) {
-                String cmd = msg.getLast();
+                String cmd = msg.getLast().toString();
             }
         }
 
