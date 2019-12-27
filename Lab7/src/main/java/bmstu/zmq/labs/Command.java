@@ -22,17 +22,19 @@ public class Command {
             this.type = Type.GET;
             args.add(Integer.parseInt(split[1]));
         }
-        if (split[1] == "PUT") {
+        if (split[0] == "PUT") {
             this.type = Type.PUT;
             args.add(Integer.parseInt(split[1]));
             args.add(Integer.parseInt(split[2]));
         }
-        if (split[2] == "NOTIFY") {
+        if (split[0] == "NOTIFY") {
             this.type = Type.NOTIFY;
             args.add(Integer.parseInt(split[1]));
             args.add(Integer.parseInt(split[2]));
         }
-        if()
+        if (split[0] == "ERROR") {
+            this.type = Type.ERROR;
+        }
     }
 
     public String getType() {
