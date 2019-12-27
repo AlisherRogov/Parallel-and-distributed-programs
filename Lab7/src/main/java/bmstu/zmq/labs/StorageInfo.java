@@ -10,6 +10,7 @@ public class StorageInfo {
         this.storageID = storageID;
         this.firstIndex = firstIndex;
         this.lastIndex = lastIndex;
+        updateNotifyTime();
     }
 
     public void updateNotifyTime() {
