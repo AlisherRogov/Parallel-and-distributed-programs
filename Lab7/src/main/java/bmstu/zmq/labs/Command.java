@@ -60,8 +60,8 @@ public class Command {
         return null;
     }
 
-    public static void response(int result) {
-        
+    public static String response(int result) {
+        return "RESULT"
     }
 }
 
