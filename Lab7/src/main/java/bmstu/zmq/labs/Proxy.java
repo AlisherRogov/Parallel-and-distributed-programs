@@ -9,7 +9,7 @@ public class Proxy {
 
     private static String ClientAddress = "tcp://localhost:5555";
     private static String address = "tcp://localhost:5569";
-    private ArrayList<StorageInfo> activeStorages = new ArrayList<>();
+    private static ArrayList<StorageInfo> activeStorages = new ArrayList<>();
 
     public static void main(String[] args) {
         ZContext context = new ZContext();
@@ -44,7 +44,9 @@ public class Proxy {
 
     private static void sendGet(int key, Command cmd) {
         ZMsg msg = new ZMsg();
-        for(StorageInfo)
+        for(StorageInfo storageInfo : activeStorages) {
+            
+        }
     }
 
 }
