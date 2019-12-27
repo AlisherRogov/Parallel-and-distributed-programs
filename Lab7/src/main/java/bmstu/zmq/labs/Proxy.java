@@ -112,8 +112,9 @@ public class Proxy {
         return msg;
     }
 
-    private static void insertStorage(ZFrame storageId, int firstIndex, int lastIndex) {
-        StorageInfo storageInfo = new StorageInfo()
+    private static void insertStorage(String storageId, int firstIndex, int lastIndex) {
+        StorageInfo storageInfo = new StorageInfo(storageId, firstIndex, lastIndex);
+        
     }
 
 
