@@ -12,6 +12,7 @@ import java.util.Map;
 public class Cache {
     private static final int TIMEOUT_MS = 3000;
     private static final String CACHE_ADDRESS = "tcp://localhost:5569";
+
     public static void main(String[] args) {
         Map<Integer, Integer> storage = new HashMap<>();
 
@@ -38,7 +39,6 @@ public class Cache {
                     reply.add(Command.response(value));
                     reply.send(socket);
                 }
-
                 if (command.getType().equals("PUT")) {
                     int index = command.getIndex();
                     int value = command.getValue();
@@ -51,7 +51,6 @@ public class Cache {
                 sendNotify(socket, start, end);
             }
         }
-
         context.destroySocket(socket);
         context.destroy();
     }
