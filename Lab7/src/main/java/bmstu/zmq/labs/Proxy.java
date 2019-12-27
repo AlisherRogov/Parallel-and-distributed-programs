@@ -94,7 +94,7 @@ public class Proxy {
         msg.add(result);
     }
 
-    private static ZMsg createMessage(ZFrame address, )
+    private static ZMsg createMessage(ZFrame param1, ZFrame param2, ZFrame param3  )
 
 
 
