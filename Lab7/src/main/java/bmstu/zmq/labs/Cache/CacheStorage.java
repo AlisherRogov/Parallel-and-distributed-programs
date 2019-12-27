@@ -23,7 +23,11 @@ public class CacheStorage {
         return lastInd;
     }
 
-    public get(int index) {
-        return list.get()
+    public int get(int index) {
+        return list.get(index - firstInd);
+    }
+
+    public int put(int index, int value) {
+        
     }
 }
