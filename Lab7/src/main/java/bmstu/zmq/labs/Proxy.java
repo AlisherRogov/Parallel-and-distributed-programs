@@ -88,9 +88,9 @@ public class Proxy {
         msg.send(backend);
     }
 
-    private static void sendToClient(ZFrame clientId, String result) {
+    private static void sendToClient(ZFrame clientId, String result, ZMQ.Socket frontend) {
         ZMsg msg = createMessage(clientId, (String) null, result);
-        msg.send()
+        msg.send(frontend)
     }
 
     private static ZMsg createMessage(ZFrame param1, String param2, String param3) {
