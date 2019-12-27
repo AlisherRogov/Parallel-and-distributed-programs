@@ -43,12 +43,15 @@ public class Proxy {
     }
 
     private static boolean isInsideInterval(int key, int start, int end) {
-        return (start < key) && 
+        return (start <= key) && (key <= end);
     }
+
     private static void sendGet(int key, Command cmd) {
         ZMsg msg = new ZMsg();
         for(StorageInfo storageInfo : activeStorages) {
-            if(storageInfo.getFirstIndex() <)
+            if(isInsideInterval(key, storageInfo.firstIndex, storageInfo.lastIndex) {
+                
+            }
         }
     }
 
