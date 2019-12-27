@@ -1,7 +1,7 @@
 package bmstu.zmq.labs;
 
 public class StorageInfo {
-    private static final int 
+    private static final int DURATION
     String storageID;
     int firstIndex;
     int lastIndex;
