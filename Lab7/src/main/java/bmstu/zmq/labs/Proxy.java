@@ -42,7 +42,7 @@ public class Proxy {
         context.destroy();
     }
 
-    private static void sendGet(ZFrame clientId, Command cmd) {
+    private static void sendGet(int key, Command cmd) {
         ZMsg msg = new ZMsg();
         m
     }
