@@ -30,7 +30,7 @@ public class Proxy {
                 ZMsg msg = ZMsg.recvMsg(frontend);
                 Command cmd = new Command(msg.getLast().toString());
 
-                if (cmd.getType() == )
+                if (cmd.getType() == "GET") 
             }
 
         }
