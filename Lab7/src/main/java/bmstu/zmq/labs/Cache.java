@@ -39,7 +39,7 @@ public class Cache {
                 if (command.getType() == "PUT") {
                     int index = command.getIndex();
                     int value = command.getValue();
-                    storage.put()
+                    storage.put(index, value);
                 }
             }
         }
