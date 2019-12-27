@@ -32,6 +32,7 @@ public class Command {
             args.add(Integer.parseInt(split[1]));
             args.add(Integer.parseInt(split[2]));
         }
+        if()
     }
 
     public String getType() {
