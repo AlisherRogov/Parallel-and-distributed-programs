@@ -123,7 +123,7 @@ public class Proxy {
         activeStorages.add(storageInfo);
     }
 
-    pr
+    private static void removeDeadStorages()
 
 
 
