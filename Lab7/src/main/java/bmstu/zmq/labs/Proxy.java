@@ -44,6 +44,8 @@ public class Proxy {
         context.destroy();
     }
 
-    private static void sendToCache(ZFrame storageId, ZFrame clientId, Command )
+    private static void sendToCache(ZFrame storageId, ZFrame clientId, Command cmd) {
+        
+    }
 
 }
