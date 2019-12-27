@@ -47,15 +47,15 @@ public class Proxy {
         return (start <= key) && (key <= end);
     }
 
-    private static void sendGet(int key, ZFrame clientId, String cmd) {
+    private static void sendGet(int key, ZMsg frame, ZMQ.Socket backend) {
         for(StorageInfo storageInfo : activeStorages) {
             if(isInsideInterval(key, storageInfo.firstIndex, storageInfo.lastIndex)) {
                 ZMsg msg = new ZMsg();
                 msg.add(storageInfo.getStorageID());
-                msg.add(clientId);
-                msg.add(cmd);
+                msg.add(frame.getFirst()); // ClientId
+                msg.add(frame.getLast().toString()); // command
                 System.out.println("message to cache has been sent");
-                msg.send()
+                msg.send(backend)
 
             }
         }
