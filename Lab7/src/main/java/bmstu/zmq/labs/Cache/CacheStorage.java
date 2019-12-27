@@ -23,5 +23,7 @@ public class CacheStorage {
         return lastInd;
     }
 
-    public get()
+    public get(int index) {
+        
+    }
 }
