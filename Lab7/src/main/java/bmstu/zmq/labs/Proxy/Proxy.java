@@ -1,5 +1,6 @@
-package bmstu.zmq.labs;
+package bmstu.zmq.labs.Proxy;
 
+import bmstu.zmq.labs.Command;
 import org.zeromq.*;
 
 import java.util.ArrayList;

@@ -1,5 +1,6 @@
-package bmstu.zmq.labs;
+package bmstu.zmq.labs.Cache;
 
+import bmstu.zmq.labs.Command;
 import org.zeromq.SocketType;
 import org.zeromq.ZContext;
 import org.zeromq.ZMQ;
