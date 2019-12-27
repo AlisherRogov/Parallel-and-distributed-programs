@@ -1,7 +1,7 @@
 package bmstu.zmq.labs;
 
 public class StorageInfo {
-    private static final int DURATION
+    private static final int DURATION_MS = 500
     String storageID;
     int firstIndex;
     int lastIndex;
