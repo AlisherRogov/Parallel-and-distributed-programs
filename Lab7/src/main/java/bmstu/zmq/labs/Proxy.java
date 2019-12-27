@@ -90,6 +90,7 @@ public class Proxy {
 
     private static void sendToClient(ZFrame clientId, String result) {
         ZMsg msg = createMessage(clientId, (String) null, result);
+        msg.send()
     }
 
     private static ZMsg createMessage(ZFrame param1, String param2, String param3) {
