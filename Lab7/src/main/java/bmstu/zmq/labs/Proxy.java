@@ -40,6 +40,10 @@ public class Proxy {
                 if (cmd.getType() == "PUT") {
                     int key = cmd.getIndex();
                     boolean isKeyValid = sendPut(key, msg, backend);
+                   // if(!isKeyValid) {
+//                        //error message
+//                    }
+                    }
                 }
             }
 
