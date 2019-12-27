@@ -28,6 +28,6 @@ public class CacheStorage {
     }
 
     public int put(int index, int value) {
-        list.set()
+        list.set(index - firstInd, value);
     }
 }
