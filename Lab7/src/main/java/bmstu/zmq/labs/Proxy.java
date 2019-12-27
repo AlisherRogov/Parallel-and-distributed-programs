@@ -47,10 +47,10 @@ public class Proxy {
     }
 
     private static void sendGet(int key, Command cmd) {
-        ZMsg msg = new ZMsg();
         for(StorageInfo storageInfo : activeStorages) {
             if(isInsideInterval(key, storageInfo.firstIndex, storageInfo.lastIndex)) {
-                msg.ad
+                ZMsg msg = new ZMsg();
+                msg.add
             }
         }
     }
