@@ -37,6 +37,8 @@ public class Command {
     public String getType() {
         return type.name();
     }
+
+    
 }
 
 
