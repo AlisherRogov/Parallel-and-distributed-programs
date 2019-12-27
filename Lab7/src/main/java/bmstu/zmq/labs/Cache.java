@@ -29,10 +29,10 @@ public class Cache {
 
                 if (command.getType() == "GET") {
                     int key = command.getIndex();
-                    int value = storage.get(key);
+                    Integer value = storage.get(key);
 
                     String response = value == null ? "null" : Integer.toString(value);
-                    
+
                 }
             }
         }
