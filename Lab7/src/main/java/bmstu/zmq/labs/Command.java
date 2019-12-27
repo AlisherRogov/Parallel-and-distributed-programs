@@ -47,7 +47,7 @@ public class Command {
     }
 
     public Integer getFirstIndex() {
-        if (this.type == Type.NOTIFY) return args.get(1)
+        if (this.type == Type.NOTIFY) return args.get(0);
     }
 }
 
