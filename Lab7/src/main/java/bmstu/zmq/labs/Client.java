@@ -14,11 +14,13 @@ public class Client {
         socket.connect(CLIENT_ADDRESS);
         Scanner in = new Scanner(System.in);
 
-        while(!Thread.currentThread().isInterrupted()) {
+        while(true) {
             String command = in.nextLine();
             System.out.println(command);
             socket.send(command, 0);
-            System.out.println(socket.recvStr(0));
+            String reply = socket.recvStr();
+            if(reply.equals("ERROR")) break;
+            System.out.println(reply);
         }
 
         context.destroySocket(socket);
