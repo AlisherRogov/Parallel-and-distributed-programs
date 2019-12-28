@@ -19,7 +19,9 @@ public class Client {
             System.out.println(command);
             socket.send(command, 0);
             Command cmd = new Command(command);
-            if (cmd.getType().equals())
+            if (cmd.getType().equals("GET")){
+                
+            }
             System.out.println(socket.recvStr(0));
         }
 
