@@ -40,9 +40,9 @@ public class Cache {
                 }
                 if (command.getType().equals("PUT")) {
                     System.out.println(msg.toString());
-                    int index = command.getIndex();
-                    int value = command.getValue();
-                    storage.put(index, value);
+                   // int index = command.getIndex();
+                   // int value = command.getValue();
+                    //storage.put(index, value);
                    // msg.destroy();
                 }
                 if (System.currentTimeMillis() >= timeoutTime) {
