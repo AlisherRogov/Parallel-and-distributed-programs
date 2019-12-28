@@ -62,6 +62,7 @@ public class Proxy {
                     insertStorage(msg.getFirst(), command.getFirstIndex(), command.getSecondIndex());
                 }
                 if(command.getType().equals("RESULT")) {
+                    System.out.println(msg);
                     msg.send(frontend);
                 }
             }

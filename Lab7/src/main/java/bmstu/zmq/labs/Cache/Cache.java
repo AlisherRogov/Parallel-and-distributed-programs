@@ -36,6 +36,7 @@ public class Cache {
                     reply.add(clientId);
                     reply.add((String) null);
                     reply.add(Command.response(value));
+                    System.out.println(reply);
                     reply.send(socket);
                 }
                 if (command.getType().equals("PUT")) {
