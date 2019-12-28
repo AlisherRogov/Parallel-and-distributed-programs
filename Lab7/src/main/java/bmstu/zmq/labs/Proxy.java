@@ -50,8 +50,8 @@ public class Proxy {
                 ZMsg msg = ZMsg.recvMsg(backend);
                 String storageId = msg.getFirst().toString();
                 String cmd = msg.getLast().toString();
+                System.out.println(cmd);
                 Command command = new Command(cmd);
-                System.out.println(command.getType());
                 if (command.getType() == "NOTIFY") {
                     insertStorage(storageId, command.getFirstIndex(), command.getSecondIndex());
                 }
