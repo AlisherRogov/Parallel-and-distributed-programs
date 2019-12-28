@@ -63,7 +63,8 @@ public class Proxy {
                 }
                 if(command.getType().equals("RESULT")) {
                     System.out.println(msg);
-                    msg.send(frontend);
+                    sendToClient(msg.getFirst(), msg.getLast().toString(), frontend);
+                   // msg.send(frontend);
                 }
             }
             removeDeadStorages();
