@@ -55,7 +55,6 @@ public class Proxy {
                 if (command.getType() == "NOTIFY") {
                     insertStorage(storageId, command.getFirstIndex(), command.getSecondIndex());
                 }
-
             }
             removeDeadStorages();
         }
