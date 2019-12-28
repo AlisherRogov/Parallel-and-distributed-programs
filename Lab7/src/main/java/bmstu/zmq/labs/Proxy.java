@@ -31,6 +31,7 @@ public class Proxy {
                 ZMsg msg = ZMsg.recvMsg(frontend);
                 ZFrame clientId = msg.getFirst();
                 Command cmd = new Command(msg.getLast().toString());
+                System.out.println(cmd.getType());
                 if (cmd.getType() == "GET") {
                     int key = cmd.getIndex();
                     boolean isKeyValid = sendGet(key, msg, backend);
