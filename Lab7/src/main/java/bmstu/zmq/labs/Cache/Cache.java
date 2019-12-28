@@ -21,8 +21,7 @@ public class Cache {
         int end = Integer.parseInt(args[1]);
         long timeoutTime = System.currentTimeMillis() + TIMEOUT_MS;
         sendNotify(socket, start, end);
-fasdfd
-        
+
         while (!Thread.currentThread().isInterrupted()) {
             ZMsg msg = ZMsg.recvMsg(socket, false);
             if (msg != null) {
