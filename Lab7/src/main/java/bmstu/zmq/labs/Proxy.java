@@ -43,6 +43,7 @@ public class Proxy {
                     int key = cmd.getIndex();
                     boolean isKeyValid = sendPut(key, msg, backend);
                     if (!isKeyValid) {
+                        System.out.println(clientId);
                         sendToClient(clientId, "ERROR", frontend);
                     } else {
                         System.out.println("nice");
