@@ -27,6 +27,7 @@ public class Proxy {
         while (!Thread.currentThread().isInterrupted()) {
             items.poll();
             if (items.pollin(0)) {
+                System.out.println(0);
                 ZMsg msg = ZMsg.recvMsg(frontend);
                 System.out.println(msg.toString());
                 ZFrame clientId = msg.getFirst();
