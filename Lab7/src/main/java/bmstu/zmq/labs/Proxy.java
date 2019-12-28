@@ -91,8 +91,6 @@ public class Proxy {
         return false;
     }
 
-
-
     private static boolean sendPut(int key, ZMsg frame, ZMQ.Socket backend) {
         boolean isKeyValid = false;
         for(StorageInfo storageInfo : activeStorages) {

@@ -4,7 +4,7 @@ import org.zeromq.ZFrame;
 import org.zeromq.ZMQ;
 
 public class StorageInfo {
-    private static final int DURATION_MS = 500;
+    private static final int DURATION_MS = 50;
     ZFrame storageID;
     int firstIndex;
     int lastIndex;
