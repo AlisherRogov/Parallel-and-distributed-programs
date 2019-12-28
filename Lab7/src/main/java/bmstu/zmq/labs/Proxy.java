@@ -97,7 +97,7 @@ public class Proxy {
        // msg.add("");
      //   msg.add(frame.getFirst()); // ClientId
        // msg.add("");
-        msg.add((String) null);
+      //  msg.add((String) null);
         msg.add(frame.getLast().toString()); // command
         System.out.println("message to cache has been sent");
         System.out.println(msg.toString());
