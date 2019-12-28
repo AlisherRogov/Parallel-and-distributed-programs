@@ -93,9 +93,9 @@ public class Proxy {
     private static void sendToCache(String  storageId, ZMsg frame, ZMQ.Socket backend) {
         System.out.println(frame.toString());
         ZMsg msg = new ZMsg();
-     //   msg.add(storageId);
+        msg.add(storageId);
        // msg.add("");
-        msg.add(frame.getFirst()); // ClientId
+     //   msg.add(frame.getFirst()); // ClientId
        // msg.add("");
         msg.add((String) null);
         msg.add(frame.getLast().toString()); // command
