@@ -82,7 +82,7 @@ public class Proxy {
 
     private static boolean sendGet(int key, ZMsg frame, ZMQ.Socket backend) {
         for(StorageInfo storageInfo : activeStorages) {
-            if(isInsideInterval(key, storageInfo.firstIndex, storageInfo.lastIndex) ) {
+            if(isInsideInterval(key, storageInfo.firstIndex, storageInfo.lastIndex) && storageInfo.idDead()) {
                 sendToCache(storageInfo.getStorageID(), frame, backend);
                 return true;
             }
@@ -95,7 +95,7 @@ public class Proxy {
     private static boolean sendPut(int key, ZMsg frame, ZMQ.Socket backend) {
         boolean isKeyValid = false;
         for(StorageInfo storageInfo : activeStorages) {
-            if(isInsideInterval(key, storageInfo.firstIndex, storageInfo.lastIndex)) {
+            if(isInsideInterval(key, storageInfo.firstIndex, storageInfo.lastIndex) && storageInfo.idDead()) {
                 sendToCache(storageInfo.getStorageID(), frame, backend);
                 isKeyValid = true;
             }
