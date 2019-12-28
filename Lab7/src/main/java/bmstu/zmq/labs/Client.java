@@ -18,6 +18,7 @@ public class Client {
             String command = in.nextLine();
             System.out.println(command);
             socket.send(command, 0);
+            
             System.out.println(socket.recvStr(0));
         }
 
