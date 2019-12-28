@@ -50,6 +50,7 @@ public class Cache {
                 }
                 if (System.currentTimeMillis() >= timeoutTime) {
                     timeoutTime = System.currentTimeMillis() + TIMEOUT_MS;
+                    System.out.println(storage);
                     sendNotify(socket, start, end);
                 }
             }
@@ -59,6 +60,7 @@ public class Cache {
     }
 
     private static void sendNotify(ZMQ.Socket socket, int firstIndex, int lastIndex) {
+        System.out.println("Updated ");
         socket.send(Command.notify(firstIndex, lastIndex));
     }
 }
