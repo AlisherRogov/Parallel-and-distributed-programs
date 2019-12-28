@@ -52,9 +52,9 @@ public class Proxy {
                 String cmd = msg.getLast().toString();
                 Command command = new Command(cmd);
 
-//                if (command.getType() == "NOTIFY") {
-//                    insertStorage(storageId, command.getFirstIndex(), command.getSecondIndex());
-//                }
+                if (command.getType() == "NOTIFY") {
+                    insertStorage(storageId, command.getFirstIndex(), command.getSecondIndex());
+                }
             }
             removeDeadStorages();
         }
