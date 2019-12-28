@@ -17,7 +17,7 @@ public class StorageInfo {
         updateNotifyTime();
     }
 
-    public String updateNotifyTime() {
+    public long updateNotifyTime() {
         lastNotifyTime = System.currentTimeMillis();
         return  lastNotifyTime;
     }
