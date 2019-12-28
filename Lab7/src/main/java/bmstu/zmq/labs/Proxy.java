@@ -45,6 +45,7 @@ public class Proxy {
                     if (!isKeyValid) {
                         sendToClient(clientId, "ERROR", frontend);
                     } else {
+                        System.out.println("nice");
                         sendToClient(clientId, "NICE", frontend);
                     }
                 }
