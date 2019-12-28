@@ -47,7 +47,9 @@ public class Proxy {
             } else if (items.pollin(1)) {
                 ZMsg msg = ZMsg.recvMsg(backend);
                 System.out.println(msg.toString());
+                System.out.println(msg.getFirst());
                 String storageId = msg.getFirst().toString();
+                System.out.println(storageId);
                 String cmd = msg.getLast().toString();
                 Command command = new Command(cmd);
                 if (command.getType().equals("NOTIFY")) {
