@@ -25,12 +25,11 @@ public class Cache {
         while (!Thread.currentThread().isInterrupted()) {
             ZMsg msg = ZMsg.recvMsg(socket, false);
             if (msg != null) {
-                System.out.println(msg.getLast());
                 String cmd = msg.getLast().toString();
-                System.out.println(cmd);
                 Command command = new Command(cmd);
                 String clientId = msg.getFirst().toString();
                 if (command.getType().equals("GET")) {
+                    System.out.println(msg.toString());
                     Integer key = command.getIndex();
                     Integer value = storage.get(key);
                     ZMsg reply = new ZMsg();
@@ -40,6 +39,7 @@ public class Cache {
                     reply.send(socket);
                 }
                 if (command.getType().equals("PUT")) {
+                    System.out.println(msg.toString());
                     int index = command.getIndex();
                     int value = command.getValue();
                     storage.put(index, value);
