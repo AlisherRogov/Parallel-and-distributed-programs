@@ -104,7 +104,9 @@ public class Proxy {
     }
 
     private static void sendToClient(ZFrame clientId, String result, ZMQ.Socket frontend) {
-        ZMsg msg = createMessage(clientId, (String) null, result);
+        ZMsg msg = new ZMsg();
+        msg.add(clientId);
+        msg.add(result);
         msg.send(frontend, false);
     }
 
