@@ -43,7 +43,7 @@ public class Cache {
                     int index = command.getIndex();
                     int value = command.getValue();
                     storage.put(index, value);
-                    msg.destroy();
+                   // msg.destroy();
                 }
                 if (System.currentTimeMillis() >= timeoutTime) {
                     timeoutTime = System.currentTimeMillis() + TIMEOUT_MS;
