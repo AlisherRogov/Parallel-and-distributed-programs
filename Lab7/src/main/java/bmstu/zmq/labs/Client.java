@@ -22,7 +22,6 @@ public class Client {
             if (cmd.getType().equals("GET")){
                 System.out.println(socket.recvStr());
             }
-
         }
 
    //     context.destroySocket(socket);
