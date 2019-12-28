@@ -15,7 +15,7 @@ public class Client {
         Scanner in = new Scanner(System.in);
 
         while(!Thread.currentThread().isInterrupted()) {
-            String command = in.next();
+            String command = in.nextLine();
             System.out.println(command);
             socket.send(command, 0);
             System.out.println(socket.recvStr(0));
