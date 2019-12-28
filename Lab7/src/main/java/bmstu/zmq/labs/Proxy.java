@@ -64,7 +64,8 @@ public class Proxy {
                 if(command.getType().equals("RESULT")) {
                     System.out.println(msg);
                     frontend.send(msg.toString(), 0);
-                   // sendToClient(msg.getFirst(), msg.getLast().toString(), frontend);
+                    msg.pop();
+                    sendToClient(msg.getFirst(), msg.getLast().toString(), frontend);
                    // msg.send(frontend);
                 }
             }
