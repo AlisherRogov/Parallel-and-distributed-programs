@@ -41,7 +41,6 @@ public class Proxy {
                 }
                 if (cmd.getType().equals("PUT")) {
                     int key = cmd.getIndex();
-                    System.out.println(key + " the key");
                     boolean isKeyValid = sendPut(key, msg, backend);
                     if (!isKeyValid) {
 
