@@ -17,8 +17,9 @@ public class StorageInfo {
         updateNotifyTime();
     }
 
-    public void updateNotifyTime() {
+    public String updateNotifyTime() {
         lastNotifyTime = System.currentTimeMillis();
+        return  lastNotifyTime;
     }
 
     public boolean idDead() {
