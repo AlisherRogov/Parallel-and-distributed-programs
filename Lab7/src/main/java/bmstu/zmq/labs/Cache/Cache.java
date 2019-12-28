@@ -28,7 +28,7 @@ public class Cache {
                 String cmd = msg.getLast().toString();
                 Command command = new Command(cmd);
                 msg.pop();
-                ZFrame clientId = msg.pop();
+                ZFrame clientId = msg.getFirst();
                 System.out.println(msg);
                 if (command.getType().equals("GET")) {
                     System.out.println(msg.toString());
