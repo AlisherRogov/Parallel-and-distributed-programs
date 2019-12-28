@@ -47,7 +47,6 @@ public class Proxy {
             } else if (items.pollin(1)) {
                 ZMsg msg = ZMsg.recvMsg(backend);
                 System.out.println(msg.toString());
-                System.out.println(msg.getFirst());
             //    String storageId = msg.getFirst().toString();
               //  System.out.println(storageId);
                 String cmd = msg.getLast().toString();
@@ -56,7 +55,6 @@ public class Proxy {
                     insertStorage(msg.getFirst(), command.getFirstIndex(), command.getSecondIndex());
                 }
                 if(command.getType().equals("RESULT")) {
-                    System.out.println(msg.toString());
                     msg.send(frontend);
                 }
             }
