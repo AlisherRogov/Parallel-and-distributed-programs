@@ -51,6 +51,7 @@ public class Proxy {
                 String storageId = msg.getFirst().toString();
                 String cmd = msg.getLast().toString();
                 Command command = new Command(cmd);
+                System.out.println(command.getType());
                 if (command.getType() == "NOTIFY") {
                     insertStorage(storageId, command.getFirstIndex(), command.getSecondIndex());
                 }
