@@ -44,6 +44,8 @@ public class Proxy {
                     boolean isKeyValid = sendPut(key, msg, backend);
                     if (!isKeyValid) {
                         sendToClient(clientId, "ERROR", frontend);
+                    } else {
+                        sendToClient(clientId, "NICE", frontend);
                     }
                 }
             } else if (items.pollin(1)) {
@@ -110,13 +112,6 @@ public class Proxy {
         msg.send(frontend, false);
     }
 
-    private static ZMsg createMessage(ZFrame param1, String param2, String param3) {
-        ZMsg msg = new ZMsg();
-        msg.add(param1);
-        msg.add(param2);
-        msg.add(param3);
-        return msg;
-    }
 
     private static void insertStorage(ZFrame storageId, int firstIndex, int lastIndex) {
         StorageInfo storageInfo = new StorageInfo(storageId, firstIndex, lastIndex);
