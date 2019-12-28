@@ -1,17 +1,14 @@
 package bmstu.zmq.labs.Cache;
 
 import bmstu.zmq.labs.Command;
-import org.zeromq.SocketType;
-import org.zeromq.ZContext;
-import org.zeromq.ZMQ;
-import org.zeromq.ZMsg;
+import org.zeromq.*;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class Cache {
     private static final int TIMEOUT_MS = 3000;
-    private static final String CACHE_ADDRESS = "tcp://localhost:5569";
+    private static final String CACHE_ADDRESS = "tcp://localhost:5555";
 
     public static void main(String[] args) {
         Map<Integer, Integer> storage = new HashMap<>();
@@ -24,11 +21,14 @@ public class Cache {
         int end = Integer.parseInt(args[1]);
         long timeoutTime = System.currentTimeMillis() + TIMEOUT_MS;
         sendNotify(socket, start, end);
-
+fasdfd
+        
         while (!Thread.currentThread().isInterrupted()) {
-            ZMsg msg = ZMsg.recvMsg(socket);
+            ZMsg msg = ZMsg.recvMsg(socket, false);
             if (msg != null) {
+                System.out.println(msg.getLast());
                 String cmd = msg.getLast().toString();
+                System.out.println(cmd);
                 Command command = new Command(cmd);
                 String clientId = msg.getFirst().toString();
                 if (command.getType().equals("GET")) {
@@ -36,6 +36,7 @@ public class Cache {
                     Integer value = storage.get(key);
                     ZMsg reply = new ZMsg();
                     reply.add(clientId);
+                    reply.add((String) null);
                     reply.add(Command.response(value));
                     reply.send(socket);
                 }
@@ -45,10 +46,10 @@ public class Cache {
                     storage.put(index, value);
                     msg.destroy();
                 }
-            }
-            if(System.currentTimeMillis() >= timeoutTime) {
-                timeoutTime = System.currentTimeMillis() + TIMEOUT_MS;
-                sendNotify(socket, start, end);
+                if (System.currentTimeMillis() >= timeoutTime) {
+                    timeoutTime = System.currentTimeMillis() + TIMEOUT_MS;
+                    sendNotify(socket, start, end);
+                }
             }
         }
         context.destroySocket(socket);

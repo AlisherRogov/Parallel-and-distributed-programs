@@ -18,24 +18,24 @@ public class Command {
 
     private void parseCommand(String cmd) {
         String[] split = cmd.trim().split(DELIMETER);
-        if (split[0] == "GET") {
+        if (split[0].equals("GET")) {
             this.type = Type.GET;
             args.add(Integer.parseInt(split[1]));
         }
-        if (split[0] == "PUT") {
+        if (split[0].equals("PUT")) {
             this.type = Type.PUT;
             args.add(Integer.parseInt(split[1]));
             args.add(Integer.parseInt(split[2]));
         }
-        if (split[0] == "NOTIFY") {
+        if (split[0].equals("NOTIFY")) {
             this.type = Type.NOTIFY;
             args.add(Integer.parseInt(split[1]));
             args.add(Integer.parseInt(split[2]));
         }
-        if (split[0] == "ERROR") {
+        if (split[0].equals("ERROR")) {
             this.type = Type.ERROR;
         }
-        if (split[0] == "RESULT") {
+        if (split[0].equals("RESULT")) {
             this.type = Type.RESULT;
             args.add(Integer.parseInt(split[1]));
         }
@@ -66,11 +66,11 @@ public class Command {
     }
 
     public static String response(int result) {
-        return "RESULT:" + DELIMETER + result;
+        return "RESULT" + DELIMETER + result;
     }
 
     public static String notify(int firstIndex, int lastIndex) {
-        return "NOTIFY:"+ DELIMETER + firstIndex + DELIMETER + lastIndex;
+        return "NOTIFY"+ DELIMETER + firstIndex + DELIMETER + lastIndex;
     }
 }
 

@@ -1,6 +1,5 @@
 package bmstu.zmq.labs;
 
-import bmstu.zmq.labs.Command;
 import org.zeromq.*;
 
 import java.util.ArrayList;
@@ -8,8 +7,8 @@ import java.util.ArrayList;
 
 public class Proxy {
 
-    private static String clientAddress = "tcp://localhost:5555";
-    private static String cacheAddress = "tcp://localhost:5569";
+    private static String CLIENT_ADDRESS = "tcp://localhost:5569";
+    private static String CACHE_ADDRESS = "tcp://localhost:5555";
     private static ArrayList<StorageInfo> activeStorages = new ArrayList<>();
 
     public static void main(String[] args) {
@@ -18,8 +17,8 @@ public class Proxy {
         ZMQ.Socket backend = context.createSocket(SocketType.ROUTER);
         ZMQ.Socket frontend = context.createSocket(SocketType.ROUTER);
 
-        backend.bind(cacheAddress);
-        frontend.bind(clientAddress);
+        backend.bind(CACHE_ADDRESS);
+        frontend.bind(CLIENT_ADDRESS);
 
         ZMQ.Poller items = context.createPoller(2);
         items.register(frontend, ZMQ.Poller.POLLIN);
@@ -31,15 +30,14 @@ public class Proxy {
                 ZMsg msg = ZMsg.recvMsg(frontend);
                 ZFrame clientId = msg.getFirst();
                 Command cmd = new Command(msg.getLast().toString());
-                System.out.println(cmd.getType());
-                if (cmd.getType() == "GET") {
+                if (cmd.getType().equals("GET")) {
                     int key = cmd.getIndex();
                     boolean isKeyValid = sendGet(key, msg, backend);
                     if (!isKeyValid) {
                         sendToClient(clientId, "ERROR", frontend);
                     }
                 }
-                if (cmd.getType() == "PUT") {
+                if (cmd.getType().equals("PUT")) {
                     int key = cmd.getIndex();
                     boolean isKeyValid = sendPut(key, msg, backend);
                     if (!isKeyValid) {
@@ -48,12 +46,16 @@ public class Proxy {
                 }
             } else if (items.pollin(1)) {
                 ZMsg msg = ZMsg.recvMsg(backend);
+                System.out.println(msg.toString());
                 String storageId = msg.getFirst().toString();
                 String cmd = msg.getLast().toString();
-                System.out.println(cmd);
                 Command command = new Command(cmd);
-                if (command.getType() == "NOTIFY") {
+                if (command.getType().equals("NOTIFY")) {
                     insertStorage(storageId, command.getFirstIndex(), command.getSecondIndex());
+                }
+                if(command.getType().equals("RESULT")) {
+                    System.out.println(msg.toString());
+                    msg.send(frontend);
                 }
             }
             removeDeadStorages();
@@ -89,18 +91,22 @@ public class Proxy {
     }
 
     private static void sendToCache(String  storageId, ZMsg frame, ZMQ.Socket backend) {
+        System.out.println(frame.toString());
         ZMsg msg = new ZMsg();
-        msg.add(storageId);
+     //   msg.add(storageId);
+       // msg.add("");
         msg.add(frame.getFirst()); // ClientId
+       // msg.add("");
+        msg.add((String) null);
         msg.add(frame.getLast().toString()); // command
-      //  ZMsg msg1 = createMessage(storageId, frame.getFirst())
         System.out.println("message to cache has been sent");
-        msg.send(backend);
+        System.out.println(msg.toString());
+        msg.send(backend, false);
     }
 
     private static void sendToClient(ZFrame clientId, String result, ZMQ.Socket frontend) {
         ZMsg msg = createMessage(clientId, (String) null, result);
-        msg.send(frontend);
+        msg.send(frontend, false);
     }
 
     private static ZMsg createMessage(ZFrame param1, String param2, String param3) {
@@ -125,9 +131,6 @@ public class Proxy {
     private static void removeDeadStorages() {
         activeStorages.removeIf(StorageInfo::idDead);
     }
-
-
-
 
 
 }
