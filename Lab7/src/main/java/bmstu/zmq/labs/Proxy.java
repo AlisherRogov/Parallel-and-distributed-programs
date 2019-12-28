@@ -103,7 +103,7 @@ public class Proxy {
         System.out.println(frame.toString());
         ZMsg msg = new ZMsg();
         msg.add(storageId);
-        msg.add(frame.getFirst());
+
         msg.add(frame.getLast().toString()); // command
         System.out.println("message to cache has been sent");
         System.out.println(msg.toString());
