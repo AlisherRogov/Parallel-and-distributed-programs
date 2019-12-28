@@ -18,7 +18,7 @@ public class Client {
             String command = in.nextLine();
             System.out.println(command);
             socket.send(command, 0);
-            String reply = socket.recvStr();
+            String reply = socket.recvStr(0);
             if(reply.equals("ERROR")) break;
             System.out.println(reply);
         }
