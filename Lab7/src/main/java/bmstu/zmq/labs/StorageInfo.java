@@ -1,13 +1,16 @@
 package bmstu.zmq.labs;
 
+import org.zeromq.ZFrame;
+import org.zeromq.ZMQ;
+
 public class StorageInfo {
     private static final int DURATION_MS = 500;
-    String storageID;
+    ZFrame storageID;
     int firstIndex;
     int lastIndex;
     long lastNotifyTime;
 
-    public StorageInfo(String storageID, int firstIndex, int lastIndex) {
+    public StorageInfo(ZFrame storageID, int firstIndex, int lastIndex) {
         this.storageID = storageID;
         this.firstIndex = firstIndex;
         this.lastIndex = lastIndex;
@@ -23,7 +26,7 @@ public class StorageInfo {
         return (currentTime - lastNotifyTime) > 2 * DURATION_MS;
     }
 
-    public String getStorageID() {
+    public ZFrame getStorageID() {
         return storageID;
     }
 

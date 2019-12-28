@@ -48,12 +48,12 @@ public class Proxy {
                 ZMsg msg = ZMsg.recvMsg(backend);
                 System.out.println(msg.toString());
                 System.out.println(msg.getFirst());
-                String storageId = msg.getFirst().toString();
-                System.out.println(storageId);
+            //    String storageId = msg.getFirst().toString();
+              //  System.out.println(storageId);
                 String cmd = msg.getLast().toString();
                 Command command = new Command(cmd);
                 if (command.getType().equals("NOTIFY")) {
-                    insertStorage(storageId, command.getFirstIndex(), command.getSecondIndex());
+                    insertStorage(msg.getFirst(), command.getFirstIndex(), command.getSecondIndex());
                 }
                 if(command.getType().equals("RESULT")) {
                     System.out.println(msg.toString());
@@ -92,7 +92,7 @@ public class Proxy {
         return isKeyValid;
     }
 
-    private static void sendToCache(String  storageId, ZMsg frame, ZMQ.Socket backend) {
+    private static void sendToCache(ZFrame  storageId, ZMsg frame, ZMQ.Socket backend) {
         System.out.println(frame.toString());
         ZMsg msg = new ZMsg();
         msg.add(storageId);
@@ -119,7 +119,7 @@ public class Proxy {
         return msg;
     }
 
-    private static void insertStorage(String storageId, int firstIndex, int lastIndex) {
+    private static void insertStorage(ZFrame storageId, int firstIndex, int lastIndex) {
         StorageInfo storageInfo = new StorageInfo(storageId, firstIndex, lastIndex);
         for (StorageInfo storedStorages : activeStorages) {
             if (storedStorages.getStorageID().equals(storageId)) {
